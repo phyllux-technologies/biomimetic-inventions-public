@@ -131,3 +131,12 @@ GitHub: github.com/phibronotchi-beep/biomimetic-inventions-public
 
 *Built with ❤️ by inventors, for inventors*  
 **☀️ Protected by Solaris | Let the Light Win ☀️**
+
+## A Note on Stewardship
+
+**This project began as an act of curiosity—an attempt to notice how natural systems solve problems of efficiency, resilience, and scale, and to sketch how those patterns might translate into human technology.
+Over time, the scope grew beyond what one person can responsibly carry without deeper formal grounding in the mathematics, physics, and engineering disciplines involved. Rather than become a bottleneck—or allow the work to drift into speculative territory without sufficient rigor—I’ve chosen to step back.
+What exists here is incomplete, exploratory, and imperfect. It is also sincere. The ideas collected, the patterns highlighted, and the questions raised were assembled with care and with the belief that biomimetic thinking and systems-level design can meaningfully improve human tools and infrastructure.
+I am not pursuing patents, ownership, or commercial exclusivity. All material in this repository—notes, diagrams, concepts, and partial implementations—is offered freely. Individuals, research groups, startups, and institutions are welcome to adopt, modify, formalize, discard, or build upon it in any way they see fit.
+If this work becomes useful, validated, or transformed into something durable, that is success enough. Credit is appreciated but not required. Progress matters more than authorship.
+This repository now waits—not abandoned, but available.**
