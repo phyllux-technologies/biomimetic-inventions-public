@@ -45,7 +45,7 @@ This repository is protected by the **[Solaris Framework](https://github.com/phi
 ### **Status:**
 - ✅ Prior art established (Dec 2024 - Jan 2026)
 - ✅ US/Canada grace period active (until Jan 2027)
-- ✅ Provisional patents filed (Jan 24, 2026)
+- ✅ Provisional patents filed (In the immediate future)
 - ✅ Trade secrets protected
 
 ### **For Complete Details:**
