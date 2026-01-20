@@ -1,55 +1,45 @@
-# Prior Art Declaration
+# Prior Art Declaration – Biomimetic Inventions
 
-## Biomimetic Technologies Prior Art Disclosure
+> Rebrand note: Earlier drafts and related documents sometimes refer to a “Solaris” framework. That internal working name has been superseded publicly by **Phyllux**. References to “Solaris” are retained where necessary to maintain continuity of public disclosures and prior-art records.
 
-This repository establishes prior art for the following biomimetic technologies developed by David Edward Sproule, Edmonton, Alberta, Canada (GitHub: @Phibronotchi).
+This file summarizes the intent to establish public prior art for certain biomimetic concepts explored in this repository. It does **not** provide legal advice and does not replace formal patent filings.
 
-### Covered Inventions
+## Covered Concept Areas
 
-| Technology | Description | First Public Disclosure | Repository Location |
-|------------|-------------|------------------------|---------------------|
-| **PNM** (Phyllotactic Neural Meshing) | Brain electrode array design based on golden angle (137.508°) phyllotactic patterns for reduced crosstalk and optimized signal quality in neural interfaces | January 2, 2025 | `/PNM-public/` |
-| **GAFAA** (Golden-Angle Fractal Antenna Arrays) | Wireless communication antenna arrays using biomimetic phyllotactic patterns and fractal geometry for enhanced signal distribution and efficiency | January 2, 2025 | `/golden-angle-antenna-GAFAA-public/` |
-| **PhiKey** | Quantum-resistant cryptographic protocol based on golden ratio lattice structures and geometric security principles | January 2, 2025 | `/PhiKey-public/` |
+The following conceptual technologies are sketched or demonstrated in toy form within this repository:
 
-### Evidence of Prior Art
+- **Phyllotactic Neural Meshing (PNM):**  
+  - Neural electrode array layouts inspired by golden-angle phyllotaxis.  
+  - Intended benefits such as reduced crosstalk or tissue response are **design goals**, not verified clinical claims at this stage.
 
-- **GitHub Repository Created:** Late December 2024 (preliminary), Finalized January 2, 2025
-- **Repository URL:** https://github.com/phibronotchi-beep/biomimetic-inventions-public
-- **First Public Commit:** January 2, 2025
-- **Zenodo DOI:** To be added upon first release
-- **Software Heritage Archive:** To be added upon archival submission
-- **Internet Archive:** To be added upon Wayback Machine submission
+- **Golden-Angle Fractal Antenna Arrays (GAFAA):**  
+  - Antenna element placements following sunflower-like spirals.  
+  - Any performance numbers mentioned in related docs should be treated as **simulations or hypothetical targets**, not guaranteed specifications.
 
-### Inventor Information
+- **PhiKey (Geometric Security Concepts):**  
+  - Conceptual mappings from geometric/spiral indices to cryptographic material.  
+  - Demonstrations here are not audited cryptographic primitives and must not be used to secure real-world assets.
 
-- **Name:** David Edward Sproule
-- **Location:** Edmonton, Alberta, Canada
-- **GitHub Handle:** @Phibronotchi / phibronotchi-beep
-- **Email:** phibronotchi@gmail.com
+- **Integrated Biomimetic System (IBS / PhiNexus):**  
+  - High-level concept of a system combining PNM, GAFAA, and PhiKey into one architecture.  
+  - All system-level metrics should be regarded as **theoretical or simulated** until independently verified.
 
-### Legal Notice
+## Evidence of Public Disclosure (High Level)
 
-This public disclosure is intended to establish prior art under:
-- **35 U.S.C. § 102** (United States Patent Law)
-- **Section 28.2 of the Patent Act** (Canada - 12-month grace period)
-- **Article 54 EPC** (Europe - absolute novelty requirement)
+Examples of channels that may contribute to prior art include:
 
-**⚠️ NOTICE TO THIRD PARTIES:** Any party filing patent claims covering the technologies disclosed herein after **January 2, 2025** should be aware that this repository constitutes anticipatory prior art that may invalidate such claims.
+- Commits and tagged releases in this GitHub repository.  
+- Public posts or discussions describing these ideas in general terms.  
+- Time-stamped documentation such as `TIMESTAMP.md` within this repo.
 
-### Grace Period Deadlines
+Exact legal effect depends on jurisdiction and timing; consult qualified counsel for any patentability or enforcement analysis.
 
-**CRITICAL FILING DEADLINE: January 2, 2027** (Canada and US)
+## Legal Notice
 
-### Contact for Commercial Inquiries
+- This document is intended to **record and summarize** the existence of public disclosures relating to the above concept areas.  
+- It does **not** guarantee that any particular claim will be considered prior art, nor that any future patent filing will be valid or enforceable.  
+- Anyone considering filing patents that cover similar subject matter should perform their own professional prior-art search and legal analysis.
 
-**David Edward Sproule**  
-Edmonton, Alberta, Canada  
-Email: phibronotchi@gmail.com  
-GitHub: @phibronotchi-beep
+For more detailed strategy discussions, see `PATENTS.md`, `INVENTION_DISCLOSURE.md`, and `INVENTORSHIP_DECLARATION.md`.
 
----
-
-**Last Updated:** January 13, 2026  
-**Version:** 1.0  
-**Status:** Active prior art establishment and patent preparation phase
+**Last Updated:** January 20, 2026
