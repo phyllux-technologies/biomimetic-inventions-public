@@ -1,60 +1,65 @@
 # COPYRIGHT
 
 Copyright © 2025-2026 David Edward Sproule  
-Edmonton, Alberta, Canada  
-All Rights Reserved
+Edmonton, Alberta, Canada
 
-## Copyright Notice
+## License Summary
 
-This software and associated documentation files (the "Software") are the copyrighted work of David Edward Sproule. The Software is licensed under the Apache License, Version 2.0 (the "License").
-
-You may obtain a copy of the License at:
-http://www.apache.org/licenses/LICENSE-2.0
+- **Source Code**: MIT License (see `LICENSE`)
+- **Documentation**: CC BY-SA 4.0 (see `LICENSE-DOCS.md`)
 
 ## Technologies Covered
 
-- **PNM (Phyllotactic Neural Meshing)** - Brain electrode array designs
-- **GAFAA (Golden-Angle Fractal Antenna Arrays)** - Wireless antenna technology
-- **PhiKey** - Quantum-resistant cryptographic protocols
+- **PNM (Phyllotactic Neural Meshing / Phyllux Mesh)** - Neural electrode array concepts
+- **GAFAA (Golden-Angle Fractal Antenna Arrays / Phyllux Wave)** - Antenna array concepts
+- **Phyllux Vault** (formerly PhiKey) - Geometric cryptographic concepts
+- **Integrated Biomimetic System (IBS / PhiNexus)** - System integration concepts
 
 ## Attribution Requirements
 
-When using, modifying, or distributing this Software:
-1. Retain this copyright notice in all copies
-2. Provide attribution to David Edward Sproule as original author
-3. Indicate if changes were made
-4. Include a copy of the Apache 2.0 License
+When using, modifying, or distributing:
 
-### Proper Attribution Format
+1. **For Code**: Retain MIT License notice (see LICENSE)
+2. **For Documentation**: Provide attribution per CC BY-SA 4.0 (see LICENSE-DOCS.md)
+3. **For Both**: Indicate if changes were made
+
+### Suggested Attribution Formats
 
 **For Academic Papers:**
 ```
-Sproule, D. E. (2025). Biomimetic Inventions: PNM, GAFAA, and PhiKey. 
-GitHub. https://github.com/phibronotchi-beep/biomimetic-inventions-public
+Sproule, D. E. (2026). Biomimetic Inventions: PNM, GAFAA, and Phyllux Vault 
+(conceptual demos). GitHub. 
+https://github.com/phibronotchi-beep/biomimetic-inventions-public
 ```
 
 **For Software Projects:**
 ```
-Technology by David Edward Sproule (@Phibronotchi)
+Technology by David Edward Sproule (@phibronotchi-beep)
 github.com/phibronotchi-beep/biomimetic-inventions-public
-License: Apache 2.0
+License: MIT (code), CC BY-SA 4.0 (docs)
 ```
 
-## Copyright vs. Patent Rights
+## Intellectual Property
 
-- **Copyright license** (Apache 2.0) grants rights to code/documentation
-- **Patent rights** (see PATENTS.md) separately control commercial use of inventions
+**Copyright License**: MIT (code) and CC BY-SA 4.0 (docs) grant rights to code/documentation.
+
+**Patent Rights**: Core inventions are proprietary. This repository establishes prior art. 
+For commercial licensing, contact phibronotchi@gmail.com. See `PATENTS.md` and `LICENSE` 
+for details.
 
 ## Contact Information
 
 **David Edward Sproule**  
+Independent Inventor  
 Edmonton, Alberta, Canada  
-Email: phibronotchi@gmail.com  
-GitHub: @phibronotchi-beep / phibronotchi-beep
 
-For commercial licensing: phibronotchi@gmail.com
+- **Email**: phibronotchi@gmail.com
+- **GitHub**: @phibronotchi-beep
+- **Repository**: https://github.com/phibronotchi-beep/biomimetic-inventions-public
 
-## Moral Rights
+**Commercial Licensing**: phibronotchi@gmail.com
+
+## Moral Rights (Canada)
 
 Under Canadian copyright law, the author retains:
 - Right of attribution (to be identified as creator)
@@ -63,6 +68,6 @@ Under Canadian copyright law, the author retains:
 
 ---
 
-**Document Version:** 1.0  
-**Effective Date:** January 2, 2025  
-**Last Updated:** January 13, 2026
+**Document Version**: 2.0  
+**Effective Date**: January 20, 2026  
+**Last Updated**: January 20, 2026

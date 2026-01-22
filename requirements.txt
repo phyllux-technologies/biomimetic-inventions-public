@@ -1,0 +1,10 @@
+# Root requirements for biomimetic-inventions-public
+# This file aggregates dependencies from all subprojects
+
+# Core dependencies (used by all subprojects)
+numpy>=1.21.0
+matplotlib>=3.5.0
+scipy>=1.7.0
+
+# Note: Individual subprojects may have additional specific requirements.
+# See individual requirements.txt files in each subproject directory.

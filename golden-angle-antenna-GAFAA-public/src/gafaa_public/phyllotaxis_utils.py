@@ -17,26 +17,28 @@ def golden_like_spiral_points(n_points: int,
     y = r * np.sin(theta)
     return x, y
 
-# Generate 121 antenna positions for GAFAA
-x, y = golden_like_spiral_points(121, radius_scale=1.07, angle_deg=137.508)
 
-# Print results
-print("Number of antenna elements:", len(x))
-print("First 5 positions:")
-for i in range(5):
-    print(f"  Element {i+1}: x={x[i]:.3f}, y={y[i]:.3f}")
+if __name__ == "__main__":
+    # Generate 121 antenna positions for GAFAA
+    x, y = golden_like_spiral_points(121, radius_scale=1.07, angle_deg=137.508)
 
-# Plot
-plt.figure(figsize=(8, 8))
-plt.scatter(x, y, s=100, c='red', alpha=0.6, edgecolors='black')
-plt.plot(x, y, 'b-', alpha=0.2, linewidth=0.5)
-plt.xlabel('X position (mm)')
-plt.ylabel('Y position (mm)')
-plt.title('GAFAA: 121 Antenna Elements (Golden Angle Spiral)')
-plt.axis('equal')
-plt.grid(True, alpha=0.3)
-plt.show()
+    # Print results
+    print("Number of antenna elements:", len(x))
+    print("First 5 positions:")
+    for i in range(5):
+        print(f"  Element {i+1}: x={x[i]:.3f}, y={y[i]:.3f}")
 
-# Save the figure
-plt.savefig('GAFAA_spiral_pattern.png', dpi=300, bbox_inches='tight')
-print("\nFigure saved!")
+    # Plot
+    plt.figure(figsize=(8, 8))
+    plt.scatter(x, y, s=100, c='red', alpha=0.6, edgecolors='black')
+    plt.plot(x, y, 'b-', alpha=0.2, linewidth=0.5)
+    plt.xlabel('X position (mm)')
+    plt.ylabel('Y position (mm)')
+    plt.title('GAFAA: 121 Antenna Elements (Golden Angle Spiral)')
+    plt.axis('equal')
+    plt.grid(True, alpha=0.3)
+    plt.show()
+
+    # Save the figure
+    plt.savefig('GAFAA_spiral_pattern.png', dpi=300, bbox_inches='tight')
+    print("\nFigure saved!")
