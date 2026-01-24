@@ -80,7 +80,9 @@ def array_factor_2d(positions: Tuple[np.ndarray, np.ndarray],
         observation_angles = np.column_stack([az_grid.ravel(), el_grid.ravel()])
     
     # Scan direction unit vector
-    scan_az, scan_el = np.deg2rad(scan_angle_deg)
+    scan_az_deg, scan_el_deg = scan_angle_deg
+    scan_az = np.deg2rad(scan_az_deg)
+    scan_el = np.deg2rad(scan_el_deg)
     scan_dir = np.array([
         np.cos(scan_el) * np.sin(scan_az),
         np.cos(scan_el) * np.cos(scan_az),
