@@ -41,6 +41,25 @@ All example Python files follow numbered lowercase-hyphenated format:
   - 021-024: Basic demos and visualizations
   - 025-027: Realistic neural analysis, SVG visualization, crosstalk optimization
 
+## Image Directory Structure
+
+**Root `/images/` Directory:**
+- Primary location for generated visualization images
+- Contains clean reference images (e.g., `*_121_clean.png` patterns)
+- All image generation scripts output to this directory using relative path resolution
+- Scripts automatically detect repository root by searching for `README.md` and `LICENSE.md`
+
+**Subproject `/docs/assets/` Directories:**
+- `golden-angle-antenna-GAFAA-public/docs/assets/` - SVG layouts and PNG plots for GAFAA
+- `PNM-public/docs/assets/` - SVG layouts and PNG plots for PNM
+- `PhiKey-public/docs/assets/` - SVG layouts and PNG plots for Phyllux Vault
+- These contain SVG visualizations and documentation-specific images referenced in README files
+
+**Image Generation:**
+- All Python visualization scripts use portable relative paths
+- Scripts locate repository root automatically
+- Images are saved to root `/images/` directory for consistency
+
 ## Unified Under PPA Embodiments
 
 All implementations are unified under phyllotactic system principles per PPA "Phyllotactic Multi-Domain System for Neural Interfaces, Wireless Communications, and Cryptographic Security" prepared for filing Jan 21, 2026.

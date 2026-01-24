@@ -6,12 +6,25 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Safe IMAGE_DIR
+# Safe IMAGE_DIR - find repository root
 try:
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 except NameError:
     SCRIPT_DIR = os.getcwd()
-IMAGE_DIR = r"D:\Phyllux Project\biomimetic-inventions-public\images"
+
+# Find repository root by looking for README.md or LICENSE.md
+REPO_ROOT = SCRIPT_DIR
+for _ in range(5):  # Max 5 levels up
+    if os.path.exists(os.path.join(REPO_ROOT, 'README.md')) and \
+       os.path.exists(os.path.join(REPO_ROOT, 'LICENSE.md')):
+        break
+    parent = os.path.dirname(REPO_ROOT)
+    if parent == REPO_ROOT:  # Reached filesystem root
+        REPO_ROOT = SCRIPT_DIR  # Fallback to script directory
+        break
+    REPO_ROOT = parent
+
+IMAGE_DIR = os.path.join(REPO_ROOT, 'images')
 os.makedirs(IMAGE_DIR, exist_ok=True)
 print(f"Image output directory: {IMAGE_DIR}")
 
