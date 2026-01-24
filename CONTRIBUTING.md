@@ -21,6 +21,10 @@ Good faith contributions only. Follow ethical tiers. Empirical contributions wel
 
 Simulation-based; empirical validation required per provisional application prepared for filing Jan 21, 2026.
 
+## Security
+
+If you discover a security vulnerability, please see [SECURITY.md](SECURITY.md) for reporting instructions.
+
 ## Contact
 
 For questions about contributions or licensing, contact: phibronotchi@gmail.com

@@ -24,7 +24,7 @@ The PPA embodiments unify multiple domains under phyllotactic system principles:
 - **AI/ML**: Mandelbrot optimizations, geometric learning
 - **Medical**: Neuroprosthetics, brain-computer interfaces
 - **Space**: Propulsion systems, orbital mechanics
-- **Quantum**: Post-quantum cryptography, quantum-resistant security
+- **Quantum**: Post-quantum cryptography exploration, quantum-resistant security research
 
 All extensions are unified under phyllotactic system principles per PPA embodiments.
 

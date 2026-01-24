@@ -72,12 +72,16 @@
   - Medical: "not clinical devices, have not been tested in vivo"
   - Security: "not production-grade or security-reviewed cryptography"
   - Performance: "not to specify any validated RF design or guaranteed performance"
-- ✅ **No "quantum-resistant" assertions** (checked via grep)
+- ⚠️ **"Quantum-resistant" language found** in:
+  - `PITCH.md`: "quantum-resistant security"
+  - `README ALT.md`: "quantum-resistant cryptography", "Quantum-resistant"
+  - `project_overview.md`: "quantum-resistant security"
 - ✅ **No performance guarantees** detected
 
 **RECOMMENDATIONS:**
-- Continue current practices
-- No changes needed
+- Soften "quantum-resistant" language to "explores quantum resistance" or "aims for quantum resistance"
+- Update PITCH.md, README ALT.md, project_overview.md
+- Continue qualified language practices
 
 ---
 

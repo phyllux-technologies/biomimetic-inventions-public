@@ -2,7 +2,7 @@
 
 **Problem:** Neural interfaces limited, wireless communications constrained, cryptographic systems vulnerable to quantum attacks.
 
-**Solution:** Phyllux — phyllotactic patterns for crosstalk-free brain-computer interfaces, wideband antennas, quantum-resistant security, multi-domain integrations.
+**Solution:** Phyllux — phyllotactic patterns for crosstalk-free brain-computer interfaces, wideband antennas, quantum-resistant security exploration, multi-domain integrations.
 
 **Market:** Longevity, wireless communications, quantum-safe cryptography, sustainability.
 

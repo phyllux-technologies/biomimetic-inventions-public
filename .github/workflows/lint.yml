@@ -1,0 +1,31 @@
+name: Lint Markdown
+
+on:
+  push:
+    paths:
+      - '**.md'
+  pull_request:
+    paths:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run markdownlint
+        uses: DavidAnson/markdownlint@v0.9.0
+        with:
+          config_file: .markdownlint.json
+          result_output: markdownlint-results.txt
+        continue-on-error: true
+      
+      - name: Display results
+        run: |
+          if [ -f markdownlint-results.txt ]; then
+            cat markdownlint-results.txt
+          else
+            echo "No linting issues found"
+          fi

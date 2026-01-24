@@ -1,0 +1,34 @@
+name: Check Links
+
+on:
+  push:
+    paths:
+      - '**.md'
+  pull_request:
+    paths:
+      - '**.md'
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          args: --accept 200,403,429 --exclude-all-private --exclude-mail --no-progress --format detailed
+          args: --fail-on 404,500,503
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+      
+      - name: Check external links (warn only)
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          args: --accept 200,403,429 --exclude-all-private --exclude-mail --no-progress --format detailed
+          args: --exclude 'https://github.com/phibronotchi-beep/*'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true

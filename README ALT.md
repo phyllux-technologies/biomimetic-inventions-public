@@ -7,7 +7,7 @@
 
 **Nature-inspired engineering solutions using the golden ratio (φ ≈ 1.618) and phyllotactic spiral patterns.**
 
-This repository showcases three groundbreaking biomimetic inventions solving real-world challenges in neural interfaces, wireless communications, and quantum-resistant cryptography.
+This repository showcases three groundbreaking biomimetic inventions solving real-world challenges in neural interfaces, wireless communications, and quantum-resistant cryptography exploration.
 
 ---
 
@@ -54,11 +54,11 @@ Copyright © 2025-2026 David Edward Sproule. Licensed under Apache 2.0.
 
 ### 3. PhiKey - Geometric Security Protocol 🔑
 
-**Quantum-resistant cryptography using golden ratio lattice structures**
+**Quantum-resistant cryptography exploration using golden ratio lattice structures**
 
 - **Problem:** RSA/ECC vulnerable to quantum computers
-- **Solution:** Encryption using φ-based lattices and geometric path traversal
-- **Benefits:** Quantum-resistant, compact keys (2-4 KB), novel hardness
+- **Solution:** Encryption using φ-based lattices and geometric path traversal (research-stage)
+- **Benefits:** Explores quantum resistance, compact keys (2-4 KB), novel hardness (theoretical)
 
 **Applications:** Post-quantum encryption, blockchain security, secure messaging
 
