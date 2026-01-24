@@ -33,9 +33,13 @@ biomimetic-inventions-public/
 ## File Naming Convention
 
 All example Python files follow numbered lowercase-hyphenated format:
-- **GAFAA examples**: `001-phyllux-gafaa-*.py` through `004-phyllux-gafaa-*.py`
+- **GAFAA examples**: `001-phyllux-gafaa-*.py` through `007-phyllux-gafaa-*.py`
+  - 001-004: Basic demos and visualizations
+  - 005-007: Realistic RF analysis, SVG visualization, multi-frequency comparison
 - **PhiKey examples**: `011-phyllux-phikey-*.py` through `014-phyllux-phikey-*.py`
-- **PNM examples**: `021-phyllux-pnm-*.py` through `024-phyllux-pnm-*.py`
+- **PNM examples**: `021-phyllux-pnm-*.py` through `027-phyllux-pnm-*.py`
+  - 021-024: Basic demos and visualizations
+  - 025-027: Realistic neural analysis, SVG visualization, crosstalk optimization
 
 ## Unified Under PPA Embodiments
 
