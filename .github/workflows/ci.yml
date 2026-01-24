@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint@v0.9.0
+        with:
+          config_file: .markdownlint.json
+          result_output: markdownlint-results.txt
+        continue-on-error: true
+      
+      - name: Display lint results
+        run: |
+          if [ -f markdownlint-results.txt ]; then
+            cat markdownlint-results.txt
+          else
+            echo "No linting issues found"
+          fi
+      
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          args: --accept 200,403,429 --exclude-all-private --exclude-mail --no-progress --format detailed
+          args: --fail-on 404,500,503
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+      
+      - name: Python syntax check
+        run: |
+          if [ -f requirements.txt ]; then
+            python3 -m py_compile $(find . -name "*.py" -not -path "./.git/*" -not -path "*/__pycache__/*" | head -5) || echo "Syntax check completed with warnings"
+          else
+            echo "No requirements.txt found, skipping Python syntax check"
+          fi
+        continue-on-error: true

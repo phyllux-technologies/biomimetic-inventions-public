@@ -1,5 +1,7 @@
 # Phyllux Biomimetic Inventions – Public Demos
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![CI](https://github.com/phibronotchi-beep/biomimetic-inventions-public/actions/workflows/ci.yml/badge.svg)](.github/workflows/ci.yml) [![Disclosure](https://img.shields.io/badge/Disclosure-Framework-green.svg)](DISCLOSURE.md)
+
 Biomimetic multi-domain system fusing phyllotaxis (golden angle ~137.508°) with AI, biology, quantum for neural interfaces, wireless communications, cryptographic security, integrated tech.
 
 **Provisional application prepared for filing (to be filed late January 2026) – prior art established via commits (Jan 7, 2026), MIT as defensive publication, @Phibronotchi disclosures Jan 2026. Simulation-based; empirical validation required.**
