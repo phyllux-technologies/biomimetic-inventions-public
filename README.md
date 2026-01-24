@@ -5,15 +5,15 @@ Biomimetic multi-domain system fusing phyllotaxis (golden angle ~137.508°) with
 **Provisional application prepared for filing Jan 21, 2026 – prior art established via commits (Jan 7, 2026), MIT as defensive publication, @Phibronotchi disclosures Jan 2026. Simulation-based; empirical validation required.**
 
 ## Ethical IP Tiers (Unified Across All Phyllux Repos)
-1. **Free Tier** — Research, education, open-source contributions.
-2. **Commercial Tier** — Fair royalties for profit use.
-3. **Pioneer Tier** — Low/no-fee for high-impact players (sustainability, space, longevity orgs).
-4. **Community Defense** — No misuse; revocation for bad faith; shared prosperity, no patent trolling.
+1. Free Tier — Research, education, open-source contributions.
+2. Commercial Tier — Fair royalties for profit use.
+3. Pioneer Tier — Low/no-fee for high-impact players (sustainability, space, longevity orgs).
+4. Community Defense — No misuse; revocation for bad faith; shared prosperity, no patent trolling.
 
 ## This Repo
-Public demos and prior art for golden-angle antennas, neural meshes, PhiKey crypto concepts, empirical simulations.
+Public demos and prior art for golden-angle antennas, neural meshes, Phyllux Vault crypto concepts, empirical simulations.
 
-## Extensions as Embodiments
+## Extensions as Embodiments (Unifying Other Inventions)
 Extensions for biological (mycelium nets), AI/ML (mandelbrot optimizations), medical (neuroprosthetics), space (propulsion), etc. — unified under phyllotactic system per PPA embodiments.
 
 ## Cross-Repo Links
@@ -90,9 +90,7 @@ Sproule, D. E. (2026). Biomimetic Inventions: Phyllotactic Neural Meshing (Phyll
 
 ## License
 
-Source code and example scripts: typically under an open-source license such as MIT (see LICENSE.md for exact terms).
-
-Underlying inventions and higher-level concepts may be subject to additional Phyllux Framework licensing for commercial use.
+MIT License + Ethical IP Tiers (see README.md). No misuse.
 
 Nothing in this repository guarantees any particular performance, safety level, or regulatory status. Use at your own risk, and do not treat any content here as medical, security, or legal advice.
 
