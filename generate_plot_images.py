@@ -37,9 +37,9 @@ try:
     plt.tight_layout()
     plt.savefig(os.path.join(IMAGE_DIR, 'phyllotaxis-plot.png'), dpi=300, bbox_inches='tight', facecolor='white')
     plt.close()
-    print("  ✅ Generated: phyllotaxis-plot.png")
+    print("  [OK] Generated: phyllotaxis-plot.png")
 except Exception as e:
-    print(f"  ❌ Error: {e}")
+    print(f"  [ERROR] Error: {e}")
 
 # Generate spiral-plot.png (PNM)
 print("\nGenerating spiral-plot.png...")
@@ -62,9 +62,9 @@ try:
     plt.tight_layout()
     plt.savefig(os.path.join(IMAGE_DIR, 'spiral-plot.png'), dpi=300, bbox_inches='tight', facecolor='white')
     plt.close()
-    print("  ✅ Generated: spiral-plot.png")
+    print("  [OK] Generated: spiral-plot.png")
 except Exception as e:
-    print(f"  ❌ Error: {e}")
+    print(f"  [ERROR] Error: {e}")
 
 # Generate geometric-plot.png (Phyllux Vault)
 print("\nGenerating geometric-plot.png...")
@@ -87,8 +87,8 @@ try:
     plt.tight_layout()
     plt.savefig(os.path.join(IMAGE_DIR, 'geometric-plot.png'), dpi=300, bbox_inches='tight', facecolor='white')
     plt.close()
-    print("  ✅ Generated: geometric-plot.png")
+    print("  [OK] Generated: geometric-plot.png")
 except Exception as e:
-    print(f"  ❌ Error: {e}")
+    print(f"  [ERROR] Error: {e}")
 
 print("\nPlot image generation complete!")

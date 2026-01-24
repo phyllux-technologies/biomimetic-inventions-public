@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .electrode { stroke: #000000; stroke-width: 1; }
+      .spiral { stroke: #0066CC; stroke-width: 0.5; fill: none; opacity: 0.3; }
+      .coverage { stroke: #FF0000; stroke-width: 2; fill: none; stroke-dasharray: 5,5; opacity: 0.7; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="#FFFFFF"/>
+  
+  <circle class="coverage" cx="495.53" cy="493.58" r="455.82"/>
+  <path class="spiral" d="M 463.20,520.52 L 499.81,431.91 L 539.35,550.24 L 410.82,476.99 L 574.76,440.78 L 467.51,592.36 L 442.71,391.98 L 607.50,533.05 L 376.66,540.46 L 551.54,370.04 L 536.74,626.34 L 367.14,417.95 L 644.26,458.90 L 403.06,621.92 L 473.40,328.51 L 624.57,601.40 L 319.42,499.03 L 622.41,364.58 L 485.98,676.91 L 372.75,345.82 L 687.63,517.80 L 330.86,605.67 L 539.32,292.89 L 598.08,672.51 L 292.05,427.17 L 691.34,400.90 L 409.25,695.57 L 418.44,280.11 L 697.19,598.33 L 269.38,551.12 L 622.59,292.72 L 535.25,728.82 L 301.49,342.24 L 741.60,471.37 L 323.73,676.40 L 495.83,236.73 L 668.27,683.36 L 233.61,467.58 L 706.06,331.33 L 446.38,756.32 L 349.61,261.38 L 760.25,564.67 L 246.51,619.04 L 592.63,227.41 L 602.03,755.96 L 234.02,368.27 L 773.08,405.99 L 345.58,745.88 L 432.13,200.83 L 739.59,665.94 L 193.27,529.28 L 693.31,258.40 L 505.76,801.09 L 275.32,269.24 L 809.42,507.97 L 249.25,694.38 L 538.98,173.93 L 678.10,758.51 L 176.34,418.50 L 781.10,329.54 L 392.01,807.61 L 355.71,187.21 L 805.15,623.67 L 173.93,605.26 L 655.57,189.23 L 580.86,826.22 L 202.83,302.09 L 840.36,434.21 L 276.89,769.88 L 467.01,137.18 L 756.24,736.42 L 133.84,488.17 L 764.84,249.15 L 458.91,855.77 L 273.49,197.38 L 858.83,560.03 L 177.79,688.84 L 595.67,130.21 L 665.32,828.87 L 138.71,357.77 L 849.67,349.39 L 327.87,838.82 L 382.37,121.09 L 829.68,690.56 L 110.91,572.09 L 724.54,171.59 L 541.53,885.54 L 192.22,231.72 L 895.42,479.29 L 205.81,773.38 L 517.39,86.90 L 752.62,807.51 L 88.81,433.01 L 835.26,259.84 L 399.51,895.12 L 291.14,128.31 L 892.13,623.10 L 110.73,664.43 L 661.81,103.28 L 634.36,893.28 L 118.40,289.20 L 910.82,386.59 L 257.52,852.32 L 425.47,63.79 L 836.23,762.03 L 58.00,523.49 L 796.45,172.05 L 487.89,933.56 L 199.71,160.04 L 938.08,537.48 L 135.03,758.92 L 579.60,50.00 L 731.32,876.73 L 58.03,367.36 L 902.26,287.81 L 331.00,919.47 L 325.54,64.14 L 909.82,693.84 L 50.00,623.89 L 734.13,92.45 L 588.04,950.00"/>
+
+  <!-- Electrodes -->
+  <circle class="electrode" cx="463.20" cy="520.52" r="5.31" fill="#ADD8E6"/>
+  <circle class="electrode" cx="499.81" cy="431.91" r="5.31" fill="#A5CFE2"/>
+  <circle class="electrode" cx="539.35" cy="550.24" r="5.31" fill="#A0C8DF"/>
+  <circle class="electrode" cx="410.82" cy="476.99" r="5.31" fill="#9BC2DC"/>
+  <circle class="electrode" cx="574.76" cy="440.78" r="5.31" fill="#97BDDA"/>
+  <circle class="electrode" cx="467.51" cy="592.36" r="5.31" fill="#93B8D8"/>
+  <circle class="electrode" cx="442.71" cy="391.98" r="5.31" fill="#90B4D7"/>
+  <circle class="electrode" cx="607.50" cy="533.05" r="5.31" fill="#8DB0D5"/>
+  <circle class="electrode" cx="376.66" cy="540.46" r="5.31" fill="#8AACD3"/>
+  <circle class="electrode" cx="551.54" cy="370.04" r="5.31" fill="#87A9D2"/>
+  <circle class="electrode" cx="536.74" cy="626.34" r="5.31" fill="#84A5D0"/>
+  <circle class="electrode" cx="367.14" cy="417.95" r="5.31" fill="#82A2CF"/>
+  <circle class="electrode" cx="644.26" cy="458.90" r="5.31" fill="#7F9FCE"/>
+  <circle class="electrode" cx="403.06" cy="621.92" r="5.31" fill="#7D9CCD"/>
+  <circle class="electrode" cx="473.40" cy="328.51" r="5.31" fill="#7B99CB"/>
+  <circle class="electrode" cx="624.57" cy="601.40" r="5.31" fill="#7997CA"/>
+  <circle class="electrode" cx="319.42" cy="499.03" r="5.31" fill="#7694C9"/>
+  <circle class="electrode" cx="622.41" cy="364.58" r="5.31" fill="#7491C8"/>
+  <circle class="electrode" cx="485.98" cy="676.91" r="5.31" fill="#728FC7"/>
+  <circle class="electrode" cx="372.75" cy="345.82" r="5.31" fill="#708DC6"/>
+  <circle class="electrode" cx="687.63" cy="517.80" r="5.31" fill="#6F8AC5"/>
+  <circle class="electrode" cx="330.86" cy="605.67" r="5.31" fill="#6D88C4"/>
+  <circle class="electrode" cx="539.32" cy="292.89" r="5.31" fill="#6B86C3"/>
+  <circle class="electrode" cx="598.08" cy="672.51" r="5.31" fill="#6983C2"/>
+  <circle class="electrode" cx="292.05" cy="427.17" r="5.31" fill="#6781C1"/>
+  <circle class="electrode" cx="691.34" cy="400.90" r="5.31" fill="#667FC0"/>
+  <circle class="electrode" cx="409.25" cy="695.57" r="5.31" fill="#647DBF"/>
+  <circle class="electrode" cx="418.44" cy="280.11" r="5.31" fill="#627BBE"/>
+  <circle class="electrode" cx="697.19" cy="598.33" r="5.31" fill="#6179BE"/>
+  <circle class="electrode" cx="269.38" cy="551.12" r="5.31" fill="#5F77BD"/>
+  <circle class="electrode" cx="622.59" cy="292.72" r="5.31" fill="#5D75BC"/>
+  <circle class="electrode" cx="535.25" cy="728.82" r="5.31" fill="#5C73BB"/>
+  <circle class="electrode" cx="301.49" cy="342.24" r="5.31" fill="#5A71BA"/>
+  <circle class="electrode" cx="741.60" cy="471.37" r="5.31" fill="#596FBA"/>
+  <circle class="electrode" cx="323.73" cy="676.40" r="5.31" fill="#576DB9"/>
+  <circle class="electrode" cx="495.83" cy="236.73" r="5.31" fill="#566CB8"/>
+  <circle class="electrode" cx="668.27" cy="683.36" r="5.31" fill="#556AB7"/>
+  <circle class="electrode" cx="233.61" cy="467.58" r="5.31" fill="#5368B7"/>
+  <circle class="electrode" cx="706.06" cy="331.33" r="5.31" fill="#5266B6"/>
+  <circle class="electrode" cx="446.38" cy="756.32" r="5.31" fill="#5064B5"/>
+  <circle class="electrode" cx="349.61" cy="261.38" r="5.31" fill="#4F63B4"/>
+  <circle class="electrode" cx="760.25" cy="564.67" r="5.31" fill="#4E61B4"/>
+  <circle class="electrode" cx="246.51" cy="619.04" r="5.31" fill="#4C5FB3"/>
+  <circle class="electrode" cx="592.63" cy="227.41" r="5.31" fill="#4B5EB2"/>
+  <circle class="electrode" cx="602.03" cy="755.96" r="5.31" fill="#4A5CB2"/>
+  <circle class="electrode" cx="234.02" cy="368.27" r="5.31" fill="#485BB1"/>
+  <circle class="electrode" cx="773.08" cy="405.99" r="5.31" fill="#4759B0"/>
+  <circle class="electrode" cx="345.58" cy="745.88" r="5.31" fill="#4657B0"/>
+  <circle class="electrode" cx="432.13" cy="200.83" r="5.31" fill="#4556AF"/>
+  <circle class="electrode" cx="739.59" cy="665.94" r="5.31" fill="#4354AE"/>
+  <circle class="electrode" cx="193.27" cy="529.28" r="5.31" fill="#4253AE"/>
+  <circle class="electrode" cx="693.31" cy="258.40" r="5.31" fill="#4151AD"/>
+  <circle class="electrode" cx="505.76" cy="801.09" r="5.31" fill="#4050AC"/>
+  <circle class="electrode" cx="275.32" cy="269.24" r="5.31" fill="#3F4EAC"/>
+  <circle class="electrode" cx="809.42" cy="507.97" r="5.31" fill="#3D4DAB"/>
+  <circle class="electrode" cx="249.25" cy="694.38" r="5.31" fill="#3C4BAB"/>
+  <circle class="electrode" cx="538.98" cy="173.93" r="5.31" fill="#3B4AAA"/>
+  <circle class="electrode" cx="678.10" cy="758.51" r="5.31" fill="#3A49A9"/>
+  <circle class="electrode" cx="176.34" cy="418.50" r="5.31" fill="#3947A9"/>
+  <circle class="electrode" cx="781.10" cy="329.54" r="5.31" fill="#3846A8"/>
+  <circle class="electrode" cx="392.01" cy="807.61" r="5.31" fill="#3744A8"/>
+  <circle class="electrode" cx="355.71" cy="187.21" r="5.31" fill="#3643A7"/>
+  <circle class="electrode" cx="805.15" cy="623.67" r="5.31" fill="#3442A6"/>
+  <circle class="electrode" cx="173.93" cy="605.26" r="5.31" fill="#3340A6"/>
+  <circle class="electrode" cx="655.57" cy="189.23" r="5.31" fill="#323FA5"/>
+  <circle class="electrode" cx="580.86" cy="826.22" r="5.31" fill="#313EA5"/>
+  <circle class="electrode" cx="202.83" cy="302.09" r="5.31" fill="#303CA4"/>
+  <circle class="electrode" cx="840.36" cy="434.21" r="5.31" fill="#2F3BA4"/>
+  <circle class="electrode" cx="276.89" cy="769.88" r="5.31" fill="#2E3AA3"/>
+  <circle class="electrode" cx="467.01" cy="137.18" r="5.31" fill="#2D38A2"/>
+  <circle class="electrode" cx="756.24" cy="736.42" r="5.31" fill="#2C37A2"/>
+  <circle class="electrode" cx="133.84" cy="488.17" r="5.31" fill="#2B36A1"/>
+  <circle class="electrode" cx="764.84" cy="249.15" r="5.31" fill="#2A35A1"/>
+  <circle class="electrode" cx="458.91" cy="855.77" r="5.31" fill="#2933A0"/>
+  <circle class="electrode" cx="273.49" cy="197.38" r="5.31" fill="#2832A0"/>
+  <circle class="electrode" cx="858.83" cy="560.03" r="5.31" fill="#27319F"/>
+  <circle class="electrode" cx="177.79" cy="688.84" r="5.31" fill="#26309F"/>
+  <circle class="electrode" cx="595.67" cy="130.21" r="5.31" fill="#252E9E"/>
+  <circle class="electrode" cx="665.32" cy="828.87" r="5.31" fill="#242D9E"/>
+  <circle class="electrode" cx="138.71" cy="357.77" r="5.31" fill="#232C9D"/>
+  <circle class="electrode" cx="849.67" cy="349.39" r="5.31" fill="#222B9D"/>
+  <circle class="electrode" cx="327.87" cy="838.82" r="5.31" fill="#212A9C"/>
+  <circle class="electrode" cx="382.37" cy="121.09" r="5.31" fill="#20289C"/>
+  <circle class="electrode" cx="829.68" cy="690.56" r="5.31" fill="#1F279B"/>
+  <circle class="electrode" cx="110.91" cy="572.09" r="5.31" fill="#1E269B"/>
+  <circle class="electrode" cx="724.54" cy="171.59" r="5.31" fill="#1D259A"/>
+  <circle class="electrode" cx="541.53" cy="885.54" r="5.31" fill="#1C249A"/>
+  <circle class="electrode" cx="192.22" cy="231.72" r="5.31" fill="#1C2299"/>
+  <circle class="electrode" cx="895.42" cy="479.29" r="5.31" fill="#1B2199"/>
+  <circle class="electrode" cx="205.81" cy="773.38" r="5.31" fill="#1A2098"/>
+  <circle class="electrode" cx="517.39" cy="86.90" r="5.31" fill="#191F98"/>
+  <circle class="electrode" cx="752.62" cy="807.51" r="5.31" fill="#181E97"/>
+  <circle class="electrode" cx="88.81" cy="433.01" r="5.31" fill="#171D97"/>
+  <circle class="electrode" cx="835.26" cy="259.84" r="5.31" fill="#161C96"/>
+  <circle class="electrode" cx="399.51" cy="895.12" r="5.31" fill="#151B96"/>
+  <circle class="electrode" cx="291.14" cy="128.31" r="5.31" fill="#141995"/>
+  <circle class="electrode" cx="892.13" cy="623.10" r="5.31" fill="#131895"/>
+  <circle class="electrode" cx="110.73" cy="664.43" r="5.31" fill="#131795"/>
+  <circle class="electrode" cx="661.81" cy="103.28" r="5.31" fill="#121694"/>
+  <circle class="electrode" cx="634.36" cy="893.28" r="5.31" fill="#111594"/>
+  <circle class="electrode" cx="118.40" cy="289.20" r="5.31" fill="#101493"/>
+  <circle class="electrode" cx="910.82" cy="386.59" r="5.31" fill="#0F1393"/>
+  <circle class="electrode" cx="257.52" cy="852.32" r="5.31" fill="#0E1292"/>
+  <circle class="electrode" cx="425.47" cy="63.79" r="5.31" fill="#0D1192"/>
+  <circle class="electrode" cx="836.23" cy="762.03" r="5.31" fill="#0D1091"/>
+  <circle class="electrode" cx="58.00" cy="523.49" r="5.31" fill="#0C0F91"/>
+  <circle class="electrode" cx="796.45" cy="172.05" r="5.31" fill="#0B0E90"/>
+  <circle class="electrode" cx="487.89" cy="933.56" r="5.31" fill="#0A0D90"/>
+  <circle class="electrode" cx="199.71" cy="160.04" r="5.31" fill="#090C90"/>
+  <circle class="electrode" cx="938.08" cy="537.48" r="5.31" fill="#080B8F"/>
+  <circle class="electrode" cx="135.03" cy="758.92" r="5.31" fill="#080A8F"/>
+  <circle class="electrode" cx="579.60" cy="50.00" r="5.31" fill="#07098E"/>
+  <circle class="electrode" cx="731.32" cy="876.73" r="5.31" fill="#06078E"/>
+  <circle class="electrode" cx="58.03" cy="367.36" r="5.31" fill="#05068D"/>
+  <circle class="electrode" cx="902.26" cy="287.81" r="5.31" fill="#04058D"/>
+  <circle class="electrode" cx="331.00" cy="919.47" r="5.31" fill="#03048D"/>
+  <circle class="electrode" cx="325.54" cy="64.14" r="5.31" fill="#03038C"/>
+  <circle class="electrode" cx="909.82" cy="693.84" r="5.31" fill="#02028C"/>
+  <circle class="electrode" cx="50.00" cy="623.89" r="5.31" fill="#01018B"/>
+  <circle class="electrode" cx="734.13" cy="92.45" r="5.31" fill="#00008B"/>
+  <circle class="electrode" cx="588.04" cy="950.00" r="5.31" fill="#00008B"/>
+
+  <!-- Title -->
+  <text x="500.0" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">
+    PNM Phyllotactic Electrode Array (121 electrodes)
+  </text>
+</svg>

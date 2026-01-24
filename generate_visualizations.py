@@ -17,8 +17,7 @@ from src.gafaa_public.rf_utils import phyllotactic_positions
 from src.gafaa_public.svg_utils import generate_array_svg
 from src.pnm_public.neural_utils import phyllotactic_electrode_positions, coverage_area
 from src.pnm_public.svg_utils import generate_electrode_array_svg
-from src.phikey_public.geometric_utils import toy_lattice_growth
-from src.phikey_public.geometric_utils import toy_lattice_growth as phikey_lattice
+# toy_lattice_growth not available - generate positions directly
 
 def generate_gafaa_svg():
     """Generate GAFAA antenna array SVG."""
@@ -81,8 +80,12 @@ def generate_pnm_svg():
 def generate_phikey_svg():
     """Generate PhiKey lattice SVG."""
     n_nodes = 121
-    nodes = toy_lattice_growth(n_nodes, growth_angle_deg=137.508)
-    x, y = nodes[:, 0], nodes[:, 1]
+    # Generate phyllotactic positions directly
+    golden_angle_deg = 137.508
+    theta = np.arange(n_nodes) * np.deg2rad(golden_angle_deg)
+    r = np.sqrt(np.arange(n_nodes)) * 0.5
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
     
     # Color gradient
     r = np.sqrt(x**2 + y**2)

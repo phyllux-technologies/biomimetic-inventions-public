@@ -91,12 +91,12 @@ Write-Host "========================================" -ForegroundColor Cyan
 $imageDir = "images"
 if (Test-Path $imageDir) {
     $images = Get-ChildItem -Path $imageDir -File
-    Write-Host "Found $($images.Count) images in $imageDir:" -ForegroundColor Green
+    Write-Host "Found $($images.Count) images in ${imageDir}:" -ForegroundColor Green
     foreach ($img in $images) {
         Write-Host "  - $($img.Name)" -ForegroundColor White
     }
 } else {
-    Write-Host "WARNING: $imageDir directory not found!" -ForegroundColor Yellow
+    Write-Host "WARNING: ${imageDir} directory not found!" -ForegroundColor Yellow
 }
 
 Write-Host ""
