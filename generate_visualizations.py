@@ -39,7 +39,11 @@ def generate_gafaa_svg():
         red = int(0xCC + (0x00 - 0xCC) * r_val)
         colors.append(f"#{red:02X}{green:02X}{blue:02X}")
     
-    filename = 'golden-angle-antenna-GAFAA-public/docs/assets/gafaa-array-layout.svg'
+    # Save to /images/ directory
+    REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
+    IMAGE_DIR = os.path.join(REPO_ROOT, 'images')
+    os.makedirs(IMAGE_DIR, exist_ok=True)
+    filename = os.path.join(IMAGE_DIR, 'gafaa-array-layout.svg')
     generate_array_svg((x, y), filename, element_size=3.0, width=1000, height=1000, colors=colors)
     print(f"Generated: {filename}")
 
@@ -62,7 +66,11 @@ def generate_pnm_svg():
         blue = int(0xE6 + (0x8B - 0xE6) * r_val)
         colors.append(f"#{red:02X}{green:02X}{blue:02X}")
     
-    filename = 'PNM-public/docs/assets/pnm-electrode-array.svg'
+    # Save to /images/ directory
+    REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
+    IMAGE_DIR = os.path.join(REPO_ROOT, 'images')
+    os.makedirs(IMAGE_DIR, exist_ok=True)
+    filename = os.path.join(IMAGE_DIR, 'pnm-electrode-array.svg')
     generate_electrode_array_svg(
         (x, y), filename, electrode_diameter_um=electrode_diameter_um,
         width=1000, height=1000, colors=colors,
@@ -117,7 +125,11 @@ def generate_phikey_svg():
 </svg>
 '''
     
-    filename = 'PhiKey-public/docs/assets/phikey-lattice.svg'
+    # Save to /images/ directory
+    REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
+    IMAGE_DIR = os.path.join(REPO_ROOT, 'images')
+    os.makedirs(IMAGE_DIR, exist_ok=True)
+    filename = os.path.join(IMAGE_DIR, 'phikey-lattice.svg')
     with open(filename, 'w') as f:
         f.write(svg_content)
     print(f"Generated: {filename}")

@@ -7,12 +7,12 @@ This repository presents a high-level, non‑proprietary overview of the **Phyll
 
 Phyllux Vault explores lattice‑like, growth‑inspired structures for cryptographic key material, drawing inspiration from natural geometric patterns like phyllotaxis.
 
-![Phyllux Vault Lattice](docs/assets/phikey-lattice.svg)
+![Phyllux Vault Lattice](../images/phikey-lattice.svg)
 
 *Example geometric lattice visualization:*
-![Geometric Plot](docs/assets/geometric-plot.png)
+![Geometric Plot](../images/geometric-plot.png)
 
-See [images/phikey_121_clean.png](images/phikey_121_clean.png) for accurate 121-node pattern with golden angle 137.508°.
+See [../images/phikey_121_clean.png](../images/phikey_121_clean.png) for accurate 121-node pattern with golden angle 137.508°.
 
 > ⚠️ **Conceptual only**. This repo contains **toy demos** and does **not** disclose the full Phyllux Vault protocol, algorithms, or production implementation. Detailed specifications are maintained privately for potential patent protection.
 

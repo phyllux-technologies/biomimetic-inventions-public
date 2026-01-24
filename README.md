@@ -30,7 +30,7 @@ Conceptual/educational only – not production-ready. Seeking partners for devel
 
 Illustrative code and plots exploring phyllotactic spiral layouts for antenna element placement. These examples are intended to spark ideas about array geometry, not to specify any validated RF design or guaranteed performance.
 
-![GAFAA Array Layout](golden-angle-antenna-GAFAA-public/docs/assets/gafaa-array-layout.svg)
+![GAFAA Array Layout](images/gafaa-array-layout.svg)
 
 [→ Explore GAFAA demos](https://github.com/phibronotchi-beep/biomimetic-inventions-public/tree/main/golden-angle-antenna-GAFAA-public)
 
@@ -40,7 +40,7 @@ Conceptual experiments with lattice growth and geometric path traversal. The aim
 
 > Note: The repository folder name `PhiKey-public` is retained for GitHub continuity and prior art preservation. This technology is now branded as **Phyllux Vault**.
 
-![Phyllux Vault Lattice](PhiKey-public/docs/assets/phikey-lattice.svg)
+![Phyllux Vault Lattice](images/phikey-lattice.svg)
 
 [→ Explore Phyllux Vault demos](https://github.com/phibronotchi-beep/biomimetic-inventions-public/tree/main/PhiKey-public)
 
@@ -48,7 +48,7 @@ Conceptual experiments with lattice growth and geometric path traversal. The aim
 
 Simple visualizations of electrode layouts arranged using phyllotactic patterns. These are mathematical layouts only; they are **not** clinical devices, have not been tested in vivo or in humans, and make no medical performance claims.
 
-![PNM Electrode Array](PNM-public/docs/assets/pnm-electrode-array.svg)
+![PNM Electrode Array](images/pnm-electrode-array.svg)
 
 [→ Explore PNM demos](https://github.com/phibronotchi-beep/biomimetic-inventions-public/tree/main/PNM-public)
 

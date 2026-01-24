@@ -121,9 +121,25 @@ def main():
     ax6.axis('off')
     
     plt.tight_layout()
-    plt.savefig('images/gafaa_rf_121_clean.png', dpi=300, bbox_inches='tight', facecolor='white')
-    print("\nAnalysis complete. Figure saved as 'images/gafaa_rf_121_clean.png'")
-    plt.show()
+    # Find repository root for proper path
+    import os
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    REPO_ROOT = SCRIPT_DIR
+    for _ in range(5):
+        if os.path.exists(os.path.join(REPO_ROOT, 'README.md')) and \
+           os.path.exists(os.path.join(REPO_ROOT, 'LICENSE.md')):
+            break
+        parent = os.path.dirname(REPO_ROOT)
+        if parent == REPO_ROOT:
+            REPO_ROOT = os.path.dirname(os.path.dirname(SCRIPT_DIR))
+            break
+        REPO_ROOT = parent
+    IMAGE_DIR = os.path.join(REPO_ROOT, 'images')
+    os.makedirs(IMAGE_DIR, exist_ok=True)
+    image_path = os.path.join(IMAGE_DIR, 'gafaa_rf_121_clean.png')
+    plt.savefig(image_path, dpi=300, bbox_inches='tight', facecolor='white')
+    print(f"\nAnalysis complete. Figure saved as '{image_path}'")
+    plt.close()
 
 if __name__ == "__main__":
     main()
