@@ -9,7 +9,7 @@ PNM explores electrode array layouts inspired by natural phyllotactic patterns f
 *Example spiral pattern visualization:*
 ![Spiral Plot](docs/assets/spiral-plot.png)
 
-See [images/pnm_121_clean.png](images/pnm_121_clean.png) for accurate 121-node pattern with golden angle 137.507764° (exact: 360 * (1 - 1/phi), phi = (1 + sqrt(5))/2).
+See [images/pnm_121_clean.png](images/pnm_121_clean.png) for accurate 121-node pattern with golden angle 137.508°.
 
 > ⚠️ **Toy demos only**. No full device specs, fabrication details, or clinical claims. Private work may be patent‑protected.
 

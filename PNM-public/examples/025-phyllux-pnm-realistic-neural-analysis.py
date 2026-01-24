@@ -56,7 +56,7 @@ def main():
     print(f"Mean off-diagonal crosstalk: {mean_crosstalk:.4f}")
     
     # Visualization
-    fig = plt.figure(figsize=(16, 10))
+    fig = plt.figure(figsize=(16, 10), facecolor='white')
     
     # 1. Array layout
     ax1 = plt.subplot(2, 3, 1)
@@ -66,20 +66,20 @@ def main():
         circle = plt.Circle((xi, yi), electrode_diameter_um/2, 
                           fill=False, color='black', linewidth=1, alpha=0.5)
         ax1.add_patch(circle)
-    ax1.set_xlabel('X position (μm)')
-    ax1.set_ylabel('Y position (μm)')
-    ax1.set_title(f'PNM Electrode Array Layout ({n_electrodes} electrodes)')
+    ax1.set_xlabel('X position (μm)', fontsize=11, fontweight='bold')
+    ax1.set_ylabel('Y position (μm)', fontsize=11, fontweight='bold')
+    ax1.set_title(f'PNM Electrode Array Layout ({n_electrodes} electrodes)', fontsize=12, fontweight='bold')
     ax1.set_aspect('equal')
-    ax1.grid(True, alpha=0.3)
+    ax1.grid(True, alpha=0.4, linewidth=0.8)
     
     # 2. Crosstalk matrix
     ax2 = plt.subplot(2, 3, 2)
     crosstalk_db = 20 * np.log10(np.abs(crosstalk) + 1e-10)
     im = ax2.imshow(crosstalk_db, cmap='hot', aspect='auto', origin='lower', 
                     vmin=-40, vmax=0)
-    ax2.set_xlabel('Electrode Index')
-    ax2.set_ylabel('Electrode Index')
-    ax2.set_title('Crosstalk Matrix (dB)')
+    ax2.set_xlabel('Electrode Index', fontsize=11, fontweight='bold')
+    ax2.set_ylabel('Electrode Index', fontsize=11, fontweight='bold')
+    ax2.set_title('Crosstalk Matrix (dB)', fontsize=12, fontweight='bold')
     plt.colorbar(im, ax=ax2, label='Crosstalk (dB)')
     
     # 3. Signal-to-crosstalk ratio
@@ -87,11 +87,11 @@ def main():
     ax3.scatter(range(n_electrodes), scr_db, c=scr_db, cmap='viridis', 
                edgecolors='black', s=50, alpha=0.7)
     ax3.axhline(np.mean(scr_db), color='r', linestyle='--', label=f'Mean: {np.mean(scr_db):.1f} dB')
-    ax3.set_xlabel('Electrode Index')
-    ax3.set_ylabel('Signal-to-Crosstalk Ratio (dB)')
-    ax3.set_title('SCR per Electrode')
-    ax3.legend()
-    ax3.grid(True, alpha=0.3)
+    ax3.set_xlabel('Electrode Index', fontsize=11, fontweight='bold')
+    ax3.set_ylabel('Signal-to-Crosstalk Ratio (dB)', fontsize=11, fontweight='bold')
+    ax3.set_title('SCR per Electrode', fontsize=12, fontweight='bold')
+    ax3.legend(fontsize=10)
+    ax3.grid(True, alpha=0.4, linewidth=0.8)
     
     # 4. Distance vs crosstalk
     ax4 = plt.subplot(2, 3, 4)
@@ -104,11 +104,11 @@ def main():
             distances.append(dist)
             crosstalk_values.append(np.abs(crosstalk[i, j]))
     ax4.scatter(distances, crosstalk_values, alpha=0.5, s=20)
-    ax4.set_xlabel('Electrode Distance (μm)')
-    ax4.set_ylabel('Crosstalk Magnitude')
-    ax4.set_title('Crosstalk vs Distance')
+    ax4.set_xlabel('Electrode Distance (μm)', fontsize=11, fontweight='bold')
+    ax4.set_ylabel('Crosstalk Magnitude', fontsize=11, fontweight='bold')
+    ax4.set_title('Crosstalk vs Distance', fontsize=12, fontweight='bold')
     ax4.set_yscale('log')
-    ax4.grid(True, alpha=0.3)
+    ax4.grid(True, alpha=0.4, linewidth=0.8)
     
     # 5. Coverage visualization
     ax5 = plt.subplot(2, 3, 5)
@@ -117,11 +117,11 @@ def main():
     coverage_circle = plt.Circle(center, coverage['coverage_radius_um'], 
                                 fill=False, color='red', linewidth=2, linestyle='--')
     ax5.add_patch(coverage_circle)
-    ax5.set_xlabel('X position (μm)')
-    ax5.set_ylabel('Y position (μm)')
-    ax5.set_title(f"Coverage Area ({coverage['coverage_area_um2']/1e6:.2f} mm²)")
+    ax5.set_xlabel('X position (μm)', fontsize=11, fontweight='bold')
+    ax5.set_ylabel('Y position (μm)', fontsize=11, fontweight='bold')
+    ax5.set_title(f"Coverage Area ({coverage['coverage_area_um2']/1e6:.2f} mm²)", fontsize=12, fontweight='bold')
     ax5.set_aspect('equal')
-    ax5.grid(True, alpha=0.3)
+    ax5.grid(True, alpha=0.4, linewidth=0.8)
     
     # 6. Statistics summary
     ax6 = plt.subplot(2, 3, 6)

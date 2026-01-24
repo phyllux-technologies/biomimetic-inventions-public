@@ -52,33 +52,33 @@ def main():
     coupling = mutual_coupling_matrix((x, y), frequency_hz)
     
     # Visualization
-    fig = plt.figure(figsize=(16, 10))
+    fig = plt.figure(figsize=(16, 10), facecolor='white')
     
     # 1. Array layout
     ax1 = plt.subplot(2, 3, 1)
     ax1.scatter(x*1000, y*1000, s=50, c='red', edgecolors='black', alpha=0.7)
-    ax1.set_xlabel('X position (mm)')
-    ax1.set_ylabel('Y position (mm)')
-    ax1.set_title(f'GAFAA Array Layout ({n_elements} elements)')
+    ax1.set_xlabel('X position (mm)', fontsize=11, fontweight='bold')
+    ax1.set_ylabel('Y position (mm)', fontsize=11, fontweight='bold')
+    ax1.set_title(f'GAFAA Array Layout ({n_elements} elements)', fontsize=12, fontweight='bold')
     ax1.set_aspect('equal')
-    ax1.grid(True, alpha=0.3)
+    ax1.grid(True, alpha=0.4, linewidth=0.8)
     
     # 2. Array factor
     ax2 = plt.subplot(2, 3, 2)
-    ax2.plot(az_angles, af_db, 'b-', linewidth=2)
-    ax2.set_xlabel('Azimuth Angle (deg)')
-    ax2.set_ylabel('Array Factor (dB)')
-    ax2.set_title('Array Factor (Elevation = 0°)')
-    ax2.grid(True, alpha=0.3)
+    ax2.plot(az_angles, af_db, 'b-', linewidth=2.5)
+    ax2.set_xlabel('Azimuth Angle (deg)', fontsize=11, fontweight='bold')
+    ax2.set_ylabel('Array Factor (dB)', fontsize=11, fontweight='bold')
+    ax2.set_title('Array Factor (Elevation = 0°)', fontsize=12, fontweight='bold')
+    ax2.grid(True, alpha=0.4, linewidth=0.8)
     ax2.set_ylim([-40, 5])
     
     # 3. Mutual coupling magnitude
     ax3 = plt.subplot(2, 3, 3)
     coupling_mag_db = 20 * np.log10(np.abs(coupling) + 1e-10)
     im = ax3.imshow(coupling_mag_db, cmap='hot', aspect='auto', origin='lower')
-    ax3.set_xlabel('Element Index')
-    ax3.set_ylabel('Element Index')
-    ax3.set_title('Mutual Coupling Matrix (dB)')
+    ax3.set_xlabel('Element Index', fontsize=11, fontweight='bold')
+    ax3.set_ylabel('Element Index', fontsize=11, fontweight='bold')
+    ax3.set_title('Mutual Coupling Matrix (dB)', fontsize=12, fontweight='bold')
     plt.colorbar(im, ax=ax3, label='Coupling (dB)')
     
     # 4. Spacing distribution
@@ -91,16 +91,16 @@ def main():
             distances.append(dist * 1000)  # Convert to mm
     ax4.hist(distances, bins=50, edgecolor='black', alpha=0.7)
     ax4.axvline(wavelength * 1000, color='r', linestyle='--', label=f'λ = {wavelength*1000:.2f} mm')
-    ax4.set_xlabel('Element Spacing (mm)')
-    ax4.set_ylabel('Count')
-    ax4.set_title('Spacing Distribution')
-    ax4.legend()
-    ax4.grid(True, alpha=0.3)
+    ax4.set_xlabel('Element Spacing (mm)', fontsize=11, fontweight='bold')
+    ax4.set_ylabel('Count', fontsize=11, fontweight='bold')
+    ax4.set_title('Spacing Distribution', fontsize=12, fontweight='bold')
+    ax4.legend(fontsize=10)
+    ax4.grid(True, alpha=0.4, linewidth=0.8)
     
     # 5. Polar array factor
     ax5 = plt.subplot(2, 3, 5, projection='polar')
     theta_rad = np.deg2rad(az_angles)
-    ax5.plot(theta_rad, af_db, 'b-', linewidth=2)
+    ax5.plot(theta_rad, af_db, 'b-', linewidth=2.5)
     ax5.set_theta_zero_location('N')
     ax5.set_theta_direction(-1)
     ax5.set_ylim([-40, 5])

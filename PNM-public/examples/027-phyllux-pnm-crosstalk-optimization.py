@@ -74,43 +74,51 @@ def main():
     print(f"\nCrosstalk Reduction: {improvement:.1f}%")
     
     # Visualization
-    fig = plt.figure(figsize=(16, 10))
+    fig = plt.figure(figsize=(16, 10), facecolor='white')
     
     # Layouts
     ax1 = plt.subplot(2, 3, 1)
     ax1.scatter(x_phyl, y_phyl, s=50, c='blue', edgecolors='black', alpha=0.7)
-    ax1.set_title('Phyllotactic Array')
+    ax1.set_xlabel('X position (μm)', fontsize=11, fontweight='bold')
+    ax1.set_ylabel('Y position (μm)', fontsize=11, fontweight='bold')
+    ax1.set_title('Phyllotactic Array', fontsize=12, fontweight='bold')
     ax1.set_aspect('equal')
-    ax1.grid(True, alpha=0.3)
+    ax1.grid(True, alpha=0.4, linewidth=0.8)
     
     ax2 = plt.subplot(2, 3, 2)
     ax2.scatter(x_grid, y_grid, s=50, c='red', edgecolors='black', alpha=0.7)
-    ax2.set_title('Regular Grid Array')
+    ax2.set_xlabel('X position (μm)', fontsize=11, fontweight='bold')
+    ax2.set_ylabel('Y position (μm)', fontsize=11, fontweight='bold')
+    ax2.set_title('Regular Grid Array', fontsize=12, fontweight='bold')
     ax2.set_aspect('equal')
-    ax2.grid(True, alpha=0.3)
+    ax2.grid(True, alpha=0.4, linewidth=0.8)
     
     # Crosstalk matrices
     ax3 = plt.subplot(2, 3, 3)
     crosstalk_phyl_db = 20 * np.log10(np.abs(crosstalk_phyl) + 1e-10)
     im3 = ax3.imshow(crosstalk_phyl_db, cmap='hot', aspect='auto', origin='lower', vmin=-40, vmax=0)
-    ax3.set_title('Phyllotactic Crosstalk (dB)')
+    ax3.set_xlabel('Electrode Index', fontsize=11, fontweight='bold')
+    ax3.set_ylabel('Electrode Index', fontsize=11, fontweight='bold')
+    ax3.set_title('Phyllotactic Crosstalk (dB)', fontsize=12, fontweight='bold')
     plt.colorbar(im3, ax=ax3)
     
     ax4 = plt.subplot(2, 3, 4)
     crosstalk_grid_db = 20 * np.log10(np.abs(crosstalk_grid) + 1e-10)
     im4 = ax4.imshow(crosstalk_grid_db, cmap='hot', aspect='auto', origin='lower', vmin=-40, vmax=0)
-    ax4.set_title('Grid Crosstalk (dB)')
+    ax4.set_xlabel('Electrode Index', fontsize=11, fontweight='bold')
+    ax4.set_ylabel('Electrode Index', fontsize=11, fontweight='bold')
+    ax4.set_title('Grid Crosstalk (dB)', fontsize=12, fontweight='bold')
     plt.colorbar(im4, ax=ax4)
     
     # SCR comparison
     ax5 = plt.subplot(2, 3, 5)
     ax5.scatter(range(n_electrodes), scr_phyl, label='Phyllotactic', alpha=0.6, s=20)
     ax5.scatter(range(n_electrodes), scr_grid, label='Grid', alpha=0.6, s=20)
-    ax5.set_xlabel('Electrode Index')
-    ax5.set_ylabel('SCR (dB)')
-    ax5.set_title('Signal-to-Crosstalk Ratio')
-    ax5.legend()
-    ax5.grid(True, alpha=0.3)
+    ax5.set_xlabel('Electrode Index', fontsize=11, fontweight='bold')
+    ax5.set_ylabel('SCR (dB)', fontsize=11, fontweight='bold')
+    ax5.set_title('Signal-to-Crosstalk Ratio', fontsize=12, fontweight='bold')
+    ax5.legend(fontsize=10)
+    ax5.grid(True, alpha=0.4, linewidth=0.8)
     
     # Statistics comparison
     ax6 = plt.subplot(2, 3, 6)

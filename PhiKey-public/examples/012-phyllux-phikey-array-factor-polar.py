@@ -12,7 +12,7 @@ def toy_array_factor_polar(n_nodes=64):
     
     Educational demo only - not a real cryptographic or antenna design.
     """
-    nodes = toy_lattice_growth(n_nodes, growth_angle_deg=137.507764)
+    nodes = toy_lattice_growth(n_nodes, growth_angle_deg=137.508)
     x, y = nodes[:, 0], nodes[:, 1]
 
     theta = np.linspace(0, 2*np.pi, 360)  # observation angles

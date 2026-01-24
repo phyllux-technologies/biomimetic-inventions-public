@@ -73,7 +73,7 @@ def generate_pnm_svg():
 def generate_phikey_svg():
     """Generate PhiKey lattice SVG."""
     n_nodes = 121
-    nodes = toy_lattice_growth(n_nodes, growth_angle_deg=137.507764)
+    nodes = toy_lattice_growth(n_nodes, growth_angle_deg=137.508)
     x, y = nodes[:, 0], nodes[:, 1]
     
     # Color gradient

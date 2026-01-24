@@ -15,7 +15,7 @@ C = 299792458.0  # Speed of light in m/s
 def phyllotactic_positions(n_elements: int, 
                           wavelength: float,
                           spacing_factor: float = 0.5,
-                          golden_angle_deg: float = 137.507764) -> Tuple[np.ndarray, np.ndarray]:
+                          golden_angle_deg: float = 137.508) -> Tuple[np.ndarray, np.ndarray]:
     """
     Generate phyllotactic antenna element positions with realistic spacing.
     
@@ -23,7 +23,7 @@ def phyllotactic_positions(n_elements: int,
         n_elements: Number of antenna elements
         wavelength: Operating wavelength in meters
         spacing_factor: Minimum spacing as fraction of wavelength (typically 0.4-0.6)
-        golden_angle_deg: Golden angle in degrees (default 137.507764°, exact: 360 * (1 - 1/phi), phi = (1 + sqrt(5))/2)
+        golden_angle_deg: Golden angle in degrees (default 137.508°)
     
     Returns:
         x, y: Element positions in meters

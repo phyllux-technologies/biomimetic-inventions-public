@@ -4,7 +4,7 @@ Simulation-based; empirical validation required per provisional application prep
 import numpy as np
 import matplotlib.pyplot as plt
 
-def toy_lattice_growth(n_nodes: int, growth_angle_deg: float = 137.507764):
+def toy_lattice_growth(n_nodes: int, growth_angle_deg: float = 137.508):
     """
     Generic toy lattice growth demo.
     
@@ -22,7 +22,7 @@ def toy_lattice_growth(n_nodes: int, growth_angle_deg: float = 137.507764):
 
 if __name__ == "__main__":
     # Generate 121 nodes
-    nodes = toy_lattice_growth(121, growth_angle_deg=137.507764)
+    nodes = toy_lattice_growth(121, growth_angle_deg=137.508)
 
     # Print results
     print("Number of nodes:", len(nodes))
@@ -31,13 +31,14 @@ if __name__ == "__main__":
 
     # Plot
     plt.figure(figsize=(8, 8), facecolor='white')
-    plt.scatter(nodes[:, 0], nodes[:, 1], s=80, c='green', alpha=0.6)
-    plt.plot(nodes[:, 0], nodes[:, 1], 'b-', alpha=0.2, linewidth=0.5)
-    plt.xlabel('X position')
-    plt.ylabel('Y position')
-    plt.title('121-Node Lattice Growth (Golden Angle)')
+    plt.scatter(nodes[:, 0], nodes[:, 1], s=80, c='green', alpha=0.7, edgecolors='black', linewidths=1.5)
+    plt.plot(nodes[:, 0], nodes[:, 1], 'b-', alpha=0.3, linewidth=1.0)
+    plt.xlabel('X position', fontsize=12, fontweight='bold')
+    plt.ylabel('Y position', fontsize=12, fontweight='bold')
+    plt.title('121-Node Lattice Growth (Golden Angle)', fontsize=14, fontweight='bold')
     plt.axis('equal')
-    plt.grid(True, alpha=0.3)
+    plt.grid(True, alpha=0.4, linewidth=0.8)
+    plt.tight_layout()
     plt.savefig('images/phikey_121_clean.png', dpi=300, bbox_inches='tight', facecolor='white')
     print("\nFigure saved to images/phikey_121_clean.png")
     plt.show()

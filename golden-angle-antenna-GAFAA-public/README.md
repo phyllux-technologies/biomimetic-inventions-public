@@ -9,7 +9,7 @@ GAFAA is an antenna architecture *inspired* by phyllotaxis: the spiral patterns 
 *Example phyllotactic spiral pattern visualization:*
 ![Phyllotaxis Plot](docs/assets/phyllotaxis-plot.png)
 
-See [images/gafaa_121_clean.png](images/gafaa_121_clean.png) for accurate 121-node pattern with golden angle 137.507764° (exact: 360 * (1 - 1/phi), phi = (1 + sqrt(5))/2).
+See [images/gafaa_121_clean.png](images/gafaa_121_clean.png) for accurate 121-node pattern with golden angle 137.508°.
 
 > Important: This repo is **conceptual only**. It does **not** contain full device specifications, patent claim language, or production‑grade designs. Those details are maintained separately and may be the subject of patent filings.
 

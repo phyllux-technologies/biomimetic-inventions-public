@@ -14,7 +14,7 @@ from scipy.special import erfc
 def phyllotactic_electrode_positions(n_electrodes: int,
                                     electrode_diameter_um: float = 50.0,
                                     min_spacing_um: float = 200.0,
-                                    golden_angle_deg: float = 137.507764) -> Tuple[np.ndarray, np.ndarray]:
+                                    golden_angle_deg: float = 137.508) -> Tuple[np.ndarray, np.ndarray]:
     """
     Generate phyllotactic electrode positions with realistic neural interface spacing.
     
@@ -22,7 +22,7 @@ def phyllotactic_electrode_positions(n_electrodes: int,
         n_electrodes: Number of electrodes
         electrode_diameter_um: Electrode diameter in micrometers
         min_spacing_um: Minimum center-to-center spacing in micrometers
-        golden_angle_deg: Golden angle in degrees (default 137.507764°, exact: 360 * (1 - 1/phi), phi = (1 + sqrt(5))/2)
+        golden_angle_deg: Golden angle in degrees (default 137.508°)
     
     Returns:
         x, y: Electrode center positions in micrometers

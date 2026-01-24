@@ -1,6 +1,6 @@
 # Phyllux Biomimetic Inventions – Public Demos
 
-Biomimetic multi-domain system fusing phyllotaxis (golden angle 137.507764°, exact: 360 * (1 - 1/phi), phi = (1 + sqrt(5))/2) with AI, biology, quantum for neural interfaces, wireless communications, cryptographic security, integrated tech.
+Biomimetic multi-domain system fusing phyllotaxis (golden angle ~137.508°) with AI, biology, quantum for neural interfaces, wireless communications, cryptographic security, integrated tech.
 
 **Provisional application prepared for filing Jan 21, 2026 – prior art established via commits (Jan 7, 2026), MIT as defensive publication, @Phibronotchi disclosures Jan 2026. Simulation-based; empirical validation required.**
 
