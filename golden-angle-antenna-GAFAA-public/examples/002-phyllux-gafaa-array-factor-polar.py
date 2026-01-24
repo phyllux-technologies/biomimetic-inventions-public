@@ -12,11 +12,11 @@ try:
 except NameError:
     SCRIPT_DIR = os.getcwd()
 
-# Find repository root by looking for README.md or LICENSE.md
+# Find repository root by looking for README.md or LICENSE
 REPO_ROOT = SCRIPT_DIR
 for _ in range(5):  # Max 5 levels up
     if os.path.exists(os.path.join(REPO_ROOT, 'README.md')) and \
-       os.path.exists(os.path.join(REPO_ROOT, 'LICENSE.md')):
+       os.path.exists(os.path.join(REPO_ROOT, 'LICENSE')):
         break
     parent = os.path.dirname(REPO_ROOT)
     if parent == REPO_ROOT:  # Reached filesystem root

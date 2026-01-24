@@ -127,7 +127,7 @@ def main():
     REPO_ROOT = SCRIPT_DIR
     for _ in range(5):
         if os.path.exists(os.path.join(REPO_ROOT, 'README.md')) and \
-           os.path.exists(os.path.join(REPO_ROOT, 'LICENSE.md')):
+           os.path.exists(os.path.join(REPO_ROOT, 'LICENSE')):
             break
         parent = os.path.dirname(REPO_ROOT)
         if parent == REPO_ROOT:
