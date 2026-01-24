@@ -6,29 +6,24 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Section 4: geometric_utils.py
-# Portable IMAGE_DIR
+# Safe IMAGE_DIR
 try:
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 except NameError:
     SCRIPT_DIR = os.getcwd()
-
-# Use absolute path (change if needed)
 IMAGE_DIR = r"D:\Phyllux Project\biomimetic-inventions-public\images"
 os.makedirs(IMAGE_DIR, exist_ok=True)
-
 print(f"Image output directory: {IMAGE_DIR}")
 
+# Section 4: geometric_utils.py
 print("Running geometric_utils section...")
 try:
     N = 121
     golden_angle = 137.508
     theta = np.arange(N) * np.deg2rad(golden_angle)
     r = np.sqrt(np.arange(N)) * 0.5
-
     x = r * np.cos(theta)
     y = r * np.sin(theta)
-
     fig, ax = plt.subplots(figsize=(8, 8))
     ax.scatter(x, y, s=10, c='green', alpha=0.7)
     ax.plot(x, y, color='blue', linewidth=0.5, alpha=0.5)

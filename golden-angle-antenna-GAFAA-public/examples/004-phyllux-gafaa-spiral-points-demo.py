@@ -6,33 +6,27 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Section 2: spiral_utils.py
-# Portable IMAGE_DIR
+# Safe IMAGE_DIR
 try:
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 except NameError:
     SCRIPT_DIR = os.getcwd()
-
-# Use absolute path (change if needed)
 IMAGE_DIR = r"D:\Phyllux Project\biomimetic-inventions-public\images"
 os.makedirs(IMAGE_DIR, exist_ok=True)
-
 print(f"Image output directory: {IMAGE_DIR}")
 
+# Section 2: spiral_utils.py
 print("Running spiral_utils section...")
 try:
     N = 121
     golden_angle = 137.508
     theta = np.arange(N) * np.deg2rad(golden_angle)
     r = np.sqrt(theta) * 0.5
-
     x = r * np.cos(theta)
     y = r * np.sin(theta)
-
     print("Number of nodes:", N)
     print("First 5 node positions (x, y):")
     print(np.column_stack((x[:5], y[:5])))
-
     fig, ax = plt.subplots(figsize=(8, 8))
     ax.scatter(x, y, s=10, c='blue')
     ax.set_title("Spiral Positions (121 nodes)")

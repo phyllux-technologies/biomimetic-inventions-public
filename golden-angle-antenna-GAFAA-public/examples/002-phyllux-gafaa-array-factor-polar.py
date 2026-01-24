@@ -6,40 +6,33 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Section 1: array_factor_polar.py
-# Portable IMAGE_DIR
+# Safe IMAGE_DIR
 try:
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 except NameError:
     SCRIPT_DIR = os.getcwd()
-
-# Use absolute path (change if needed)
 IMAGE_DIR = r"D:\Phyllux Project\biomimetic-inventions-public\images"
 os.makedirs(IMAGE_DIR, exist_ok=True)
-
 print(f"Image output directory: {IMAGE_DIR}")
 
+# Section 1: array_factor_polar.py
 print("Running array_factor_polar section...")
 try:
     f = 28e9
     c = 3e8
     lambda_ = c / f
     N = 121
-
     theta = np.linspace(0, 10 * np.pi, N)
     r = np.sqrt(theta) * 0.5
     x = r * np.cos(theta)
     y = r * np.sin(theta)
     positions = np.column_stack((x, y))
-
     theta_grid, phi_grid = np.mgrid[0:np.pi:50j, 0:2*np.pi:50j]
-
     k = 2 * np.pi / lambda_
     phase = k * (positions[:, 0, np.newaxis, np.newaxis] * np.sin(theta_grid) * np.cos(phi_grid) +
                  positions[:, 1, np.newaxis, np.newaxis] * np.sin(theta_grid) * np.sin(phi_grid))
     AF = np.sum(np.exp(1j * phase), axis=0) / N
     AF_dB = 20 * np.log10(np.abs(AF) + 1e-10)
-
     fig = plt.figure(figsize=(8, 8))
     ax = fig.add_subplot(111, projection='polar')
     contour = ax.contourf(phi_grid, theta_grid * (180/np.pi), AF_dB, levels=30, cmap='viridis')

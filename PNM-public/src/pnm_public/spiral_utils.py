@@ -6,26 +6,22 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Section 3: toy_electrode_array.py
-# Portable IMAGE_DIR
+# Safe IMAGE_DIR
 try:
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 except NameError:
     SCRIPT_DIR = os.getcwd()
-
-# Use absolute path (change if needed)
 IMAGE_DIR = r"D:\Phyllux Project\biomimetic-inventions-public\images"
 os.makedirs(IMAGE_DIR, exist_ok=True)
-
 print(f"Image output directory: {IMAGE_DIR}")
 
+# Section 3: toy_electrode_array.py
 print("Running toy_electrode_array section...")
 try:
     N = 121
     golden_angle = 137.508
     theta = np.arange(N) * np.deg2rad(golden_angle)
     r = np.sqrt(theta)
-
     fig = plt.figure(figsize=(8, 8))
     ax = fig.add_subplot(111, projection='polar')
     ax.scatter(theta, r, s=10, c='blue')
