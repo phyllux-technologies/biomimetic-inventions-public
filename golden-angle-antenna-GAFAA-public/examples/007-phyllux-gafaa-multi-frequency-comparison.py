@@ -70,7 +70,7 @@ def main():
         }
     
     plt.tight_layout()
-    plt.savefig('gafaa_multi_frequency_comparison.png', dpi=300, bbox_inches='tight')
+    plt.savefig('images/gafaa_multi_freq_121_clean.png', dpi=300, bbox_inches='tight', facecolor='white')
     
     # Print summary
     print("Multi-Frequency GAFAA Comparison")

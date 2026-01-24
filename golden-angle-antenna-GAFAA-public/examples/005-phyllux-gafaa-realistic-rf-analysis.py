@@ -121,8 +121,8 @@ def main():
     ax6.axis('off')
     
     plt.tight_layout()
-    plt.savefig('gafaa_realistic_rf_analysis.png', dpi=300, bbox_inches='tight')
-    print("\nAnalysis complete. Figure saved as 'gafaa_realistic_rf_analysis.png'")
+    plt.savefig('images/gafaa_rf_121_clean.png', dpi=300, bbox_inches='tight', facecolor='white')
+    print("\nAnalysis complete. Figure saved as 'images/gafaa_rf_121_clean.png'")
     plt.show()
 
 if __name__ == "__main__":

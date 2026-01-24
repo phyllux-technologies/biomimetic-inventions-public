@@ -12,7 +12,7 @@ def toy_array_factor_polar(n_electrodes=64):
     
     Educational demo only - not a real neural interface design.
     """
-    positions = toy_electrode_array(n_electrodes, spacing_scale=0.05, angle_deg=137.508)
+    positions = toy_electrode_array(n_electrodes, spacing_scale=0.05, angle_deg=137.507764)
     x, y = positions[:, 0], positions[:, 1]
 
     theta = np.linspace(0, 2*np.pi, 360)  # observation angles

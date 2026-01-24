@@ -11,7 +11,7 @@ def toy_array_factor(num_elements=64, angle_scan_deg=0.0):
 
     Not calibrated to any real frequency, spacing, or claimed design.
     """
-    x, y = golden_like_spiral_points(num_elements, radius_scale=0.05, angle_deg=137.0)
+    x, y = golden_like_spiral_points(num_elements, radius_scale=0.05, angle_deg=137.507764)
 
     theta = np.linspace(-np.pi, np.pi, 721)  # observation angles
     k = 1.0  # arbitrary wavenumber for toy example

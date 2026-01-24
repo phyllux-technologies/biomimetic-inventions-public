@@ -131,8 +131,8 @@ def main():
     ax6.grid(True, alpha=0.3, axis='y')
     
     plt.tight_layout()
-    plt.savefig('pnm_crosstalk_optimization.png', dpi=300, bbox_inches='tight')
-    print("\nAnalysis complete. Figure saved as 'pnm_crosstalk_optimization.png'")
+    plt.savefig('images/pnm_crosstalk_121_clean.png', dpi=300, bbox_inches='tight', facecolor='white')
+    print("\nAnalysis complete. Figure saved as 'images/pnm_crosstalk_121_clean.png'")
     plt.show()
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def golden_like_spiral_points(n_points: int,
                               radius_scale: float = 1.0,
-                              angle_deg: float = 137.0):
+                              angle_deg: float = 137.507764):
     """
     Generate a simple phyllotactic-style spiral point set.
     This is a generic educational function. It is NOT a production
@@ -23,7 +23,7 @@ def golden_like_spiral_points(n_points: int,
 
 if __name__ == "__main__":
     # Generate 121 antenna positions for GAFAA
-    x, y = golden_like_spiral_points(121, radius_scale=1.07, angle_deg=137.508)
+    x, y = golden_like_spiral_points(121, radius_scale=1.07, angle_deg=137.507764)
 
     # Print results
     print("Number of antenna elements:", len(x))
@@ -43,5 +43,5 @@ if __name__ == "__main__":
     plt.show()
 
     # Save the figure
-    plt.savefig('GAFAA_spiral_pattern.png', dpi=300, bbox_inches='tight')
-    print("\nFigure saved!")
+    plt.savefig('images/gafaa_121_clean.png', dpi=300, bbox_inches='tight', facecolor='white')
+    print("\nFigure saved to images/gafaa_121_clean.png")

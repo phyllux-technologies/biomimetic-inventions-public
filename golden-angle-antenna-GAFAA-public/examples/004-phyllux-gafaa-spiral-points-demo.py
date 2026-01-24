@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from src.gafaa_public.phyllotaxis_utils import golden_like_spiral_points
 
 def main():
-    x, y = golden_like_spiral_points(n_points=200, radius_scale=0.1, angle_deg=137.0)
+    x, y = golden_like_spiral_points(n_points=200, radius_scale=0.1, angle_deg=137.507764)
 
     fig, ax = plt.subplots()
     ax.scatter(x, y, s=10)
