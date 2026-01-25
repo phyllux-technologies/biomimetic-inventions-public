@@ -3,21 +3,20 @@ name: Lint Markdown
 on:
   push:
     paths:
-      - "**.md"
+      - "**/*.md"
   pull_request:
     paths:
-      - "**.md"
+      - "**/*.md"
   workflow_dispatch:
 
 jobs:
   markdown-lint:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run markdownlint
+      - name: Markdownlint (cli2)
         uses: DavidAnson/markdownlint-cli2-action@v16
         with:
           config: .markdownlint.json
