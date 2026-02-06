@@ -885,9 +885,13 @@
         /* ===== TECHNOLOGY DOMAIN CARDS ===== */
         .domains-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: stretch;
         }
 
         .domain-card {
@@ -899,6 +903,8 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .domain-card::before {
@@ -1016,9 +1022,13 @@
 
         .method-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            align-items: stretch;
         }
 
         .method-item {
@@ -1027,6 +1037,10 @@
             background: rgba(255, 255, 255, 0.02);
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .method-item h4 {
@@ -1084,9 +1098,10 @@
 
         .licensing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
             margin-top: 3rem;
+            align-items: stretch;
         }
 
         .tier-card {
@@ -1555,6 +1570,419 @@
             margin-top: 1.5rem;
         }
 
+        /* ===== IP STRATEGY SECTION ===== */
+        .ip-strategy-section {
+            margin-top: 6rem;
+        }
+
+        .ip-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem 0;
+        }
+
+        .ip-timeline-bar {
+            position: relative;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin: 2rem 0;
+        }
+
+        .ip-timeline-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 8%;
+            background: linear-gradient(90deg, var(--primary-gold), var(--primary-cyan));
+            border-radius: 3px;
+            transition: width 1s ease;
+        }
+
+        .ip-timeline-milestones {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .ip-milestone {
+            flex: 1;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .ip-milestone:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .ip-milestone .milestone-icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .ip-milestone .milestone-date {
+            font-size: 0.8rem;
+            color: var(--primary-gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .ip-milestone .milestone-title {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .ip-milestone .milestone-desc {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            line-height: 1.5;
+        }
+
+        .ip-two-col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ip-col-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .ip-col-card:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .ip-col-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-cyan);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .ip-col-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ip-col-card ul li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            line-height: 1.6;
+        }
+
+        .ip-col-card ul li::before {
+            content: '\2192';
+            color: var(--primary-cyan);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .ip-col-card .btn {
+            margin-top: 1.5rem;
+        }
+
+        /* Patent Strategy Table */
+        .ip-strategy-table-wrapper {
+            margin-top: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ip-strategy-table-wrapper h3 {
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .ip-strategy-note {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* GitHub Repos Grid */
+        .github-repos-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            margin-top: 3rem;
+        }
+
+        .github-repos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .github-repo-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .github-repo-card:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-4px);
+        }
+
+        .github-repo-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary-cyan);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-family: monospace;
+        }
+
+        .github-repo-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .github-repo-card .btn {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            text-align: center;
+        }
+
+        /* ===== SOLARIS FRAMEWORK ===== */
+        .solaris-section {
+            margin-top: 6rem;
+        }
+
+        .solaris-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        .solaris-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .solaris-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solaris-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .solaris-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .solaris-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .solaris-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .solaris-badge.gold {
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--primary-gold);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .solaris-badge.cyan {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary-cyan);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .solaris-badge.purple {
+            background: rgba(102, 126, 234, 0.15);
+            color: var(--primary-purple);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .solaris-badge.green {
+            background: rgba(0, 200, 83, 0.1);
+            color: #00c853;
+            border: 1px solid rgba(0, 200, 83, 0.3);
+        }
+
+        .solaris-card .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .solaris-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .solaris-card h4 {
+            font-size: 0.9rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .solaris-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .solaris-card ul li {
+            padding: 0.3rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .solaris-card ul li::before {
+            content: '\2192';
+            color: var(--primary-cyan);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .solaris-card .solaris-example {
+            margin-top: auto;
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            font-style: italic;
+            line-height: 1.5;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Case Studies */
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            align-items: stretch;
+        }
+
+        .case-study-card {
+            background: #1a1a24;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .case-study-card:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .case-study-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .case-study-card .study-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .case-study-card .study-label {
+            font-size: 0.8rem;
+            color: var(--primary-cyan);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .case-study-card .study-text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
         /* ===== REDUCED MOTION ===== */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -1604,8 +2032,28 @@
             .domains-grid,
             .method-grid,
             .ethics-grid,
-            .licensing-grid {
+            .licensing-grid,
+            .ip-two-col,
+            .github-repos-grid,
+            .solaris-grid,
+            .case-studies-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .ip-timeline-milestones {
+                flex-direction: column;
+            }
+
+            .ip-milestone {
+                text-align: left;
+                display: flex;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+
+            .ip-milestone .milestone-icon {
+                margin-bottom: 0;
+                flex-shrink: 0;
             }
 
             .nature-examples {
@@ -1715,6 +2163,8 @@
             <li><a href="#technology">Technology</a></li>
             <li><a href="#ecosystem">Ecosystem</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#ip-strategy">IP Strategy</a></li>
+            <li><a href="#solaris">Solaris</a></li>
             <li><a href="#licensing">Licensing</a></li>
             <li><a href="#ethics">Ethics</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -1781,6 +2231,8 @@
         <a href="#technology">Technology</a>
         <a href="#ecosystem">Ecosystem</a>
         <a href="#about">About</a>
+        <a href="#ip-strategy">IP Strategy</a>
+        <a href="#solaris">Solaris Framework</a>
         <a href="#licensing">Licensing</a>
         <a href="#ethics">Ethics</a>
         <a href="#contact">Contact</a>
@@ -2463,6 +2915,338 @@
         </section>
     </div>
 
+    <!-- IP Strategy Section -->
+    <div class="container">
+        <section id="ip-strategy" class="ip-strategy-section fade-in-section">
+            <h2>Intellectual Property Strategy</h2>
+            <p class="section-subtitle">Transparent, ethical IP protection balancing innovation incentives with open research</p>
+
+            <!-- Timeline -->
+            <div class="ip-timeline">
+                <div class="ip-timeline-bar">
+                    <div class="ip-timeline-progress"></div>
+                </div>
+                <div class="ip-timeline-milestones">
+                    <div class="ip-milestone">
+                        <span class="milestone-icon">&#x2705;</span>
+                        <div>
+                            <span class="milestone-date">January 7, 2026</span>
+                            <div class="milestone-title">Public Disclosure</div>
+                            <div class="milestone-desc">Defensive Publication &amp; GitHub repos published</div>
+                        </div>
+                    </div>
+                    <div class="ip-milestone">
+                        <span class="milestone-icon">&#x23F3;</span>
+                        <div>
+                            <span class="milestone-date">Jan 7, 2026 &ndash; Jan 7, 2027</span>
+                            <div class="milestone-title">USPTO Grace Period</div>
+                            <div class="milestone-desc">12-month window for patent filing</div>
+                        </div>
+                    </div>
+                    <div class="ip-milestone">
+                        <span class="milestone-icon">&#x1F4C5;</span>
+                        <div>
+                            <span class="milestone-date">Target: Q4 2026</span>
+                            <div class="milestone-title">Provisional Patent</div>
+                            <div class="milestone-desc">PPA filing for core innovations</div>
+                        </div>
+                    </div>
+                    <div class="ip-milestone">
+                        <span class="milestone-icon">&#x1F4C5;</span>
+                        <div>
+                            <span class="milestone-date">Target: 2027</span>
+                            <div class="milestone-title">Non-Provisional Patent</div>
+                            <div class="milestone-desc">Full patent application submission</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Defensive Publication Strategy -->
+            <h3 style="text-align: center; font-size: 1.5rem; color: var(--primary-gold); margin-top: 4rem; margin-bottom: 0.5rem;">Defensive Publication Strategy</h3>
+            <div class="ip-two-col">
+                <div class="ip-col-card">
+                    <h3>Why Defensive Publication</h3>
+                    <ul>
+                        <li>Establishes prior art (prevents others from patenting Phyllux concepts)</li>
+                        <li>Maintains public accessibility for research</li>
+                        <li>Creates transparency for ethical partnerships</li>
+                        <li>Enables open-source framework development</li>
+                        <li>Protects against patent trolls</li>
+                        <li>Demonstrates technical leadership</li>
+                    </ul>
+                </div>
+                <div class="ip-col-card">
+                    <h3>What's Published</h3>
+                    <ul>
+                        <li>Core phyllotactic methodology (golden angle, 121-node, position 61)</li>
+                        <li>Wave domain: GAFAA architecture principles</li>
+                        <li>Mesh domain: PNM electrode placement algorithms</li>
+                        <li>Vault domain: PhiKey cryptographic foundations</li>
+                        <li>Core domain: Integration protocols</li>
+                        <li>Reference implementations (GitHub)</li>
+                    </ul>
+                    <a href="https://github.com/phibronotchi-beep" target="_blank" rel="noopener noreferrer" class="btn btn-cyan-outline">View Public Repositories</a>
+                </div>
+            </div>
+
+            <!-- Patent vs Trade Secret Strategy -->
+            <div class="ip-strategy-table-wrapper">
+                <h3>Patent vs. Trade Secret Strategy</h3>
+                <div class="comparison-table-scroll">
+                    <table class="comparison-table" aria-label="Patent vs trade secret strategy table">
+                        <thead>
+                            <tr>
+                                <th>Element</th>
+                                <th>Strategy</th>
+                                <th>Rationale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Element">Golden angle spacing (137.508&deg;)</td>
+                                <td data-label="Strategy">Patent</td>
+                                <td data-label="Rationale">Core innovation, defensible prior art</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Element">121-node reference design</td>
+                                <td data-label="Strategy">Patent</td>
+                                <td data-label="Rationale">Specific implementation, enables licensing</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Element">Position 61 anchor concept</td>
+                                <td data-label="Strategy">Patent</td>
+                                <td data-label="Rationale">Novel architectural element</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Element">GAFAA beamforming method</td>
+                                <td data-label="Strategy">Patent</td>
+                                <td data-label="Rationale">Clear commercial value</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Element">PNM electrode algorithms</td>
+                                <td data-label="Strategy">Patent</td>
+                                <td data-label="Rationale">Medical device protection</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Element">PhiKey rotation sequences</td>
+                                <td data-label="Strategy">Trade Secret</td>
+                                <td data-label="Rationale">Security through obscurity component</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Element">Manufacturing tolerances</td>
+                                <td data-label="Strategy">Trade Secret</td>
+                                <td data-label="Rationale">Competitive advantage</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Element">Signal processing optimizations</td>
+                                <td data-label="Strategy">Trade Secret</td>
+                                <td data-label="Rationale">Implementation details</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Element">Multi-band tuning parameters</td>
+                                <td data-label="Strategy">Trade Secret</td>
+                                <td data-label="Rationale">Performance edge</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="ip-strategy-note">This hybrid approach maximizes protection while maintaining research transparency.</p>
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="#contact" class="btn btn-gold-outline contact-scroll-btn" data-interest="IP Strategy Document">Download IP Strategy Overview</a>
+                </div>
+            </div>
+
+            <!-- GitHub Repository Integration -->
+            <h3 style="text-align: center; font-size: 1.5rem; color: var(--primary-gold); margin-top: 4rem; margin-bottom: 0.5rem;">GitHub Repository Integration</h3>
+            <p class="github-repos-intro">Our research is publicly available on GitHub</p>
+            <div class="github-repos-grid">
+                <div class="github-repo-card">
+                    <h4>biomimetic-inventions-public</h4>
+                    <p>Core defensive publications and public prior art establishing foundational IP claims</p>
+                    <a href="https://github.com/phibronotchi-beep/biomimetic-inventions-public" target="_blank" rel="noopener noreferrer" class="btn btn-cyan-outline">View on GitHub</a>
+                </div>
+                <div class="github-repo-card">
+                    <h4>phyllux-framework</h4>
+                    <p>Reference implementations of the IP protection system and licensing templates</p>
+                    <a href="https://github.com/phibronotchi-beep/phyllux-framework" target="_blank" rel="noopener noreferrer" class="btn btn-cyan-outline">View on GitHub</a>
+                </div>
+                <div class="github-repo-card">
+                    <h4>phyllux-inventions-wip</h4>
+                    <p>Ongoing R&amp;D portfolio with 350+ research-stage technology fusions across 14 categories</p>
+                    <a href="https://github.com/phibronotchi-beep/phyllux-inventions-wip" target="_blank" rel="noopener noreferrer" class="btn btn-cyan-outline">View on GitHub</a>
+                </div>
+                <div class="github-repo-card">
+                    <h4>Phyllux-Superrepo</h4>
+                    <p>Comprehensive documentation, ecosystem coordination, strategy, and commercialization pipeline</p>
+                    <a href="https://github.com/phibronotchi-beep/Phyllux-Superrepo" target="_blank" rel="noopener noreferrer" class="btn btn-cyan-outline">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Solaris Framework Section -->
+    <div class="container">
+        <section id="solaris" class="solaris-section fade-in-section">
+            <h2>The Solaris Framework</h2>
+            <p class="section-subtitle">Ethical Technology Licensing for Mission-Aligned Innovation</p>
+            <p class="solaris-intro">Phyllux Technologies employs a tiered licensing framework that rewards mission alignment, ethical application, and collaborative innovation while maintaining commercial viability.</p>
+
+            <div class="solaris-grid">
+                <!-- Pioneer Tier -->
+                <div class="solaris-card">
+                    <span class="card-icon">&#x1F3C6;</span>
+                    <span class="solaris-badge gold">Pioneer</span>
+                    <h3>Pioneer Tier</h3>
+
+                    <h4>Benefits</h4>
+                    <ul>
+                        <li>Equity participation opportunity (co-ownership in specific applications)</li>
+                        <li>Joint patent filing on derivative inventions</li>
+                        <li>Preferential royalty rates (0.5&ndash;1%)</li>
+                        <li>First access to new developments</li>
+                        <li>Technical co-development support</li>
+                        <li>Public recognition as Pioneer partner</li>
+                    </ul>
+
+                    <h4>Requirements</h4>
+                    <ul>
+                        <li>Significant technical contribution to Phyllux platform</li>
+                        <li>Shared R&amp;D investment</li>
+                        <li>Mission-aligned values</li>
+                        <li>Long-term partnership commitment</li>
+                    </ul>
+
+                    <p class="solaris-example">Example: Co-developing next-generation BCI or optimizing satellite array architecture</p>
+                </div>
+
+                <!-- Mission-Aligned Tier -->
+                <div class="solaris-card">
+                    <span class="card-icon">&#x1F680;</span>
+                    <span class="solaris-badge cyan">Mission-Aligned</span>
+                    <h3>Mission-Aligned Tier</h3>
+
+                    <h4>Benefits</h4>
+                    <ul>
+                        <li>Reduced royalty rates (1&ndash;3%)</li>
+                        <li>Priority technical support</li>
+                        <li>Flexible payment terms</li>
+                        <li>Collaborative roadmap input</li>
+                        <li>Joint marketing opportunities</li>
+                    </ul>
+
+                    <h4>Requirements</h4>
+                    <ul>
+                        <li>Humanitarian, medical, or space exploration focus</li>
+                        <li>Demonstrable societal benefit</li>
+                        <li>Ethical application commitment</li>
+                        <li>No dual-use for offensive weapons</li>
+                    </ul>
+
+                    <p class="solaris-example">Example: Medical BCI for paralysis treatment or deep space communications for NASA missions</p>
+                </div>
+
+                <!-- Commercial Tier -->
+                <div class="solaris-card">
+                    <span class="card-icon">&#x1F4BC;</span>
+                    <span class="solaris-badge purple">Commercial</span>
+                    <h3>Commercial Tier</h3>
+
+                    <h4>Benefits</h4>
+                    <ul>
+                        <li>Clear territorial licensing</li>
+                        <li>Standard royalty rates (3&ndash;5%)</li>
+                        <li>Technical documentation access</li>
+                        <li>Implementation support</li>
+                        <li>Patent protection</li>
+                    </ul>
+
+                    <h4>Requirements</h4>
+                    <ul>
+                        <li>Ethical use compliance</li>
+                        <li>Standard commercial terms</li>
+                        <li>Quality standards adherence</li>
+                        <li>Reporting requirements</li>
+                    </ul>
+
+                    <p class="solaris-example">Example: 5G base station optimization or automotive radar systems</p>
+                </div>
+
+                <!-- Academic/Research Tier -->
+                <div class="solaris-card">
+                    <span class="card-icon">&#x1F393;</span>
+                    <span class="solaris-badge green">Research</span>
+                    <h3>Academic &amp; Research Tier</h3>
+
+                    <h4>Benefits</h4>
+                    <ul>
+                        <li>FREE for non-commercial research</li>
+                        <li>Full access to open-source framework</li>
+                        <li>Citation requirements only</li>
+                        <li>Research collaboration opportunities</li>
+                        <li>Publication rights</li>
+                    </ul>
+
+                    <h4>Requirements</h4>
+                    <ul>
+                        <li>Non-commercial use</li>
+                        <li>Proper attribution</li>
+                        <li>Publication of results (open science)</li>
+                        <li>No patent filing on Phyllux-derived work</li>
+                    </ul>
+
+                    <p class="solaris-example">Example: University antenna research or neuroscience electrode studies</p>
+                </div>
+            </div>
+
+            <!-- Case Studies -->
+            <h3 style="text-align: center; font-size: 1.5rem; color: var(--primary-gold); margin-top: 4rem; margin-bottom: 0.5rem;">Hypothetical Case Studies</h3>
+            <p class="section-subtitle" style="margin-bottom: 2rem;">Illustrative partnership scenarios demonstrating the Solaris framework in practice</p>
+
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <h4>Mission-Aligned Partnership: Neuralink BCI</h4>
+                    <div class="study-item">
+                        <div class="study-label">Challenge</div>
+                        <div class="study-text">High-density brain electrode array for medical applications</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-label">Phyllux Solution</div>
+                        <div class="study-text">PNM electrode placement achieving 95%+ coverage with reduced surgical complexity</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-label">Terms</div>
+                        <div class="study-text">1.5% royalty, joint research, humanitarian focus (epilepsy, paralysis)</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-label">Outcome</div>
+                        <div class="study-text">Improved patient outcomes, reduced costs, ethical framework</div>
+                    </div>
+                </div>
+
+                <div class="case-study-card">
+                    <h4>Pioneer Partnership: SpaceX Starlink</h4>
+                    <div class="study-item">
+                        <div class="study-label">Challenge</div>
+                        <div class="study-text">Optimize inter-satellite links for 40,000+ satellite constellation</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-label">Phyllux Solution</div>
+                        <div class="study-text">GAFAA phyllotactic array architecture (reduced mutual coupling, scalable)</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-label">Terms</div>
+                        <div class="study-text">0.75% royalty + equity participation, joint patent on satellite-specific optimizations</div>
+                    </div>
+                    <div class="study-item">
+                        <div class="study-label">Outcome</div>
+                        <div class="study-text">Enhanced constellation performance, co-developed space-hardened design</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <div class="wide-container">
         <section id="ethics" class="ethics-section fade-in-section">
             <h2>Built on Ethical Foundations</h2>
@@ -2587,6 +3371,8 @@
                 <ul>
                     <li><a href="#technology">Technology</a></li>
                     <li><a href="#ecosystem">Ecosystem</a></li>
+                    <li><a href="#ip-strategy">IP Strategy</a></li>
+                    <li><a href="#solaris">Solaris Framework</a></li>
                     <li><a href="#ethics">Ethics</a></li>
                     <li><a href="#licensing">Licensing</a></li>
                     <li><a href="#contact">Contact</a></li>
