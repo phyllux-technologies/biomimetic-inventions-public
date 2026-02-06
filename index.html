@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Phyllux Technologies | Biomimetic Innovation Across Wave, Mesh, and Vault</title>
@@ -48,7 +48,7 @@
         }
 
         html {
-            scroll-behavior: smooth;
+            /* scroll-behavior: smooth removed - using JS scrollIntoView instead for mobile compatibility */
         }
 
         body {
@@ -77,6 +77,7 @@
                 radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 40% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
             z-index: -1;
+            pointer-events: none;
             animation: pulse 20s ease-in-out infinite;
         }
 
@@ -2858,6 +2859,95 @@
                 grid-column: 1;
             }
         }
+
+        /* ===== UNIVERSAL MOBILE BUTTON FIX ===== */
+        /* Ensure all clickable elements receive touch events */
+        button, a, [role="button"], input[type="submit"],
+        .nav-link, .cta-button, .btn, .collapsible-toggle,
+        .nav-dropdown-toggle, .hamburger, .mobile-menu-close,
+        .calc-submit-btn, .form-submit-btn, .viz-btn,
+        .contact-scroll-btn, #back-to-top, summary {
+            cursor: pointer !important;
+            pointer-events: auto !important;
+            touch-action: manipulation !important;
+            -webkit-tap-highlight-color: rgba(255, 215, 0, 0.3) !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+        }
+
+        /* Prevent pseudo-elements from intercepting clicks */
+        *::before, *::after {
+            pointer-events: none !important;
+        }
+
+        /* Ensure child elements within buttons don't steal pointer events */
+        button *, a *, [role="button"] *, .btn *,
+        summary *, .collapsible-toggle * {
+            pointer-events: none !important;
+        }
+
+        /* Re-enable pointer events on nav containers */
+        nav, nav *, .nav-dropdown, .nav-dropdown-menu,
+        .mobile-menu, .mobile-overlay {
+            pointer-events: auto !important;
+        }
+
+        /* Override nav child pointer-events for links/buttons inside nav */
+        .nav-dropdown-menu a, .mobile-menu a,
+        .nav-dropdown-toggle, .hamburger, .mobile-menu-close {
+            pointer-events: auto !important;
+        }
+
+        /* Minimum touch target sizes on mobile */
+        @media (max-width: 768px) {
+            button, a[href], [role="button"], summary,
+            .btn, .nav-dropdown-toggle, .hamburger,
+            .mobile-menu-close, .collapsible-toggle,
+            .calc-submit-btn, .form-submit-btn, .viz-btn,
+            .contact-scroll-btn, #back-to-top {
+                min-width: 44px !important;
+                min-height: 44px !important;
+            }
+
+            /* Ensure mobile overlay doesn't block touches when hidden */
+            .mobile-overlay:not(.open) {
+                pointer-events: none !important;
+            }
+
+            /* Ensure mobile menu doesn't block touches when hidden */
+            .mobile-menu:not(.open) {
+                pointer-events: none !important;
+            }
+
+            /* Fix body::before not blocking touches */
+            body::before {
+                pointer-events: none !important;
+                z-index: -1 !important;
+            }
+
+            /* Ensure hero content is clickable */
+            .hero-content, .hero-content * {
+                position: relative;
+            }
+
+            .hero-content a, .hero-content button {
+                pointer-events: auto !important;
+                position: relative;
+                z-index: 2 !important;
+            }
+
+            /* Fix CTA buttons on mobile */
+            .cta-buttons {
+                position: relative;
+                z-index: 2 !important;
+            }
+
+            .cta-buttons .btn {
+                pointer-events: auto !important;
+                position: relative;
+                z-index: 2 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -4398,9 +4488,15 @@
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
 
-        backToTop.addEventListener('click', function() {
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+        backToTop.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, { passive: false });
 
         // ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS (MOBILE FIX) =====
         document.querySelectorAll('a[href^="#"]').forEach(function(link) {
@@ -4410,17 +4506,20 @@
                     var target = document.querySelector(targetId);
                     if (target) {
                         e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth' });
+                        e.stopPropagation();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }
             });
         });
 
-        // ===== DROPDOWN MENUS =====
+        // ===== DROPDOWN MENUS (MOBILE TOUCH FIX) =====
         var dropdowns = document.querySelectorAll('.nav-dropdown');
         dropdowns.forEach(function(dropdown) {
             var toggle = dropdown.querySelector('.nav-dropdown-toggle');
-            toggle.addEventListener('click', function(e) {
+
+            function handleToggle(e) {
+                e.preventDefault();
                 e.stopPropagation();
                 var isOpen = dropdown.classList.contains('open');
                 dropdowns.forEach(function(d) {
@@ -4431,66 +4530,102 @@
                     dropdown.classList.add('open');
                     toggle.setAttribute('aria-expanded', 'true');
                 }
-            });
+            }
+
+            toggle.addEventListener('click', handleToggle);
+            toggle.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                handleToggle(e);
+            }, { passive: false });
         });
 
-        document.addEventListener('click', function() {
-            dropdowns.forEach(function(d) {
-                d.classList.remove('open');
-                d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
-            });
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-dropdown')) {
+                dropdowns.forEach(function(d) {
+                    d.classList.remove('open');
+                    d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+                });
+            }
         });
 
-        // ===== MOBILE MENU =====
+        // ===== MOBILE MENU (ENHANCED TOUCH SUPPORT) =====
         var hamburger = document.getElementById('hamburger-btn');
         var mobileMenu = document.getElementById('mobile-menu');
         var mobileOverlay = document.getElementById('mobile-overlay');
         var mobileClose = document.getElementById('mobile-close');
 
-        function openMobile() {
+        function openMobile(e) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
             mobileMenu.classList.add('open');
             mobileOverlay.classList.add('open');
             hamburger.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
         }
 
-        function closeMobile() {
+        function closeMobile(e) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
             mobileMenu.classList.remove('open');
             mobileOverlay.classList.remove('open');
             hamburger.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
         }
 
+        // Click and touchend for hamburger open
         hamburger.addEventListener('click', openMobile);
+        hamburger.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            openMobile(e);
+        }, { passive: false });
+
+        // Click and touchend for close button
         mobileClose.addEventListener('click', closeMobile);
+        mobileClose.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            closeMobile(e);
+        }, { passive: false });
+
+        // Click and touchend for overlay close
         mobileOverlay.addEventListener('click', closeMobile);
+        mobileOverlay.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            closeMobile(e);
+        }, { passive: false });
 
         mobileMenu.querySelectorAll('a[href^="#"]').forEach(function(link) {
             link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 closeMobile();
                 var targetId = this.getAttribute('href');
                 if (targetId && targetId.length > 1) {
                     var target = document.querySelector(targetId);
                     if (target) {
-                        e.preventDefault();
                         setTimeout(function() {
-                            target.scrollIntoView({ behavior: 'smooth' });
-                        }, 300);
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 350);
                     }
                 }
             });
         });
 
-        // ===== COLLAPSIBLE ROADMAP =====
+        // ===== COLLAPSIBLE ROADMAP (MOBILE TOUCH FIX) =====
         var roadmapToggle = document.getElementById('roadmap-toggle');
         var roadmapContent = document.getElementById('roadmap-content');
 
-        roadmapToggle.addEventListener('click', function() {
+        function handleRoadmapToggle(e) {
+            e.preventDefault();
+            e.stopPropagation();
             var isOpen = roadmapContent.classList.contains('open');
             roadmapContent.classList.toggle('open');
             roadmapToggle.classList.toggle('open');
             roadmapToggle.setAttribute('aria-expanded', !isOpen);
-        });
+        }
+
+        roadmapToggle.addEventListener('click', handleRoadmapToggle);
+        roadmapToggle.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            handleRoadmapToggle(e);
+        }, { passive: false });
 
         // ===== INTERACTIVE PHYLLOTACTIC VISUALIZATION =====
         var vizCanvas = document.getElementById('phyllux-viz');
@@ -4662,15 +4797,15 @@
             drawViz();
         }
 
-        // ===== CONTACT SCROLL BUTTONS =====
+        // ===== CONTACT SCROLL BUTTONS (MOBILE TOUCH FIX) =====
         document.querySelectorAll('.contact-scroll-btn').forEach(function(btn) {
-            btn.addEventListener('click', function(e) {
+            function handleContactScroll(e) {
                 e.preventDefault();
+                e.stopPropagation();
                 var contactSection = document.getElementById('contact');
                 if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                    // Pre-fill interest if data attribute present
-                    var interest = this.getAttribute('data-interest');
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    var interest = btn.getAttribute('data-interest');
                     if (interest) {
                         var msgField = document.getElementById('contact-message');
                         if (msgField && !msgField.value) {
@@ -4678,7 +4813,12 @@
                         }
                     }
                 }
-            });
+            }
+            btn.addEventListener('click', handleContactScroll);
+            btn.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                handleContactScroll(e);
+            }, { passive: false });
         });
 
         // ===== LICENSING CALCULATOR =====
@@ -4895,6 +5035,39 @@
                     heroContent.style.transform = 'translateY(' + (scrollTop * 0.3) + 'px)';
                 }
             }, { passive: true });
+        }
+
+        // ===== MOBILE TOUCH EVENT SAFETY NET =====
+        // Ensure all interactive elements are reachable on touch devices
+        // This catches any elements that might have been missed
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+            // Prevent 300ms click delay on older mobile browsers
+            document.addEventListener('touchstart', function() {}, { passive: true });
+
+            // Add touchend handlers to all buttons and links that only have click handlers
+            document.querySelectorAll('button, a[href], [role="button"], summary, .btn').forEach(function(el) {
+                // Only add if element doesn't already have a touchend handler
+                if (!el.dataset.touchFixed) {
+                    el.dataset.touchFixed = 'true';
+                    el.style.touchAction = 'manipulation';
+                    el.style.webkitTapHighlightColor = 'rgba(255, 215, 0, 0.3)';
+                }
+            });
+
+            // Fix details/summary accordion toggles for mobile
+            document.querySelectorAll('details summary').forEach(function(summary) {
+                summary.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    var details = this.closest('details');
+                    if (details) {
+                        if (details.open) {
+                            details.removeAttribute('open');
+                        } else {
+                            details.setAttribute('open', '');
+                        }
+                    }
+                }, { passive: false });
+            });
         }
     })();
     </script>
