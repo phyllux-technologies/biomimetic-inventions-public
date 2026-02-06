@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+
     <title>Phyllux Technologies | Biomimetic Innovation Across Wave, Mesh, and Vault</title>
     <meta name="description" content="Phyllux Technologies: Revolutionary biomimetic systems using nature's golden angle (137.508°) for next-generation satellite antennas, brain-computer interfaces, and cryptographic security.">
     <meta name="keywords" content="phyllotaxis, golden angle, biomimetic technology, antenna arrays, neural interfaces, BCI, cryptography, SpaceX, Neuralink, phyllux">
     <meta name="author" content="David Edward Sproule">
     <meta name="robots" content="index, follow">
-    
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="Phyllux Technologies | Nature's Geometry Meets Advanced Technology">
     <meta property="og:description" content="Revolutionary biomimetic systems using the golden angle for satellite communications, brain-computer interfaces, and cryptographic security.">
     <meta property="og:url" content="https://phyllux.io">
     <meta property="og:site_name" content="Phyllux Technologies">
-    
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Phyllux Technologies | Biomimetic Innovation">
     <meta name="twitter:description" content="Revolutionary biomimetic systems using nature's golden angle for next-generation technology.">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --primary-gold: #ffd700;
@@ -40,21 +40,31 @@
             --gradient-accent: linear-gradient(to right, #f093fb 0%, #f5576c 100%);
             --gradient-success: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--dark-bg);
             color: var(--text-primary);
             line-height: 1.7;
             overflow-x: hidden;
+            opacity: 0;
+            animation: pageLoad 0.5s ease forwards;
         }
-        
+
+        @keyframes pageLoad {
+            to { opacity: 1; }
+        }
+
         body::before {
             content: '';
             position: fixed;
@@ -62,19 +72,302 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 40% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
             z-index: -1;
             animation: pulse 20s ease-in-out infinite;
         }
-        
+
         @keyframes pulse {
             0%, 100% { opacity: 0.6; }
             50% { opacity: 1; }
         }
-        
+
+        /* ===== SCROLL PROGRESS BAR ===== */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary-gold), var(--primary-cyan));
+            z-index: 10001;
+            transition: width 0.1s linear;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10000;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+            opacity: 0;
+            animation: navFadeIn 0.5s ease 0.5s forwards;
+        }
+
+        @keyframes navFadeIn {
+            to { opacity: 1; }
+        }
+
+        .main-nav.scrolled {
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            padding: 0.6rem 2rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        .nav-logo-emoji {
+            font-size: 1.6rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Dropdown */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-dropdown-toggle:hover {
+            border-color: var(--primary-cyan);
+            color: var(--primary-cyan);
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            background: rgba(15, 15, 25, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            min-width: 260px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-dropdown.open .nav-dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-dropdown-menu a {
+            display: block;
+            padding: 0.6rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .nav-dropdown-menu a:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--primary-cyan);
+        }
+
+        .nav-dropdown-menu .dropdown-label {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            padding: 0.4rem 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-dropdown-menu .dropdown-desc {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            display: block;
+            margin-top: 0.15rem;
+        }
+
+        .domain-status {
+            font-size: 0.7rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.4rem;
+        }
+
+        .domain-status.live {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--primary-cyan);
+        }
+
+        .domain-status.soon {
+            background: rgba(255, 215, 0, 0.15);
+            color: var(--primary-gold);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0.2rem;
+            z-index: 10002;
+        }
+
+        /* Mobile menu */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 10001;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-overlay.open {
+            opacity: 1;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 300px;
+            max-width: 85vw;
+            background: rgba(10, 10, 15, 0.98);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            z-index: 10003;
+            padding: 5rem 2rem 2rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.8rem 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: color 0.2s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .mobile-menu-section {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-section h4 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-tertiary);
+            margin-bottom: 0.5rem;
+        }
+
+        .mobile-menu-section a {
+            font-size: 0.95rem;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu-section .mob-desc {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            display: block;
+        }
+
+        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -82,22 +375,41 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
+            padding: 6rem 2rem 2rem;
             position: relative;
+            overflow: hidden;
         }
-        
+
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .hero-logo {
             font-size: 6rem;
             margin-bottom: 1rem;
             animation: rotate 20s linear infinite;
             filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
         }
-        
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        
+
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.5rem, 8vw, 5.5rem);
@@ -110,7 +422,7 @@
             letter-spacing: -0.02em;
             line-height: 1.1;
         }
-        
+
         .hero .tagline {
             font-size: clamp(1.1rem, 2.5vw, 1.6rem);
             color: var(--text-secondary);
@@ -118,8 +430,24 @@
             margin-bottom: 2rem;
             max-width: 900px;
             line-height: 1.6;
+            min-height: 3.2em;
         }
-        
+
+        .tagline-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: var(--primary-cyan);
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: cursorBlink 1s step-end infinite;
+        }
+
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
         .ip-badge {
             display: inline-block;
             background: rgba(255, 215, 0, 0.1);
@@ -132,66 +460,97 @@
             color: var(--primary-gold);
             backdrop-filter: blur(10px);
         }
-        
+
         .cta-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 4rem;
+            margin-bottom: 1.5rem;
         }
-        
+
         .btn {
-            padding: 1.1rem 2.8rem;
+            padding: 1rem 2.2rem;
             border-radius: 50px;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1rem;
             text-decoration: none;
             transition: all 0.3s ease;
             border: 2px solid transparent;
             cursor: pointer;
             display: inline-block;
         }
-        
+
         .btn-primary {
             background: var(--gradient-primary);
             color: white;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 45px rgba(102, 126, 234, 0.5);
         }
-        
+
         .btn-secondary {
             border: 2px solid var(--primary-cyan);
             color: var(--primary-cyan);
             background: rgba(0, 255, 136, 0.05);
         }
-        
+
         .btn-secondary:hover {
             background: var(--primary-cyan);
             color: var(--dark-bg);
             box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
         }
-        
+
+        .btn-gold-outline {
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .btn-gold-outline:hover {
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-cyan-outline {
+            border: 2px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        .btn-cyan-outline:hover {
+            background: var(--primary-cyan);
+            color: var(--dark-bg);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .ecosystem-tagline {
+            font-size: 0.95rem;
+            color: var(--text-tertiary);
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
-        
+
         .wide-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 4rem 2rem;
         }
-        
+
         section {
             margin-bottom: 8rem;
         }
-        
+
         h2 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.2rem, 5vw, 3.5rem);
@@ -202,7 +561,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .section-subtitle {
             text-align: center;
             font-size: 1.2rem;
@@ -211,7 +570,245 @@
             margin: 0 auto 4rem;
             line-height: 1.7;
         }
-        
+
+        /* ===== SCROLL ANIMATION ===== */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== ECOSYSTEM OVERVIEW SECTION ===== */
+        .ecosystem-section {
+            padding: 5rem 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .ecosystem-column {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .ecosystem-column:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .ecosystem-column h3 {
+            font-size: 1.3rem;
+            color: var(--primary-cyan);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .eco-repo-list {
+            list-style: none;
+        }
+
+        .eco-repo-list li {
+            margin-bottom: 1rem;
+        }
+
+        .eco-repo-list a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .eco-repo-list a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .eco-repo-list .repo-desc {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-top: 0.2rem;
+        }
+
+        .eco-repo-note {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            line-height: 1.5;
+        }
+
+        .eco-domain-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .eco-domain-item:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .eco-domain-item .domain-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .eco-domain-item .domain-name a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .eco-domain-item .domain-name a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .eco-domain-item .eco-status {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.3rem;
+            font-weight: 600;
+        }
+
+        .eco-status.live {
+            background: rgba(0, 255, 136, 0.12);
+            color: var(--primary-cyan);
+        }
+
+        .eco-status.coming {
+            background: rgba(255, 215, 0, 0.12);
+            color: var(--primary-gold);
+        }
+
+        .eco-domain-item .domain-purpose {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-top: 0.3rem;
+            line-height: 1.5;
+        }
+
+        .eco-flow {
+            margin-top: 1rem;
+        }
+
+        .eco-flow-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+
+        .eco-flow-arrow {
+            color: var(--primary-cyan);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .eco-flow-text {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+
+        .ecosystem-actions {
+            text-align: center;
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Collapsible roadmap */
+        .collapsible-toggle {
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .collapsible-toggle:hover {
+            border-color: var(--primary-gold);
+            color: var(--primary-gold);
+        }
+
+        .collapsible-toggle .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible-toggle.open .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .collapsible-content.open {
+            max-height: 500px;
+        }
+
+        .roadmap-content {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            text-align: left;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .roadmap-content h4 {
+            color: var(--primary-gold);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .roadmap-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .roadmap-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== GOLDEN ANGLE SECTION ===== */
         .golden-angle-section {
             background: var(--darker-bg);
             padding: 5rem 2rem;
@@ -221,7 +818,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .golden-angle-section::before {
             content: '';
             position: absolute;
@@ -231,13 +828,13 @@
             height: 4px;
             background: var(--gradient-primary);
         }
-        
+
         .golden-angle-content {
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
-        
+
         .golden-number {
             font-size: clamp(3rem, 10vw, 6rem);
             font-weight: 900;
@@ -248,19 +845,19 @@
             margin: 1.5rem 0;
             letter-spacing: -0.02em;
         }
-        
+
         .golden-angle-content h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
-        
+
         .golden-angle-content p {
             font-size: 1.15rem;
             color: var(--text-secondary);
             line-height: 1.8;
         }
-        
+
         .nature-examples {
             display: flex;
             justify-content: center;
@@ -268,30 +865,31 @@
             flex-wrap: wrap;
             margin-top: 2rem;
         }
-        
+
         .nature-item {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 0.5rem;
         }
-        
+
         .nature-item span {
             font-size: 2.5rem;
         }
-        
+
         .nature-item p {
             font-size: 0.9rem;
             color: var(--text-tertiary);
         }
-        
+
+        /* ===== TECHNOLOGY DOMAIN CARDS ===== */
         .domains-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
-        
+
         .domain-card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
@@ -302,7 +900,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .domain-card::before {
             content: '';
             position: absolute;
@@ -314,49 +912,49 @@
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
-        
+
         .domain-card:hover::before {
             transform: scaleX(1);
         }
-        
+
         .domain-card:hover {
             transform: translateY(-8px);
             background: rgba(255, 255, 255, 0.06);
             border-color: rgba(255, 255, 255, 0.15);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
-        
+
         .domain-icon {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
             display: block;
         }
-        
+
         .domain-card h3 {
             font-size: 2rem;
             margin-bottom: 0.5rem;
             color: var(--primary-cyan);
             font-weight: 700;
         }
-        
+
         .domain-card .subtitle {
             font-style: italic;
             color: var(--text-tertiary);
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
         }
-        
+
         .domain-card .description {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
-        
+
         .domain-features {
             list-style: none;
             margin-top: 1.5rem;
         }
-        
+
         .domain-features li {
             padding: 0.6rem 0;
             color: var(--text-secondary);
@@ -364,21 +962,21 @@
             align-items: flex-start;
             gap: 0.75rem;
         }
-        
+
         .domain-features li::before {
-            content: '→';
+            content: '\2192';
             color: var(--primary-cyan);
             font-weight: bold;
             flex-shrink: 0;
         }
-        
+
         .domain-applications {
             background: rgba(255, 255, 255, 0.02);
             padding: 1.5rem;
             border-radius: 12px;
             margin-top: 1.5rem;
         }
-        
+
         .domain-applications h4 {
             font-size: 1rem;
             color: var(--primary-gold);
@@ -386,42 +984,43 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
-        
+
         .domain-applications ul {
             list-style: none;
         }
-        
+
         .domain-applications li {
             padding: 0.4rem 0;
             color: var(--text-tertiary);
             font-size: 0.95rem;
         }
-        
+
         .domain-applications li::before {
-            content: '•';
+            content: '\2022';
             color: var(--primary-cyan);
             margin-right: 0.75rem;
         }
-        
+
+        /* ===== METHOD SPINE ===== */
         .method-spine {
             background: var(--darker-bg);
             padding: 5rem 2rem;
             border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .method-content {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .method-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .method-item {
             text-align: center;
             padding: 2rem;
@@ -429,65 +1028,67 @@
             border-radius: 15px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .method-item h4 {
             color: var(--primary-gold);
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
-        
+
         .method-item p {
             color: var(--text-secondary);
             line-height: 1.6;
         }
-        
+
+        /* ===== ETHICS ===== */
         .ethics-section {
             background: linear-gradient(135deg, rgba(201, 42, 42, 0.15) 0%, rgba(255, 107, 107, 0.1) 100%);
             padding: 5rem 2rem;
             border-radius: 25px;
             border: 2px solid rgba(255, 107, 107, 0.2);
         }
-        
+
         .ethics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
-        
+
         .ethics-item {
             text-align: center;
         }
-        
+
         .ethics-item .icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
             display: block;
         }
-        
+
         .ethics-item h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
-        
+
         .ethics-item p {
             color: var(--text-secondary);
             line-height: 1.7;
             font-size: 1.05rem;
         }
-        
+
+        /* ===== LICENSING ===== */
         .licensing-section {
             margin-top: 6rem;
         }
-        
+
         .licensing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .tier-card {
             background: var(--card-bg);
             padding: 2.5rem 2rem;
@@ -496,29 +1097,30 @@
             transition: all 0.3s ease;
             text-align: center;
         }
-        
+
         .tier-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary-cyan);
             box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
         }
-        
+
         .tier-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-        
+
         .tier-card h3 {
             font-size: 1.6rem;
             margin-bottom: 1rem;
             color: var(--primary-cyan);
         }
-        
+
         .tier-card p {
             color: var(--text-secondary);
             line-height: 1.7;
         }
-        
+
+        /* ===== CONTACT ===== */
         .contact-section {
             text-align: center;
             background: var(--darker-bg);
@@ -526,11 +1128,11 @@
             border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
-        
+
         .contact-section h2 {
             margin-bottom: 1.5rem;
         }
-        
+
         .contact-section p {
             font-size: 1.2rem;
             color: var(--text-secondary);
@@ -540,7 +1142,7 @@
             margin-right: auto;
             line-height: 1.7;
         }
-        
+
         .contact-email {
             display: inline-flex;
             align-items: center;
@@ -554,41 +1156,126 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
-        
+
         .contact-email:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 45px rgba(102, 126, 234, 0.5);
         }
-        
+
         .founder-info {
             margin-top: 4rem;
             padding-top: 3rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .founder-info h3 {
             font-size: 1.3rem;
             color: var(--primary-gold);
             margin-bottom: 0.5rem;
         }
-        
+
         .founder-info p {
             color: var(--text-tertiary);
             font-size: 1rem;
         }
-        
+
+        /* ===== FOOTER ===== */
         footer {
-            text-align: center;
-            padding: 3rem 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-tertiary);
             font-size: 0.9rem;
         }
-        
-        footer p {
+
+        .footer-ecosystem {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 0.9rem;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .footer-col ul li .footer-desc {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            margin-top: 0.1rem;
+        }
+
+        .footer-col .footer-note {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+            line-height: 1.5;
+            margin-top: 1rem;
+        }
+
+        .footer-col .here-tag {
+            font-size: 0.7rem;
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--primary-cyan);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.3rem;
+        }
+
+        .footer-col .coming-tag {
+            font-size: 0.7rem;
+            background: rgba(255, 215, 0, 0.1);
+            color: var(--primary-gold);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            margin-left: 0.3rem;
+        }
+
+        .footer-interconnect {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-tertiary);
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-bottom p {
             margin: 0.5rem 0;
         }
-        
+
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
@@ -597,108 +1284,417 @@
             animation: bounce 2s infinite;
             font-size: 2rem;
             color: var(--text-tertiary);
+            z-index: 1;
         }
-        
+
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
             40% { transform: translateX(-50%) translateY(-10px); }
             60% { transform: translateX(-50%) translateY(-5px); }
         }
-        
+
+        /* ===== BACK TO TOP ===== */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-gold);
+            color: var(--dark-bg);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            font-weight: 700;
+        }
+
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .fade-in-section {
+                opacity: 1;
+                transform: none;
+            }
+
+            body {
+                opacity: 1;
+            }
+
+            .main-nav {
+                opacity: 1;
+            }
+
+            #particle-canvas {
+                display: none;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
+            .hero {
+                padding-top: 5rem;
+            }
+
             .hero-logo {
                 font-size: 4rem;
             }
-            
+
             .cta-buttons {
                 flex-direction: column;
                 width: 100%;
                 max-width: 400px;
             }
-            
+
             .btn {
                 width: 100%;
             }
-            
+
             .domains-grid,
             .method-grid,
             .ethics-grid,
             .licensing-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .nature-examples {
                 gap: 1.5rem;
             }
-            
+
             .contact-email {
                 font-size: 1.1rem;
                 padding: 1.2rem 2rem;
+            }
+
+            /* Nav mobile */
+            .nav-links,
+            .nav-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .mobile-overlay,
+            .mobile-menu {
+                display: block;
+            }
+
+            /* Ecosystem grid stacks */
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Footer grid stacks */
+            .footer-ecosystem {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-logo">🌻</div>
-        <h1>PHYLLUX TECHNOLOGIES</h1>
-        <p class="tagline">Biomimetic innovation leveraging nature's golden angle for revolutionary advances in satellite communications, neural interfaces, and cryptographic security</p>
-        
-        <div class="ip-badge">
-            🔐 Proprietary Technology | Patent Application In Preparation
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="#home" class="nav-logo" aria-label="Phyllux Technologies home">
+            <span class="nav-logo-emoji" aria-hidden="true">&#x1F33B;</span>
+            <span>PHYLLUX</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#ecosystem">Ecosystem</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#licensing">Licensing</a></li>
+            <li><a href="#ethics">Ethics</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="nav-dropdown" id="github-dropdown">
+                <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                    GitHub <span aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="nav-dropdown-menu" role="menu">
+                    <div class="dropdown-label">Repositories</div>
+                    <a href="https://github.com/phibronotchi-beep/biomimetic-inventions-public" target="_blank" rel="noopener noreferrer" role="menuitem">
+                        &#x1F4DA; Public Disclosure
+                        <span class="dropdown-desc">Defensive publications and public prior art</span>
+                    </a>
+                    <a href="https://github.com/phibronotchi-beep/phyllux-framework" target="_blank" rel="noopener noreferrer" role="menuitem">
+                        &#x1F527; Framework
+                        <span class="dropdown-desc">IP protection and licensing system</span>
+                    </a>
+                    <a href="https://github.com/phibronotchi-beep/phyllux-inventions-wip" target="_blank" rel="noopener noreferrer" role="menuitem">
+                        &#x1F9EA; R&amp;D (WIP)
+                        <span class="dropdown-desc">350+ research-stage technology fusions</span>
+                    </a>
+                    <a href="https://github.com/phibronotchi-beep/Phyllux-Superrepo" target="_blank" rel="noopener noreferrer" role="menuitem">
+                        &#x1F3DB; Superrepo
+                        <span class="dropdown-desc">Ecosystem coordination and strategy</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown" id="domain-dropdown">
+                <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                    .io <span class="domain-status live">active</span> <span aria-hidden="true">&#9662;</span>
+                </button>
+                <div class="nav-dropdown-menu" role="menu">
+                    <div class="dropdown-label">Phyllux Network</div>
+                    <a href="https://phyllux.io" role="menuitem">
+                        &#x1F310; phyllux.io <span class="domain-status live">Live</span>
+                        <span class="dropdown-desc">Technical hub and primary platform</span>
+                    </a>
+                    <a href="https://phyllux.com" role="menuitem">
+                        &#x1F1FA;&#x1F1F8; phyllux.com <span class="domain-status soon">Coming Soon</span>
+                        <span class="dropdown-desc">Professional commercial platform</span>
+                    </a>
+                    <a href="https://phyllux.org" role="menuitem">
+                        &#x1F91D; phyllux.org <span class="domain-status soon">Coming Soon</span>
+                        <span class="dropdown-desc">Mission-aligned foundation</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        
-        <div class="cta-buttons">
-            <a href="#technology" class="btn btn-primary">Explore Technology</a>
-            <a href="#contact" class="btn btn-secondary">Partner With Us</a>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    </nav>
+
+    <!-- Mobile overlay -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+        <button class="mobile-menu-close" id="mobile-close" aria-label="Close menu">&times;</button>
+        <a href="#home">Home</a>
+        <a href="#technology">Technology</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#about">About</a>
+        <a href="#licensing">Licensing</a>
+        <a href="#ethics">Ethics</a>
+        <a href="#contact">Contact</a>
+
+        <div class="mobile-menu-section">
+            <h4>GitHub Repositories</h4>
+            <a href="https://github.com/phibronotchi-beep/biomimetic-inventions-public" target="_blank" rel="noopener noreferrer">
+                &#x1F4DA; Public Disclosure
+                <span class="mob-desc">Defensive publications &amp; prior art</span>
+            </a>
+            <a href="https://github.com/phibronotchi-beep/phyllux-framework" target="_blank" rel="noopener noreferrer">
+                &#x1F527; Framework
+                <span class="mob-desc">IP protection &amp; licensing</span>
+            </a>
+            <a href="https://github.com/phibronotchi-beep/phyllux-inventions-wip" target="_blank" rel="noopener noreferrer">
+                &#x1F9EA; R&amp;D (WIP)
+                <span class="mob-desc">350+ technology fusions</span>
+            </a>
+            <a href="https://github.com/phibronotchi-beep/Phyllux-Superrepo" target="_blank" rel="noopener noreferrer">
+                &#x1F3DB; Superrepo
+                <span class="mob-desc">Ecosystem coordination</span>
+            </a>
         </div>
-        
-        <div class="scroll-indicator">↓</div>
+
+        <div class="mobile-menu-section">
+            <h4>Phyllux Network</h4>
+            <a href="https://phyllux.io">phyllux.io (active)</a>
+            <a href="https://phyllux.com">phyllux.com (coming soon)</a>
+            <a href="https://phyllux.org">phyllux.org (coming soon)</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <canvas id="particle-canvas" aria-hidden="true"></canvas>
+        <div class="hero-content">
+            <div class="hero-logo" aria-hidden="true">&#x1F33B;</div>
+            <h1>PHYLLUX TECHNOLOGIES</h1>
+            <p class="tagline" id="tagline-text"><span class="tagline-cursor"></span></p>
+
+            <div class="ip-badge">
+                &#x1F512; Proprietary Technology | Patent Application In Preparation
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#technology" class="btn btn-primary">Explore Technology</a>
+                <a href="#licensing" class="btn btn-gold-outline">View Patent Strategy</a>
+                <a href="https://github.com/phibronotchi-beep/biomimetic-inventions-public" target="_blank" rel="noopener noreferrer" class="btn btn-cyan-outline">Browse GitHub</a>
+                <a href="#contact" class="btn btn-secondary">Partner With Us</a>
+            </div>
+
+            <p class="ecosystem-tagline">Open research &bull; Transparent development &bull; Ethical licensing</p>
+        </div>
+
+        <div class="scroll-indicator" aria-hidden="true">&darr;</div>
     </section>
 
+    <!-- Ecosystem Section -->
+    <div class="wide-container">
+        <section id="ecosystem" class="ecosystem-section fade-in-section">
+            <h2>The Phyllux Ecosystem</h2>
+            <p class="section-subtitle">An interconnected platform spanning open research, commercial frameworks, and mission-aligned foundations</p>
+
+            <div class="ecosystem-grid">
+                <!-- Column 1: Open Research & Development -->
+                <div class="ecosystem-column">
+                    <h3>Open Research &amp; Development</h3>
+                    <ul class="eco-repo-list">
+                        <li>
+                            <a href="https://github.com/phibronotchi-beep/biomimetic-inventions-public" target="_blank" rel="noopener noreferrer">&#x1F4DA; Public Disclosure</a>
+                            <span class="repo-desc">Defensive publications and public prior art</span>
+                        </li>
+                        <li>
+                            <a href="https://github.com/phibronotchi-beep/phyllux-framework" target="_blank" rel="noopener noreferrer">&#x1F527; Framework Implementation</a>
+                            <span class="repo-desc">IP protection system and licensing templates</span>
+                        </li>
+                        <li>
+                            <a href="https://github.com/phibronotchi-beep/phyllux-inventions-wip" target="_blank" rel="noopener noreferrer">&#x1F9EA; R&amp;D Portfolio</a>
+                            <span class="repo-desc">350+ research-stage technology fusions across 14 categories</span>
+                        </li>
+                        <li>
+                            <a href="https://github.com/phibronotchi-beep/Phyllux-Superrepo" target="_blank" rel="noopener noreferrer">&#x1F3DB; Superrepo</a>
+                            <span class="repo-desc">Ecosystem coordination, strategy, and commercialization pipeline</span>
+                        </li>
+                    </ul>
+                    <p class="eco-repo-note">All repositories updated regularly with technical specifications, implementation guides, and research findings.</p>
+                </div>
+
+                <!-- Column 2: Domain Network -->
+                <div class="ecosystem-column">
+                    <h3>Domain Network</h3>
+                    <div class="eco-domain-item">
+                        <div class="domain-name">&#x1F310; <a href="https://phyllux.io">phyllux.io</a></div>
+                        <span class="eco-status live">Live &#x2705;</span>
+                        <p class="domain-purpose">Technical hub and primary platform. Complete technology documentation, licensing framework, and partnership gateway.</p>
+                    </div>
+                    <div class="eco-domain-item">
+                        <div class="domain-name">&#x1F1FA;&#x1F1F8; phyllux.com</div>
+                        <span class="eco-status coming">Coming 2026&ndash;2027</span>
+                        <p class="domain-purpose">Professional commercial platform. U.S.-focused commercial licensing, enterprise partnerships, and professional services.</p>
+                    </div>
+                    <div class="eco-domain-item">
+                        <div class="domain-name">&#x1F91D; phyllux.org</div>
+                        <span class="eco-status coming">Coming 2026&ndash;2027</span>
+                        <p class="domain-purpose">Mission-aligned foundation. Humanitarian applications, research grants, and mission-aligned partnerships (medical, space, defense).</p>
+                    </div>
+                </div>
+
+                <!-- Column 3: Integration & Interconnection -->
+                <div class="ecosystem-column">
+                    <h3>Integration &amp; Interconnection</h3>
+                    <div class="eco-flow">
+                        <div class="eco-flow-item">
+                            <span class="eco-flow-arrow">&rarr;</span>
+                            <span>GitHub repos &rarr; phyllux.io (technical documentation)</span>
+                        </div>
+                        <div class="eco-flow-item">
+                            <span class="eco-flow-arrow">&harr;</span>
+                            <span>phyllux.io &harr; phyllux.com (commercial licensing)</span>
+                        </div>
+                        <div class="eco-flow-item">
+                            <span class="eco-flow-arrow">&harr;</span>
+                            <span>phyllux.io &harr; phyllux.org (mission partnerships)</span>
+                        </div>
+                        <div class="eco-flow-item">
+                            <span class="eco-flow-arrow">&#x21BB;</span>
+                            <span>All domains &harr; GitHub (open research loop)</span>
+                        </div>
+                    </div>
+                    <p class="eco-flow-text">The Phyllux ecosystem maintains transparent research development through GitHub while channeling commercial and humanitarian applications through specialized domain platforms.</p>
+                </div>
+            </div>
+
+            <div class="ecosystem-actions">
+                <a href="https://github.com/phibronotchi-beep/biomimetic-inventions-public" target="_blank" rel="noopener noreferrer" class="btn btn-cyan-outline">Explore GitHub Repositories</a>
+                <button class="collapsible-toggle" id="roadmap-toggle" aria-expanded="false">
+                    Future Domains Roadmap <span class="toggle-icon" aria-hidden="true">&#9662;</span>
+                </button>
+            </div>
+
+            <div class="collapsible-content" id="roadmap-content">
+                <div class="roadmap-content">
+                    <h4>phyllux.com &mdash; American Commercial Market</h4>
+                    <p>Will focus on the American commercial market with enterprise sales, professional integration services, and corporate partnership management. Designed for Fortune 500 companies, defense contractors, and technology enterprises seeking commercial licenses.</p>
+                    <h4>phyllux.org &mdash; Foundation &amp; Humanitarian</h4>
+                    <p>Will focus on foundation activities, research grants, humanitarian licensing (medical devices, accessibility tech), and academic partnerships. Preferential terms for organizations advancing human welfare through technology.</p>
+                    <h4>phyllux.io &mdash; Central Technical Hub</h4>
+                    <p>Remains the central technical hub linking all platforms. Complete technology documentation, open research coordination, and the primary gateway for all partnership inquiries and technical exploration.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
     <div class="container">
-        <section class="golden-angle-section">
+        <section class="golden-angle-section fade-in-section" id="about">
             <div class="golden-angle-content">
                 <h3>The Golden Angle</h3>
-                <div class="golden-number">137.508°</div>
-                <p>This mathematical constant appears throughout nature—from the spiral arrangement of sunflower seeds to the branching patterns of trees, from the scales of pinecones to the structure of galaxies. It represents the most efficient way to pack elements in space without gaps or overlaps. We've adapted this ancient pattern for modern technological challenges.</p>
-                
+                <div class="golden-number">137.508&deg;</div>
+                <p>This mathematical constant appears throughout nature&mdash;from the spiral arrangement of sunflower seeds to the branching patterns of trees, from the scales of pinecones to the structure of galaxies. It represents the most efficient way to pack elements in space without gaps or overlaps. We've adapted this ancient pattern for modern technological challenges.</p>
+
                 <div class="nature-examples">
                     <div class="nature-item">
-                        <span>🌻</span>
+                        <span>&#x1F33B;</span>
                         <p>Sunflowers</p>
                     </div>
                     <div class="nature-item">
-                        <span>🍍</span>
+                        <span>&#x1F34D;</span>
                         <p>Pineapples</p>
                     </div>
                     <div class="nature-item">
-                        <span>🌲</span>
+                        <span>&#x1F332;</span>
                         <p>Pinecones</p>
                     </div>
                     <div class="nature-item">
-                        <span>🌹</span>
+                        <span>&#x1F339;</span>
                         <p>Rose Petals</p>
                     </div>
                     <div class="nature-item">
-                        <span>🌀</span>
+                        <span>&#x1F300;</span>
                         <p>Galaxies</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="technology">
+        <section id="technology" class="fade-in-section">
             <h2>Three Domains. One Mathematical Foundation.</h2>
-            <p class="section-subtitle">The phyllotactic method—based on the golden angle and 121-node geometry—provides a unified architectural spine across dramatically different technological applications.</p>
-            
+            <p class="section-subtitle">The phyllotactic method&mdash;based on the golden angle and 121-node geometry&mdash;provides a unified architectural spine across dramatically different technological applications.</p>
+
             <div class="domains-grid">
                 <div class="domain-card">
-                    <span class="domain-icon">📡</span>
+                    <span class="domain-icon">&#x1F4E1;</span>
                     <h3>PHYLLUX WAVE</h3>
                     <p class="subtitle">Golden-Angle Phyllotactic Antenna Array (GAFAA)</p>
                     <p class="description">Antenna arrays utilizing phyllotactic element positioning achieve superior performance characteristics compared to conventional grid-based designs. The golden-angle spacing pattern reduces mutual coupling between elements while maximizing spatial efficiency.</p>
-                    
+
                     <ul class="domain-features">
                         <li>121-node phyllotactic geometry with position 61 phase reference</li>
                         <li>Reduced mutual coupling between antenna elements</li>
@@ -706,7 +1702,7 @@
                         <li>Scalable across frequency bands and array sizes</li>
                         <li>Flexible substrate compatibility</li>
                     </ul>
-                    
+
                     <div class="domain-applications">
                         <h4>Target Applications</h4>
                         <ul>
@@ -720,11 +1716,11 @@
                 </div>
 
                 <div class="domain-card">
-                    <span class="domain-icon">🧠</span>
+                    <span class="domain-icon">&#x1F9E0;</span>
                     <h3>PHYLLUX MESH</h3>
                     <p class="subtitle">Phyllotactic Neural Mesh (PNM)</p>
                     <p class="description">Neural interface electrode arrays based on phyllotactic positioning provide optimal cortical coverage with minimal electrode count. The golden-angle arrangement eliminates blind spots while maintaining biocompatibility and surgical feasibility.</p>
-                    
+
                     <ul class="domain-features">
                         <li>Optimal coverage uniformity across target regions</li>
                         <li>Minimal spatial redundancy and blind spots</li>
@@ -732,7 +1728,7 @@
                         <li>Biocompatible materials and flexible substrates</li>
                         <li>Scalable density for different applications</li>
                     </ul>
-                    
+
                     <div class="domain-applications">
                         <h4>Target Applications</h4>
                         <ul>
@@ -746,11 +1742,11 @@
                 </div>
 
                 <div class="domain-card">
-                    <span class="domain-icon">🔐</span>
+                    <span class="domain-icon">&#x1F510;</span>
                     <h3>PHYLLUX VAULT</h3>
                     <p class="subtitle">Phyllotactic Key Derivation (PhiKey)</p>
                     <p class="description">Cryptographic systems employing golden-angle transformations and phyllotactic indexing for key derivation and entropy generation. The structured nature of phyllotactic patterns provides reproducible yet complex keyspaces with enhanced security properties.</p>
-                    
+
                     <ul class="domain-features">
                         <li>Structured entropy generation using golden-angle rotations</li>
                         <li>Deterministic reproducibility from seed values</li>
@@ -758,7 +1754,7 @@
                         <li>Scalable keyspace complexity (121-position architecture)</li>
                         <li>No backdoors or hidden access mechanisms</li>
                     </ul>
-                    
+
                     <div class="domain-applications">
                         <h4>Target Applications</h4>
                         <ul>
@@ -770,57 +1766,56 @@
                         </ul>
                     </div>
                 </div>
-           <div class="domain-card">
-    <span class="domain-icon">🔗</span>
-    <h3>PHYLLUX CORE</h3>
-    <p class="subtitle">Integrated Biomimetic System (IBS)</p>
-    <p class="description">Unified control architecture enabling cross-domain integration of Wave, Mesh, and Vault systems. Core provides the protocols, timing synchronization, and emergent-property detection frameworks that allow phyllotactic subsystems to operate as a cohesive whole.</p>
-    
-    <ul class="domain-features">
-        <li>Unified coordinate system across all domains</li>
-        <li>Cross-domain timing and phase synchronization</li>
-        <li>Integration protocols for multi-modal operation</li>
-        <li>Emergent property detection and optimization</li>
-        <li>System-level control and orchestration</li>
-    </ul>
-    
-    <div class="domain-applications">
-        <h4>Target Applications</h4>
-        <ul>
-            <li>Aerospace medical monitoring (Wave + Mesh)</li>
-            <li>Secure neural interfaces (Mesh + Vault)</li>
-            <li>Encrypted satellite communications (Wave + Vault)</li>
-            <li>Multi-domain defense systems</li>
-            <li>Integrated research platforms</li>
-        </ul>
-    </div>
-</div>
-			</div>
+
+                <div class="domain-card">
+                    <span class="domain-icon">&#x1F517;</span>
+                    <h3>PHYLLUX CORE</h3>
+                    <p class="subtitle">Integrated Biomimetic System (IBS)</p>
+                    <p class="description">Unified control architecture enabling cross-domain integration of Wave, Mesh, and Vault systems. Core provides the protocols, timing synchronization, and emergent-property detection frameworks that allow phyllotactic subsystems to operate as a cohesive whole.</p>
+
+                    <ul class="domain-features">
+                        <li>Unified coordinate system across all domains</li>
+                        <li>Cross-domain timing and phase synchronization</li>
+                        <li>Integration protocols for multi-modal operation</li>
+                        <li>Emergent property detection and optimization</li>
+                        <li>System-level control and orchestration</li>
+                    </ul>
+
+                    <div class="domain-applications">
+                        <h4>Target Applications</h4>
+                        <ul>
+                            <li>Aerospace medical monitoring (Wave + Mesh)</li>
+                            <li>Secure neural interfaces (Mesh + Vault)</li>
+                            <li>Encrypted satellite communications (Wave + Vault)</li>
+                            <li>Multi-domain defense systems</li>
+                            <li>Integrated research platforms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        
-		
-			<section class="method-spine" style="margin-top: 8rem;">
+        <section class="method-spine fade-in-section" style="margin-top: 8rem;">
             <div class="method-content">
                 <h2>The Phyllotactic Method</h2>
                 <p class="section-subtitle">A unified mathematical framework providing the architectural foundation for all Phyllux technologies</p>
-                
+
                 <div class="method-grid">
                     <div class="method-item">
                         <h4>Golden Angle Spacing</h4>
-                        <p>Elements positioned at 137.508° intervals around a central point, creating optimal distribution without gaps or clusters</p>
+                        <p>Elements positioned at 137.508&deg; intervals around a central point, creating optimal distribution without gaps or clusters</p>
                     </div>
-                    
+
                     <div class="method-item">
                         <h4>121-Node Geometry</h4>
                         <p>Complete system architecture with up to 121 elements arranged in phyllotactic spiral patterns</p>
                     </div>
-                    
+
                     <div class="method-item">
                         <h4>Position 61 Reference</h4>
                         <p>Designated anchor point serving as phase reference (Wave), signal reference (Mesh), or key anchor (Vault)</p>
                     </div>
-                    
+
                     <div class="method-item">
                         <h4>Scale Invariance</h4>
                         <p>Geometric relationships remain constant across physical scales, from micrometers to meters</p>
@@ -829,30 +1824,27 @@
             </div>
         </section>
     </div>
-    
-	
-<div class="wide-container">
-        
-		
-		<section class="ethics-section">
+
+    <div class="wide-container">
+        <section id="ethics" class="ethics-section fade-in-section">
             <h2>Built on Ethical Foundations</h2>
             <p class="section-subtitle" style="color: var(--text-secondary);">Technology development guided by clear moral boundaries and humanitarian priorities</p>
-            
+
             <div class="ethics-grid">
                 <div class="ethics-item">
-                    <span class="icon">🛡️</span>
+                    <span class="icon">&#x1F6E1;&#xFE0F;</span>
                     <h3>Defense, Not Offense</h3>
                     <p>Phyllux technology will not be licensed for weapons systems, autonomous kill chains, or offensive military applications. Defensive systems, protective technologies, and non-lethal applications are within scope.</p>
                 </div>
-                
+
                 <div class="ethics-item">
-                    <span class="icon">👁️</span>
-                    <h3>Privacy & Human Rights</h3>
+                    <span class="icon">&#x1F441;&#xFE0F;</span>
+                    <h3>Privacy &amp; Human Rights</h3>
                     <p>No licensing for mass surveillance, abusive monitoring, or technologies that enable oppression. Applications must respect individual privacy and human dignity.</p>
                 </div>
-                
+
                 <div class="ethics-item">
-                    <span class="icon">🔓</span>
+                    <span class="icon">&#x1F513;</span>
                     <h3>Transparent Security</h3>
                     <p>All cryptographic systems are free from backdoors and hidden access mechanisms. Security through transparency and mathematical rigor, not through obscurity or covert access.</p>
                 </div>
@@ -861,62 +1853,364 @@
     </div>
 
     <div class="container">
-        <section class="licensing-section">
-            <h2>Partnership & Licensing Model</h2>
+        <section id="licensing" class="licensing-section fade-in-section">
+            <h2>Partnership &amp; Licensing Model</h2>
             <p class="section-subtitle">Flexible engagement tiers designed to align with partner mission, scale, and strategic objectives</p>
-            
+
             <div class="licensing-grid">
                 <div class="tier-card">
-                    <div class="tier-icon">🏆</div>
+                    <div class="tier-icon">&#x1F3C6;</div>
                     <h3>Pioneer Tier</h3>
                     <p>Early-stage strategic partners and first movers. Equity participation with preferential royalty structures. Collaborative development opportunities and co-invention pathways.</p>
                 </div>
-                
+
                 <div class="tier-card">
-                    <div class="tier-icon">🚀</div>
+                    <div class="tier-icon">&#x1F680;</div>
                     <h3>Mission-Aligned</h3>
                     <p>Organizations pursuing humanitarian objectives, space exploration, or medical advancement. Preferential licensing terms (1-3% royalty) for mission-aligned applications.</p>
                 </div>
-                
+
                 <div class="tier-card">
-                    <div class="tier-icon">💼</div>
+                    <div class="tier-icon">&#x1F4BC;</div>
                     <h3>Commercial</h3>
                     <p>Standard commercial licensing for industrial applications. Transparent royalty structure (3-5%) with volume-based considerations and clear territorial rights.</p>
                 </div>
-                
+
                 <div class="tier-card">
-                    <div class="tier-icon">🎓</div>
-                    <h3>Academic & Research</h3>
+                    <div class="tier-icon">&#x1F393;</div>
+                    <h3>Academic &amp; Research</h3>
                     <p>Free licensing for non-commercial research, educational institutions, and open science initiatives. No royalties, no patent enforcement for qualifying use cases.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
+        <section id="contact" class="contact-section fade-in-section">
             <h2>Partner With Phyllux</h2>
             <p>Interested in licensing Phyllux technology for your applications? Exploring strategic partnership opportunities? Discussing mission-aligned collaboration in space, medical, or defense sectors?</p>
-            
+
             <a href="mailto:phibronotchi@gmail.com" class="contact-email">
-                <span>📧</span>
+                <span>&#x1F4E7;</span>
                 <span>phibronotchi@gmail.com</span>
             </a>
 
             <div class="founder-info">
                 <h3>David Edward Sproule</h3>
-                <p>Inventor & Founder</p>
+                <p>Inventor &amp; Founder</p>
                 <p>Edmonton, Alberta, Canada</p>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Phyllux Technologies. All rights reserved.</p>
-        <p style="margin-top: 1rem; font-size: 0.85rem;">
-            Phyllux®, GAFAA®, PNM®, and PhiKey® are trademarks of Phyllux Technologies.
-        </p>
-        <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-tertiary);">
-            USPTO Grace Period: January 7, 2026 - January 7, 2027
-        </p>
+        <div class="footer-ecosystem">
+            <div class="footer-col">
+                <h4>GitHub Repositories</h4>
+                <ul>
+                    <li>
+                        <a href="https://github.com/phibronotchi-beep/biomimetic-inventions-public" target="_blank" rel="noopener noreferrer">Public Disclosure</a>
+                        <span class="footer-desc">Defensive publications and public prior art</span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/phibronotchi-beep/phyllux-framework" target="_blank" rel="noopener noreferrer">Framework</a>
+                        <span class="footer-desc">IP protection and licensing system</span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/phibronotchi-beep/phyllux-inventions-wip" target="_blank" rel="noopener noreferrer">R&amp;D Portfolio</a>
+                        <span class="footer-desc">350+ research-stage technology fusions</span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/phibronotchi-beep/Phyllux-Superrepo" target="_blank" rel="noopener noreferrer">Superrepo</a>
+                        <span class="footer-desc">Ecosystem coordination and strategy</span>
+                    </li>
+                </ul>
+                <p class="footer-note">Star our repositories on GitHub to follow development progress.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Phyllux Network</h4>
+                <ul>
+                    <li>
+                        <a href="https://phyllux.io">phyllux.io</a> <span class="here-tag">you are here</span>
+                        <span class="footer-desc">Technical hub and primary platform</span>
+                    </li>
+                    <li>
+                        <a href="https://phyllux.com">phyllux.com</a> <span class="coming-tag">coming soon</span>
+                        <span class="footer-desc">Professional commercial platform</span>
+                    </li>
+                    <li>
+                        <a href="https://phyllux.org">phyllux.org</a> <span class="coming-tag">coming soon</span>
+                        <span class="footer-desc">Mission-aligned foundation</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#ecosystem">Ecosystem</a></li>
+                    <li><a href="#ethics">Ethics</a></li>
+                    <li><a href="#licensing">Licensing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-interconnect">
+            The Phyllux ecosystem maintains transparency through open-source GitHub development while providing structured commercial and humanitarian pathways through specialized platforms.
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Phyllux Technologies. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">
+                Phyllux&reg;, GAFAA&reg;, PNM&reg;, and PhiKey&reg; are trademarks of Phyllux Technologies.
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-tertiary);">
+                USPTO Grace Period: January 7, 2026 - January 7, 2027
+            </p>
+        </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top">&uarr;</button>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // ===== TYPEWRITER EFFECT =====
+        var taglineEl = document.getElementById('tagline-text');
+        var taglineText = 'Biomimetic innovation leveraging nature\u2019s golden angle for revolutionary advances in satellite communications, neural interfaces, and cryptographic security';
+        var charIndex = 0;
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function typeWriter() {
+            if (prefersReducedMotion) {
+                taglineEl.textContent = taglineText;
+                return;
+            }
+            if (charIndex < taglineText.length) {
+                // Set text content plus cursor
+                taglineEl.innerHTML = taglineText.substring(0, charIndex + 1) + '<span class="tagline-cursor"></span>';
+                charIndex++;
+                setTimeout(typeWriter, 50);
+            } else {
+                taglineEl.innerHTML = taglineText + '<span class="tagline-cursor"></span>';
+            }
+        }
+
+        // Start typewriter after a short delay
+        setTimeout(typeWriter, 800);
+
+        // ===== PARTICLE EFFECT =====
+        var canvas = document.getElementById('particle-canvas');
+        if (canvas && !prefersReducedMotion) {
+            var ctx = canvas.getContext('2d');
+            var particles = [];
+            var particleCount = 25;
+
+            function resizeCanvas() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+
+            function createParticle() {
+                return {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    opacity: Math.random() * 0.2 + 0.1,
+                    opacityDir: (Math.random() - 0.5) * 0.002,
+                    size: 2
+                };
+            }
+
+            function initParticles() {
+                particles = [];
+                for (var i = 0; i < particleCount; i++) {
+                    particles.push(createParticle());
+                }
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (var i = 0; i < particles.length; i++) {
+                    var p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.opacity += p.opacityDir;
+
+                    if (p.opacity <= 0.1 || p.opacity >= 0.3) {
+                        p.opacityDir *= -1;
+                    }
+
+                    // Wrap around
+                    if (p.x < 0) p.x = canvas.width;
+                    if (p.x > canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = canvas.height;
+                    if (p.y > canvas.height) p.y = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(255, 215, 0, ' + p.opacity + ')';
+                    ctx.fill();
+                }
+                requestAnimationFrame(animateParticles);
+            }
+
+            resizeCanvas();
+            initParticles();
+            animateParticles();
+            window.addEventListener('resize', function() {
+                resizeCanvas();
+            });
+        }
+
+        // ===== NAVIGATION SCROLL BEHAVIOR =====
+        var nav = document.querySelector('.main-nav');
+        var scrollProgress = document.getElementById('scroll-progress');
+        var backToTop = document.getElementById('back-to-top');
+
+        function onScroll() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            // Nav scrolled state
+            if (scrollTop > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Scroll progress bar
+            if (docHeight > 0) {
+                var progress = (scrollTop / docHeight) * 100;
+                scrollProgress.style.width = progress + '%';
+            }
+
+            // Back to top button
+            if (scrollTop > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll(); // Initial call
+
+        // Back to top click
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== DROPDOWN MENUS =====
+        var dropdowns = document.querySelectorAll('.nav-dropdown');
+        dropdowns.forEach(function(dropdown) {
+            var toggle = dropdown.querySelector('.nav-dropdown-toggle');
+            toggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var isOpen = dropdown.classList.contains('open');
+                // Close all
+                dropdowns.forEach(function(d) {
+                    d.classList.remove('open');
+                    d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+                });
+                if (!isOpen) {
+                    dropdown.classList.add('open');
+                    toggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        document.addEventListener('click', function() {
+            dropdowns.forEach(function(d) {
+                d.classList.remove('open');
+                d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ===== MOBILE MENU =====
+        var hamburger = document.getElementById('hamburger-btn');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var mobileOverlay = document.getElementById('mobile-overlay');
+        var mobileClose = document.getElementById('mobile-close');
+
+        function openMobile() {
+            mobileMenu.classList.add('open');
+            mobileOverlay.classList.add('open');
+            hamburger.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobile() {
+            mobileMenu.classList.remove('open');
+            mobileOverlay.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', openMobile);
+        mobileClose.addEventListener('click', closeMobile);
+        mobileOverlay.addEventListener('click', closeMobile);
+
+        // Close mobile menu on link click
+        var mobileLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+        mobileLinks.forEach(function(link) {
+            link.addEventListener('click', closeMobile);
+        });
+
+        // ===== COLLAPSIBLE ROADMAP =====
+        var roadmapToggle = document.getElementById('roadmap-toggle');
+        var roadmapContent = document.getElementById('roadmap-content');
+
+        roadmapToggle.addEventListener('click', function() {
+            var isOpen = roadmapContent.classList.contains('open');
+            roadmapContent.classList.toggle('open');
+            roadmapToggle.classList.toggle('open');
+            roadmapToggle.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
+        if (!prefersReducedMotion) {
+            var fadeElements = document.querySelectorAll('.fade-in-section');
+            var observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            fadeElements.forEach(function(el) {
+                observer.observe(el);
+            });
+        } else {
+            // If reduced motion, show everything immediately
+            var fadeElements = document.querySelectorAll('.fade-in-section');
+            fadeElements.forEach(function(el) {
+                el.classList.add('visible');
+            });
+        }
+
+        // ===== PARALLAX HERO =====
+        if (!prefersReducedMotion) {
+            var heroContent = document.querySelector('.hero-content');
+            window.addEventListener('scroll', function() {
+                var scrollTop = window.pageYOffset;
+                if (scrollTop < window.innerHeight && heroContent) {
+                    heroContent.style.transform = 'translateY(' + (scrollTop * 0.3) + 'px)';
+                }
+            }, { passive: true });
+        }
+    })();
+    </script>
 </body>
 </html>
