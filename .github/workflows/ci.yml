@@ -29,7 +29,7 @@ jobs:
           fi
       
       - name: Check internal links
-        uses: lycheeverse/lychee-action@v1.8.0
+        uses: lycheeverse/lychee-action@v2.7.0
         with:
           args: --accept 200,403,429 --exclude-all-private --exclude-mail --no-progress --format detailed
           args: --fail-on 404,500,503
