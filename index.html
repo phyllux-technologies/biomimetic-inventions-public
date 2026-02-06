@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Phyllux Technologies | Biomimetic Innovation Across Wave, Mesh, and Vault</title>
+    <meta name="description" content="Phyllux Technologies: Revolutionary biomimetic systems using nature's golden angle (137.508°) for next-generation satellite antennas, brain-computer interfaces, and cryptographic security.">
+    <meta name="keywords" content="phyllotaxis, golden angle, biomimetic technology, antenna arrays, neural interfaces, BCI, cryptography, SpaceX, Neuralink, phyllux">
+    <meta name="author" content="David Edward Sproule">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Phyllux Technologies | Nature's Geometry Meets Advanced Technology">
+    <meta property="og:description" content="Revolutionary biomimetic systems using the golden angle for satellite communications, brain-computer interfaces, and cryptographic security.">
+    <meta property="og:url" content="https://phyllux.io">
+    <meta property="og:site_name" content="Phyllux Technologies">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Phyllux Technologies | Biomimetic Innovation">
+    <meta name="twitter:description" content="Revolutionary biomimetic systems using nature's golden angle for next-generation technology.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #ffd700;
+            --primary-cyan: #00ff88;
+            --primary-purple: #667eea;
+            --dark-bg: #0a0a0f;
+            --darker-bg: #050508;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-primary: #ffffff;
+            --text-secondary: #a8b2c1;
+            --text-tertiary: #6b7280;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(to right, #f093fb 0%, #f5576c 100%);
+            --gradient-success: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            animation: pulse 20s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .hero-logo {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            animation: rotate 20s linear infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.3));
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-cyan), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .hero .tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            line-height: 1.6;
+        }
+        
+        .ip-badge {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid var(--primary-gold);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 3rem;
+            color: var(--primary-gold);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+        
+        .btn {
+            padding: 1.1rem 2.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(102, 126, 234, 0.5);
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+            background: rgba(0, 255, 136, 0.05);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-cyan);
+            color: var(--dark-bg);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .wide-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        section {
+            margin-bottom: 8rem;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            line-height: 1.7;
+        }
+        
+        .golden-angle-section {
+            background: var(--darker-bg);
+            padding: 5rem 2rem;
+            border-radius: 25px;
+            margin-bottom: 6rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .golden-angle-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .golden-angle-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .golden-number {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
+            background: var(--gradient-success);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1.5rem 0;
+            letter-spacing: -0.02em;
+        }
+        
+        .golden-angle-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .golden-angle-content p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .nature-examples {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .nature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nature-item span {
+            font-size: 2.5rem;
+        }
+        
+        .nature-item p {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+        }
+        
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .domain-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .domain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .domain-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .domain-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+        
+        .domain-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .domain-card h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-cyan);
+            font-weight: 700;
+        }
+        
+        .domain-card .subtitle {
+            font-style: italic;
+            color: var(--text-tertiary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .domain-card .description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .domain-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .domain-features li {
+            padding: 0.6rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        
+        .domain-features li::before {
+            content: '→';
+            color: var(--primary-cyan);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .domain-applications {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+        }
+        
+        .domain-applications h4 {
+            font-size: 1rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .domain-applications ul {
+            list-style: none;
+        }
+        
+        .domain-applications li {
+            padding: 0.4rem 0;
+            color: var(--text-tertiary);
+            font-size: 0.95rem;
+        }
+        
+        .domain-applications li::before {
+            content: '•';
+            color: var(--primary-cyan);
+            margin-right: 0.75rem;
+        }
+        
+        .method-spine {
+            background: var(--darker-bg);
+            padding: 5rem 2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .method-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .method-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .method-item h4 {
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .method-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .ethics-section {
+            background: linear-gradient(135deg, rgba(201, 42, 42, 0.15) 0%, rgba(255, 107, 107, 0.1) 100%);
+            padding: 5rem 2rem;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 107, 107, 0.2);
+        }
+        
+        .ethics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .ethics-item {
+            text-align: center;
+        }
+        
+        .ethics-item .icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .ethics-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .ethics-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .licensing-section {
+            margin-top: 6rem;
+        }
+        
+        .licensing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .tier-card {
+            background: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+        }
+        
+        .tier-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tier-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+        }
+        
+        .tier-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .contact-section {
+            text-align: center;
+            background: var(--darker-bg);
+            padding: 5rem 2rem;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .contact-section h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-section p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+        
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.4rem;
+            background: var(--gradient-primary);
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .contact-email:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(102, 126, 234, 0.5);
+        }
+        
+        .founder-info {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .founder-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .founder-info p {
+            color: var(--text-tertiary);
+            font-size: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+            color: var(--text-tertiary);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-logo {
+                font-size: 4rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .domains-grid,
+            .method-grid,
+            .ethics-grid,
+            .licensing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nature-examples {
+                gap: 1.5rem;
+            }
+            
+            .contact-email {
+                font-size: 1.1rem;
+                padding: 1.2rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-logo">🌻</div>
+        <h1>PHYLLUX TECHNOLOGIES</h1>
+        <p class="tagline">Biomimetic innovation leveraging nature's golden angle for revolutionary advances in satellite communications, neural interfaces, and cryptographic security</p>
+        
+        <div class="ip-badge">
+            🔐 Proprietary Technology | Patent Application In Preparation
+        </div>
+        
+        <div class="cta-buttons">
+            <a href="#technology" class="btn btn-primary">Explore Technology</a>
+            <a href="#contact" class="btn btn-secondary">Partner With Us</a>
+        </div>
+        
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <div class="container">
+        <section class="golden-angle-section">
+            <div class="golden-angle-content">
+                <h3>The Golden Angle</h3>
+                <div class="golden-number">137.508°</div>
+                <p>This mathematical constant appears throughout nature—from the spiral arrangement of sunflower seeds to the branching patterns of trees, from the scales of pinecones to the structure of galaxies. It represents the most efficient way to pack elements in space without gaps or overlaps. We've adapted this ancient pattern for modern technological challenges.</p>
+                
+                <div class="nature-examples">
+                    <div class="nature-item">
+                        <span>🌻</span>
+                        <p>Sunflowers</p>
+                    </div>
+                    <div class="nature-item">
+                        <span>🍍</span>
+                        <p>Pineapples</p>
+                    </div>
+                    <div class="nature-item">
+                        <span>🌲</span>
+                        <p>Pinecones</p>
+                    </div>
+                    <div class="nature-item">
+                        <span>🌹</span>
+                        <p>Rose Petals</p>
+                    </div>
+                    <div class="nature-item">
+                        <span>🌀</span>
+                        <p>Galaxies</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="technology">
+            <h2>Three Domains. One Mathematical Foundation.</h2>
+            <p class="section-subtitle">The phyllotactic method—based on the golden angle and 121-node geometry—provides a unified architectural spine across dramatically different technological applications.</p>
+            
+            <div class="domains-grid">
+                <div class="domain-card">
+                    <span class="domain-icon">📡</span>
+                    <h3>PHYLLUX WAVE</h3>
+                    <p class="subtitle">Golden-Angle Phyllotactic Antenna Array (GAFAA)</p>
+                    <p class="description">Antenna arrays utilizing phyllotactic element positioning achieve superior performance characteristics compared to conventional grid-based designs. The golden-angle spacing pattern reduces mutual coupling between elements while maximizing spatial efficiency.</p>
+                    
+                    <ul class="domain-features">
+                        <li>121-node phyllotactic geometry with position 61 phase reference</li>
+                        <li>Reduced mutual coupling between antenna elements</li>
+                        <li>Superior packing density and coverage uniformity</li>
+                        <li>Scalable across frequency bands and array sizes</li>
+                        <li>Flexible substrate compatibility</li>
+                    </ul>
+                    
+                    <div class="domain-applications">
+                        <h4>Target Applications</h4>
+                        <ul>
+                            <li>Satellite communications (LEO, MEO, GEO)</li>
+                            <li>Phased-array radar systems</li>
+                            <li>5G/6G network infrastructure</li>
+                            <li>Deep-space communications</li>
+                            <li>Aerospace and defense systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <span class="domain-icon">🧠</span>
+                    <h3>PHYLLUX MESH</h3>
+                    <p class="subtitle">Phyllotactic Neural Mesh (PNM)</p>
+                    <p class="description">Neural interface electrode arrays based on phyllotactic positioning provide optimal cortical coverage with minimal electrode count. The golden-angle arrangement eliminates blind spots while maintaining biocompatibility and surgical feasibility.</p>
+                    
+                    <ul class="domain-features">
+                        <li>Optimal coverage uniformity across target regions</li>
+                        <li>Minimal spatial redundancy and blind spots</li>
+                        <li>Reduced electrode count for equivalent coverage</li>
+                        <li>Biocompatible materials and flexible substrates</li>
+                        <li>Scalable density for different applications</li>
+                    </ul>
+                    
+                    <div class="domain-applications">
+                        <h4>Target Applications</h4>
+                        <ul>
+                            <li>Brain-computer interfaces (motor/sensory)</li>
+                            <li>Neural recording and stimulation</li>
+                            <li>Medical diagnostics (epilepsy, Parkinson's)</li>
+                            <li>Neural prosthetics and restoration</li>
+                            <li>Research neuroscience platforms</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <span class="domain-icon">🔐</span>
+                    <h3>PHYLLUX VAULT</h3>
+                    <p class="subtitle">Phyllotactic Key Derivation (PhiKey)</p>
+                    <p class="description">Cryptographic systems employing golden-angle transformations and phyllotactic indexing for key derivation and entropy generation. The structured nature of phyllotactic patterns provides reproducible yet complex keyspaces with enhanced security properties.</p>
+                    
+                    <ul class="domain-features">
+                        <li>Structured entropy generation using golden-angle rotations</li>
+                        <li>Deterministic reproducibility from seed values</li>
+                        <li>Position 61 anchor point for key initialization</li>
+                        <li>Scalable keyspace complexity (121-position architecture)</li>
+                        <li>No backdoors or hidden access mechanisms</li>
+                    </ul>
+                    
+                    <div class="domain-applications">
+                        <h4>Target Applications</h4>
+                        <ul>
+                            <li>Military and defense cryptography</li>
+                            <li>Secure key generation and management</li>
+                            <li>Financial transaction security</li>
+                            <li>Secure communications infrastructure</li>
+                            <li>Blockchain and distributed systems</li>
+                        </ul>
+                    </div>
+                </div>
+           <div class="domain-card">
+    <span class="domain-icon">🔗</span>
+    <h3>PHYLLUX CORE</h3>
+    <p class="subtitle">Integrated Biomimetic System (IBS)</p>
+    <p class="description">Unified control architecture enabling cross-domain integration of Wave, Mesh, and Vault systems. Core provides the protocols, timing synchronization, and emergent-property detection frameworks that allow phyllotactic subsystems to operate as a cohesive whole.</p>
+    
+    <ul class="domain-features">
+        <li>Unified coordinate system across all domains</li>
+        <li>Cross-domain timing and phase synchronization</li>
+        <li>Integration protocols for multi-modal operation</li>
+        <li>Emergent property detection and optimization</li>
+        <li>System-level control and orchestration</li>
+    </ul>
+    
+    <div class="domain-applications">
+        <h4>Target Applications</h4>
+        <ul>
+            <li>Aerospace medical monitoring (Wave + Mesh)</li>
+            <li>Secure neural interfaces (Mesh + Vault)</li>
+            <li>Encrypted satellite communications (Wave + Vault)</li>
+            <li>Multi-domain defense systems</li>
+            <li>Integrated research platforms</li>
+        </ul>
+    </div>
+</div>
+			</div>
+        </section>
+
+        
+		
+			<section class="method-spine" style="margin-top: 8rem;">
+            <div class="method-content">
+                <h2>The Phyllotactic Method</h2>
+                <p class="section-subtitle">A unified mathematical framework providing the architectural foundation for all Phyllux technologies</p>
+                
+                <div class="method-grid">
+                    <div class="method-item">
+                        <h4>Golden Angle Spacing</h4>
+                        <p>Elements positioned at 137.508° intervals around a central point, creating optimal distribution without gaps or clusters</p>
+                    </div>
+                    
+                    <div class="method-item">
+                        <h4>121-Node Geometry</h4>
+                        <p>Complete system architecture with up to 121 elements arranged in phyllotactic spiral patterns</p>
+                    </div>
+                    
+                    <div class="method-item">
+                        <h4>Position 61 Reference</h4>
+                        <p>Designated anchor point serving as phase reference (Wave), signal reference (Mesh), or key anchor (Vault)</p>
+                    </div>
+                    
+                    <div class="method-item">
+                        <h4>Scale Invariance</h4>
+                        <p>Geometric relationships remain constant across physical scales, from micrometers to meters</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+	
+<div class="wide-container">
+        
+		
+		<section class="ethics-section">
+            <h2>Built on Ethical Foundations</h2>
+            <p class="section-subtitle" style="color: var(--text-secondary);">Technology development guided by clear moral boundaries and humanitarian priorities</p>
+            
+            <div class="ethics-grid">
+                <div class="ethics-item">
+                    <span class="icon">🛡️</span>
+                    <h3>Defense, Not Offense</h3>
+                    <p>Phyllux technology will not be licensed for weapons systems, autonomous kill chains, or offensive military applications. Defensive systems, protective technologies, and non-lethal applications are within scope.</p>
+                </div>
+                
+                <div class="ethics-item">
+                    <span class="icon">👁️</span>
+                    <h3>Privacy & Human Rights</h3>
+                    <p>No licensing for mass surveillance, abusive monitoring, or technologies that enable oppression. Applications must respect individual privacy and human dignity.</p>
+                </div>
+                
+                <div class="ethics-item">
+                    <span class="icon">🔓</span>
+                    <h3>Transparent Security</h3>
+                    <p>All cryptographic systems are free from backdoors and hidden access mechanisms. Security through transparency and mathematical rigor, not through obscurity or covert access.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section class="licensing-section">
+            <h2>Partnership & Licensing Model</h2>
+            <p class="section-subtitle">Flexible engagement tiers designed to align with partner mission, scale, and strategic objectives</p>
+            
+            <div class="licensing-grid">
+                <div class="tier-card">
+                    <div class="tier-icon">🏆</div>
+                    <h3>Pioneer Tier</h3>
+                    <p>Early-stage strategic partners and first movers. Equity participation with preferential royalty structures. Collaborative development opportunities and co-invention pathways.</p>
+                </div>
+                
+                <div class="tier-card">
+                    <div class="tier-icon">🚀</div>
+                    <h3>Mission-Aligned</h3>
+                    <p>Organizations pursuing humanitarian objectives, space exploration, or medical advancement. Preferential licensing terms (1-3% royalty) for mission-aligned applications.</p>
+                </div>
+                
+                <div class="tier-card">
+                    <div class="tier-icon">💼</div>
+                    <h3>Commercial</h3>
+                    <p>Standard commercial licensing for industrial applications. Transparent royalty structure (3-5%) with volume-based considerations and clear territorial rights.</p>
+                </div>
+                
+                <div class="tier-card">
+                    <div class="tier-icon">🎓</div>
+                    <h3>Academic & Research</h3>
+                    <p>Free licensing for non-commercial research, educational institutions, and open science initiatives. No royalties, no patent enforcement for qualifying use cases.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2>Partner With Phyllux</h2>
+            <p>Interested in licensing Phyllux technology for your applications? Exploring strategic partnership opportunities? Discussing mission-aligned collaboration in space, medical, or defense sectors?</p>
+            
+            <a href="mailto:phibronotchi@gmail.com" class="contact-email">
+                <span>📧</span>
+                <span>phibronotchi@gmail.com</span>
+            </a>
+
+            <div class="founder-info">
+                <h3>David Edward Sproule</h3>
+                <p>Inventor & Founder</p>
+                <p>Edmonton, Alberta, Canada</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Phyllux Technologies. All rights reserved.</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            Phyllux®, GAFAA®, PNM®, and PhiKey® are trademarks of Phyllux Technologies.
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-tertiary);">
+            USPTO Grace Period: January 7, 2026 - January 7, 2027
+        </p>
+    </footer>
+</body>
+</html>
