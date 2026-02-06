@@ -1327,6 +1327,234 @@
             box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
         }
 
+        /* ===== INTERACTIVE VISUALIZATION ===== */
+        .interactive-viz-box {
+            background: #141419;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .interactive-viz-box h3 {
+            color: var(--primary-gold);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .interactive-viz-box .viz-title {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .interactive-viz-box .viz-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-tertiary);
+            margin-bottom: 2rem;
+        }
+
+        .phyllotactic-svg-container {
+            margin: 2rem auto;
+            max-width: 320px;
+        }
+
+        .interactive-viz-box .viz-note {
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+            margin-top: 1.5rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .interactive-viz-box .btn {
+            margin-top: 1.5rem;
+        }
+
+        /* ===== DOMAIN ACCORDIONS ===== */
+        .domain-accordion {
+            margin-top: 1.5rem;
+        }
+
+        .domain-accordion details {
+            background: #1a1a24;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+        }
+
+        .domain-accordion summary {
+            padding: 1rem 1.25rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            list-style: none;
+            transition: background 0.3s ease;
+            user-select: none;
+        }
+
+        .domain-accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .domain-accordion summary::before {
+            content: '\25B6';
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .domain-accordion details[open] > summary::before {
+            transform: rotate(90deg);
+        }
+
+        .domain-accordion summary:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .domain-accordion .accordion-body {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .domain-accordion .accordion-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .domain-accordion .accordion-body li {
+            padding: 0.35rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .domain-accordion .accordion-body li::before {
+            content: '\2192';
+            color: var(--primary-cyan);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .domain-accordion .accordion-body .spec-label {
+            color: var(--primary-gold);
+            font-weight: 600;
+            margin-right: 0.3rem;
+        }
+
+        .domain-accordion .accordion-body .btn {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            padding: 0.7rem 1.5rem;
+        }
+
+        .domain-accordion .integration-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .domain-accordion .integration-item:last-child {
+            border-bottom: none;
+        }
+
+        .domain-accordion .integration-item strong {
+            color: var(--primary-cyan);
+        }
+
+        /* ===== COMPARISON TABLES ===== */
+        .comparison-section {
+            margin-top: 6rem;
+        }
+
+        .comparison-table-wrapper {
+            margin-top: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .comparison-table-wrapper h3 {
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .comparison-table-scroll {
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #141419;
+            font-size: 0.9rem;
+            min-width: 600px;
+        }
+
+        .comparison-table thead th {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.08));
+            color: var(--primary-gold);
+            font-weight: 700;
+            padding: 1rem 1.2rem;
+            text-align: left;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .comparison-table tbody td {
+            padding: 0.85rem 1.2rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .comparison-table tbody tr:nth-child(odd) {
+            background: #1a1a24;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background: #0f0f14;
+        }
+
+        .comparison-table tbody tr {
+            transition: background 0.2s ease;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: rgba(255, 215, 0, 0.04);
+        }
+
+        .comparison-table tbody td:first-child {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .comparison-note {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-top: 1.5rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .comparison-section .btn {
+            margin-top: 1.5rem;
+        }
+
         /* ===== REDUCED MOTION ===== */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
@@ -1413,6 +1641,60 @@
             .footer-ecosystem {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            /* Comparison tables: card layout on mobile */
+            .comparison-table {
+                min-width: unset;
+            }
+
+            .comparison-table thead {
+                display: none;
+            }
+
+            .comparison-table tbody tr {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem 1.2rem;
+                margin-bottom: 0.5rem;
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .comparison-table tbody tr:nth-child(odd),
+            .comparison-table tbody tr:nth-child(even) {
+                background: #1a1a24;
+            }
+
+            .comparison-table tbody td {
+                padding: 0.3rem 0;
+                border-bottom: none;
+                font-size: 0.85rem;
+            }
+
+            .comparison-table tbody td::before {
+                content: attr(data-label);
+                display: block;
+                font-size: 0.75rem;
+                color: var(--primary-gold);
+                font-weight: 600;
+                letter-spacing: 0.03em;
+                margin-bottom: 0.15rem;
+            }
+
+            .comparison-table tbody td:first-child {
+                font-size: 0.95rem;
+                padding-bottom: 0.5rem;
+                margin-bottom: 0.3rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+
+            .interactive-viz-box {
+                padding: 2rem 1.5rem;
+            }
+
+            .phyllotactic-svg-container {
+                max-width: 260px;
             }
         }
     </style>
@@ -1681,6 +1963,23 @@
                         <p>Galaxies</p>
                     </div>
                 </div>
+
+                <!-- Interactive Visualization Box -->
+                <div class="interactive-viz-box" style="margin-top: 3rem;">
+                    <h3>Interactive Visualization</h3>
+                    <p class="viz-title">Interactive Phyllotactic Pattern Generator</p>
+                    <p class="viz-subtitle">137.508&deg; Golden Angle Spacing Visualization</p>
+
+                    <div class="phyllotactic-svg-container">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="121 dots arranged in a phyllotactic spiral pattern using 137.508 degree golden angle spacing">
+                            <circle cx="150" cy="150" r="149" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="1"/>
+                            <g id="phyllotactic-dots"></g>
+                        </svg>
+                    </div>
+
+                    <p class="viz-note">Full interactive generator coming soon &mdash; contact us for technical specifications and simulation parameters</p>
+                    <a href="#contact" class="btn btn-gold-outline contact-scroll-btn" data-interest="Interactive Visualization Demo">Request Technical Demo</a>
+                </div>
             </div>
         </section>
 
@@ -1713,6 +2012,47 @@
                             <li>Aerospace and defense systems</li>
                         </ul>
                     </div>
+
+                    <div class="domain-accordion">
+                        <details aria-label="GAFAA Technical Specifications">
+                            <summary>Technical Specifications</summary>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><span class="spec-label">Operating frequency range:</span> 1&ndash;100 GHz (scalable)</li>
+                                    <li><span class="spec-label">Element count:</span> 121-node reference design (scalable to 89, 233, 377+ nodes)</li>
+                                    <li><span class="spec-label">Spacing:</span> Golden angle (137.508&deg;) radial arrangement</li>
+                                    <li><span class="spec-label">Mutual coupling:</span> &lt;-20dB (phyllotactic spacing advantage)</li>
+                                    <li><span class="spec-label">Beamforming:</span> 360&deg; azimuth, &plusmn;60&deg; elevation coverage</li>
+                                    <li><span class="spec-label">Scalability:</span> Linear scaling from handheld to satellite arrays</li>
+                                    <li><span class="spec-label">Substrate compatibility:</span> FR-4, Rogers, flexible PCB, 3D-printed</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-gold-outline contact-scroll-btn" data-interest="Wave Technical Specifications">Download Full Specifications</a>
+                            </div>
+                        </details>
+
+                        <details aria-label="GAFAA Research Applications">
+                            <summary>Research Applications</summary>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Satellite constellation communications (Starlink-scale arrays)</li>
+                                    <li>Deep space communications (high-gain, low-sidelobe requirement)</li>
+                                    <li>5G/6G base station optimization (urban dense deployment)</li>
+                                    <li>Radar systems (automotive, aerospace, weather)</li>
+                                    <li>Radio astronomy (interference mitigation through natural spacing)</li>
+                                    <li>Academic research: antenna theory, phyllotaxis applications, biomimetic RF engineering</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details aria-label="GAFAA Integration Potential">
+                            <summary>Integration Potential</summary>
+                            <div class="accordion-body">
+                                <div class="integration-item"><strong>Wave + Mesh:</strong> Aerospace medical monitoring &mdash; pilot/astronaut biometrics via satellite</div>
+                                <div class="integration-item"><strong>Wave + Vault:</strong> Encrypted satellite communications &mdash; quantum-resistant space links</div>
+                                <div class="integration-item"><strong>Wave + Core:</strong> Adaptive beamforming with AI-driven pattern optimization</div>
+                            </div>
+                        </details>
+                    </div>
                 </div>
 
                 <div class="domain-card">
@@ -1738,6 +2078,47 @@
                             <li>Neural prosthetics and restoration</li>
                             <li>Research neuroscience platforms</li>
                         </ul>
+                    </div>
+
+                    <div class="domain-accordion">
+                        <details aria-label="PNM Technical Specifications">
+                            <summary>Technical Specifications</summary>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><span class="spec-label">Electrode configuration:</span> Phyllotactic surface mapping (121-node baseline)</li>
+                                    <li><span class="spec-label">Coverage uniformity:</span> &gt;95% surface coverage with minimal gaps</li>
+                                    <li><span class="spec-label">Channel density:</span> 3&ndash;5x improvement over grid arrays (same surface area)</li>
+                                    <li><span class="spec-label">Biocompatibility:</span> Medical-grade materials (platinum, iridium, PEDOT)</li>
+                                    <li><span class="spec-label">Signal quality:</span> Enhanced SNR through optimal electrode spacing</li>
+                                    <li><span class="spec-label">Surgical complexity:</span> Reduced vs. traditional grids (fewer entry points)</li>
+                                    <li><span class="spec-label">Flexibility:</span> Conformable to curved neural surfaces</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-gold-outline contact-scroll-btn" data-interest="Mesh Technical Specifications">Download Technical Specifications</a>
+                            </div>
+                        </details>
+
+                        <details aria-label="PNM Research Applications">
+                            <summary>Research Applications</summary>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Epilepsy monitoring and treatment (comprehensive coverage)</li>
+                                    <li>Brain-computer interfaces (high-bandwidth neural decoding)</li>
+                                    <li>Parkinson&rsquo;s disease therapy (deep brain stimulation optimization)</li>
+                                    <li>Stroke rehabilitation (neural pathway mapping)</li>
+                                    <li>Cognitive neuroscience research (whole-brain recording)</li>
+                                    <li>Prosthetic control (intuitive limb control via motor cortex)</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details aria-label="PNM Integration Potential">
+                            <summary>Integration Potential</summary>
+                            <div class="accordion-body">
+                                <div class="integration-item"><strong>Mesh + Vault:</strong> Secure neural interfaces &mdash; encrypted BCI, privacy-preserving thought-to-text</div>
+                                <div class="integration-item"><strong>Mesh + Core:</strong> Integrated neural processing &mdash; on-device AI, reduced latency</div>
+                                <div class="integration-item"><strong>Mesh + Wave:</strong> Wireless neural telemetry &mdash; implant-to-external communication</div>
+                            </div>
+                        </details>
                     </div>
                 </div>
 
@@ -1765,6 +2146,47 @@
                             <li>Blockchain and distributed systems</li>
                         </ul>
                     </div>
+
+                    <div class="domain-accordion">
+                        <details aria-label="PhiKey Technical Specifications">
+                            <summary>Technical Specifications</summary>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><span class="spec-label">Key generation:</span> Golden angle rotation sequences (137.508&deg; phase space)</li>
+                                    <li><span class="spec-label">Entropy source:</span> Phyllotactic indexing (unpredictable natural pattern)</li>
+                                    <li><span class="spec-label">Algorithm complexity:</span> O(n log n) generation, O(1) verification</li>
+                                    <li><span class="spec-label">Keyspace:</span> 2<sup>256</sup>+ equivalent (quantum-resistant scale)</li>
+                                    <li><span class="spec-label">Implementation:</span> Hardware-friendly (no complex floating-point)</li>
+                                    <li><span class="spec-label">Attack resistance:</span> Immune to side-channel timing attacks (constant-time ops)</li>
+                                    <li><span class="spec-label">Standards compatibility:</span> Can wrap existing protocols (TLS, SSH, etc.)</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-gold-outline contact-scroll-btn" data-interest="Vault Cryptographic Analysis">Request Cryptographic Analysis</a>
+                            </div>
+                        </details>
+
+                        <details aria-label="PhiKey Research Applications">
+                            <summary>Research Applications</summary>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Post-quantum cryptography (lattice-based geometric approach)</li>
+                                    <li>Blockchain/distributed ledger security (consensus key generation)</li>
+                                    <li>Secure communications (government, military, financial)</li>
+                                    <li>IoT device security (lightweight crypto for embedded systems)</li>
+                                    <li>Digital signatures (unforgeable geometric proofs)</li>
+                                    <li>Academic research: geometric cryptography, phyllotaxis in information theory</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details aria-label="PhiKey Integration Potential">
+                            <summary>Integration Potential</summary>
+                            <div class="accordion-body">
+                                <div class="integration-item"><strong>Vault + Wave:</strong> Encrypted satellite links &mdash; secure space communications</div>
+                                <div class="integration-item"><strong>Vault + Mesh:</strong> Private neural interfaces &mdash; thought privacy, medical data security</div>
+                                <div class="integration-item"><strong>Vault + Core:</strong> System-wide encryption &mdash; unified security architecture</div>
+                            </div>
+                        </details>
+                    </div>
                 </div>
 
                 <div class="domain-card">
@@ -1791,7 +2213,223 @@
                             <li>Integrated research platforms</li>
                         </ul>
                     </div>
+
+                    <div class="domain-accordion">
+                        <details aria-label="IBS Technical Specifications">
+                            <summary>Technical Specifications</summary>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><span class="spec-label">Architecture:</span> Unified phyllotactic coordinate system across all domains</li>
+                                    <li><span class="spec-label">Timing:</span> Synchronized phase control (nanosecond-level precision)</li>
+                                    <li><span class="spec-label">Integration protocols:</span> Cross-domain communication standards</li>
+                                    <li><span class="spec-label">Emergent properties:</span> Pattern detection across Wave/Mesh/Vault interactions</li>
+                                    <li><span class="spec-label">Orchestration:</span> System-level optimization (multi-domain resource allocation)</li>
+                                    <li><span class="spec-label">Scalability:</span> Modular integration (add domains as needed)</li>
+                                    <li><span class="spec-label">API:</span> RESTful + WebSocket for real-time control</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-gold-outline contact-scroll-btn" data-interest="Core Integration Specifications">Request Integration Specifications</a>
+                            </div>
+                        </details>
+
+                        <details aria-label="IBS Research Applications">
+                            <summary>Research Applications</summary>
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Multi-domain defense systems (integrated radar + secure comms)</li>
+                                    <li>Aerospace medical monitoring (astronaut health via satellite + neural sensing)</li>
+                                    <li>Secure neural interfaces (BCI + encryption + wireless telemetry)</li>
+                                    <li>Smart city infrastructure (antenna arrays + IoT security)</li>
+                                    <li>Autonomous systems (sensor fusion + encrypted control)</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details aria-label="IBS Integration Potential">
+                            <summary>Integration Potential</summary>
+                            <div class="accordion-body">
+                                <div class="integration-item"><strong>Core enables all cross-domain scenarios</strong> &mdash; the unified integration layer connecting Wave, Mesh, and Vault</div>
+                                <div class="integration-item"><strong>Unified API:</strong> Controls Wave, Mesh, and Vault simultaneously from a single interface</div>
+                                <div class="integration-item"><strong>Emergent optimization:</strong> Detects cross-domain opportunities (e.g., using Vault timing for Wave beamforming sync)</div>
+                            </div>
+                        </details>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Technology Comparisons Section -->
+        <section class="comparison-section fade-in-section">
+            <h2>Technology Comparisons</h2>
+            <p class="section-subtitle">How Phyllux technologies compare against conventional approaches across key performance metrics</p>
+
+            <!-- Table 1: Wave (GAFAA vs Competitors) -->
+            <div class="comparison-table-wrapper">
+                <h3>Wave: GAFAA vs. Conventional Antenna Arrays</h3>
+                <div class="comparison-table-scroll">
+                    <table class="comparison-table" aria-label="GAFAA antenna array comparison table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Phyllux GAFAA</th>
+                                <th>Grid Array</th>
+                                <th>Spiral Array</th>
+                                <th>Random Array</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Metric">Mutual Coupling</td>
+                                <td data-label="Phyllux GAFAA">&lt;-20 dB</td>
+                                <td data-label="Grid Array">-10 to -15 dB</td>
+                                <td data-label="Spiral Array">-15 to -18 dB</td>
+                                <td data-label="Random Array">-12 to -16 dB</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Packing Efficiency</td>
+                                <td data-label="Phyllux GAFAA">95%+</td>
+                                <td data-label="Grid Array">60&ndash;70%</td>
+                                <td data-label="Spiral Array">75&ndash;85%</td>
+                                <td data-label="Random Array">50&ndash;65%</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Beamforming Quality</td>
+                                <td data-label="Phyllux GAFAA">Excellent (low sidelobes)</td>
+                                <td data-label="Grid Array">Good</td>
+                                <td data-label="Spiral Array">Very Good</td>
+                                <td data-label="Random Array">Poor to Fair</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Scalability</td>
+                                <td data-label="Phyllux GAFAA">Linear (any N)</td>
+                                <td data-label="Grid Array">Grid-locked (N&sup2;)</td>
+                                <td data-label="Spiral Array">Complex (Fibonacci sequence)</td>
+                                <td data-label="Random Array">Unpredictable</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Manufacturing Cost</td>
+                                <td data-label="Phyllux GAFAA">Low (simple pattern)</td>
+                                <td data-label="Grid Array">Very Low</td>
+                                <td data-label="Spiral Array">Medium</td>
+                                <td data-label="Random Array">Medium&ndash;High</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Table 2: Mesh (PNM vs Competitors) -->
+            <div class="comparison-table-wrapper">
+                <h3>Mesh: PNM vs. Conventional Neural Arrays</h3>
+                <div class="comparison-table-scroll">
+                    <table class="comparison-table" aria-label="PNM neural mesh comparison table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Phyllux PNM</th>
+                                <th>Utah Array</th>
+                                <th>ECoG Grid</th>
+                                <th>Flexible MEA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Metric">Coverage Uniformity</td>
+                                <td data-label="Phyllux PNM">95%+</td>
+                                <td data-label="Utah Array">70&ndash;80% (gaps)</td>
+                                <td data-label="ECoG Grid">75&ndash;85% (gaps)</td>
+                                <td data-label="Flexible MEA">80&ndash;90%</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Electrode Density</td>
+                                <td data-label="Phyllux PNM">Very High</td>
+                                <td data-label="Utah Array">Medium</td>
+                                <td data-label="ECoG Grid">Medium</td>
+                                <td data-label="Flexible MEA">High</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Biocompatibility</td>
+                                <td data-label="Phyllux PNM">Excellent (design + materials)</td>
+                                <td data-label="Utah Array">Good</td>
+                                <td data-label="ECoG Grid">Very Good</td>
+                                <td data-label="Flexible MEA">Excellent</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Surgical Complexity</td>
+                                <td data-label="Phyllux PNM">Low (natural pattern)</td>
+                                <td data-label="Utah Array">Medium</td>
+                                <td data-label="ECoG Grid">Medium&ndash;High</td>
+                                <td data-label="Flexible MEA">Medium</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Signal Quality (SNR)</td>
+                                <td data-label="Phyllux PNM">Excellent (optimal spacing)</td>
+                                <td data-label="Utah Array">Good</td>
+                                <td data-label="ECoG Grid">Good</td>
+                                <td data-label="Flexible MEA">Very Good</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Table 3: Vault (PhiKey vs Competitors) -->
+            <div class="comparison-table-wrapper">
+                <h3>Vault: PhiKey vs. Conventional Cryptographic Approaches</h3>
+                <div class="comparison-table-scroll">
+                    <table class="comparison-table" aria-label="PhiKey cryptography comparison table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Phyllux PhiKey</th>
+                                <th>RSA</th>
+                                <th>Lattice Crypto</th>
+                                <th>Chaotic Systems</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Metric">Key Generation Speed</td>
+                                <td data-label="Phyllux PhiKey">Very Fast</td>
+                                <td data-label="RSA">Slow (large primes)</td>
+                                <td data-label="Lattice Crypto">Medium</td>
+                                <td data-label="Chaotic Systems">Fast</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Entropy Quality</td>
+                                <td data-label="Phyllux PhiKey">Excellent (geometric)</td>
+                                <td data-label="RSA">Excellent (number theory)</td>
+                                <td data-label="Lattice Crypto">Very Good</td>
+                                <td data-label="Chaotic Systems">Good to Very Good</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Quantum Resistance</td>
+                                <td data-label="Phyllux PhiKey">High (geometric hardness)</td>
+                                <td data-label="RSA">None (Shor&rsquo;s algorithm)</td>
+                                <td data-label="Lattice Crypto">Very High</td>
+                                <td data-label="Chaotic Systems">Uncertain</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Implementation Complexity</td>
+                                <td data-label="Phyllux PhiKey">Low (simple geometry)</td>
+                                <td data-label="RSA">Medium</td>
+                                <td data-label="Lattice Crypto">High</td>
+                                <td data-label="Chaotic Systems">Medium</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Metric">Backdoor Risk</td>
+                                <td data-label="Phyllux PhiKey">None (transparent pattern)</td>
+                                <td data-label="RSA">Low (vetted standard)</td>
+                                <td data-label="Lattice Crypto">Low (mathematical)</td>
+                                <td data-label="Chaotic Systems">Medium (parameter selection)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="comparison-note">Performance metrics are approximate and application-dependent. Contact us for detailed benchmarking data and application-specific comparisons.</p>
+            <div style="text-align: center;">
+                <a href="#contact" class="btn btn-gold-outline contact-scroll-btn" data-interest="Detailed Benchmarks">Request Detailed Benchmarks</a>
             </div>
         </section>
 
@@ -2170,6 +2808,44 @@
             roadmapContent.classList.toggle('open');
             roadmapToggle.classList.toggle('open');
             roadmapToggle.setAttribute('aria-expanded', !isOpen);
+        });
+
+        // ===== PHYLLOTACTIC SVG DOT GENERATION =====
+        var dotsGroup = document.getElementById('phyllotactic-dots');
+        if (dotsGroup) {
+            var goldenAngle = 137.508 * (Math.PI / 180);
+            var centerX = 150;
+            var centerY = 150;
+            var nodeCount = 121;
+            var scaleFactor = 8.5;
+
+            for (var i = 0; i < nodeCount; i++) {
+                var angle = i * goldenAngle;
+                var radius = scaleFactor * Math.sqrt(i);
+                var x = centerX + radius * Math.cos(angle);
+                var y = centerY + radius * Math.sin(angle);
+                var dotSize = (i === 60) ? 4 : 2;
+                var dotColor = (i === 60) ? 'rgba(255,215,0,1)' : 'rgba(0,255,136,' + (0.3 + 0.5 * (i / nodeCount)) + ')';
+
+                var circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', x.toFixed(2));
+                circle.setAttribute('cy', y.toFixed(2));
+                circle.setAttribute('r', dotSize);
+                circle.setAttribute('fill', dotColor);
+                dotsGroup.appendChild(circle);
+            }
+        }
+
+        // ===== CONTACT SCROLL BUTTONS =====
+        var contactBtns = document.querySelectorAll('.contact-scroll-btn');
+        contactBtns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
 
         // ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
