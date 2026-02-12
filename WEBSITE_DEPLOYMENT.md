@@ -15,6 +15,17 @@ Open http://localhost:8080 in a browser.
 
 ## Quick Deploy to phyllux.io
 
+### Option A: Use the deploy script
+
+```powershell
+cd d:\Workspace\website
+.\deploy-to-repo.ps1
+```
+
+Then commit and push in the repo (see below).
+
+### Option B: Manual copy
+
 1. **Copy website contents into the GitHub repo**
    - Copy everything from `d:\Workspace\website\` into the root of `biomimetic-inventions-public`:
      - `index.html` (hub)
