@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technology | Phyllux Technologies</title>
+  <meta name="description" content="WAVE, MESH, VAULT, CORE — four pillars built on the golden angle. Antenna arrays, neural interfaces, post-quantum crypto, integrated systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --accent2: #8b9cf7;
+      --accent2-soft: rgba(139, 156, 247, 0.12);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --card: #0c0f14;
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 14px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 60% 40% at 10% 0%, rgba(94, 234, 212, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 30% at 90% 100%, rgba(139, 156, 247, 0.025) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(5, 5, 8, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      padding: var(--space-md) var(--space-xl);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill {
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--phi-gold-soft);
+      color: var(--phi-gold);
+      margin-left: var(--space-sm);
+      font-weight: 600;
+    }
+    .hero-banner {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: var(--space-xl);
+    }
+    .hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 280px;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl) var(--space-2xl);
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: var(--space-lg);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .back-link:hover { color: var(--accent); }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: var(--space-md);
+      color: var(--fg);
+    }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); max-width: 640px; }
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+    @media (max-width: 768px) {
+      .pillar-grid { grid-template-columns: 1fr; }
+    }
+    .pillar-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--space-xl);
+      transition: border-color var(--transition), transform var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--phi-gold));
+      opacity: 0.6;
+    }
+    .pillar-card:hover {
+      border-color: rgba(94, 234, 212, 0.25);
+      transform: translateY(-2px);
+    }
+    .pillar-card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--space-sm);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pillar-card .subtitle {
+      font-size: 0.8125rem;
+      color: var(--phi-gold);
+      margin-bottom: var(--space-md);
+    }
+    .pillar-card .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin: var(--space-md) 0;
+      background: rgba(0,0,0,0.3);
+    }
+    .pillar-card dd, .pillar-card dt { font-size: 0.875rem; color: var(--muted); }
+    .pillar-card dt { font-weight: 600; color: var(--fg); margin-top: var(--space-sm); }
+    .pillar-card dd { margin-left: 0; margin-bottom: 4px; }
+    .spec-grid { display: grid; gap: 4px; margin: var(--space-md) 0; }
+    .spec-row { display: flex; gap: var(--space-md); }
+    .spec-row span:first-child { color: var(--muted); min-width: 140px; }
+    .spec-row span:last-child { color: var(--fg); }
+    .pillar-card .doc-link {
+      display: inline-block;
+      margin-top: var(--space-md);
+      font-size: 0.8125rem;
+      color: var(--accent);
+    }
+    .unified-spine {
+      margin-top: var(--space-2xl);
+      padding: var(--space-xl);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(94, 234, 212, 0.05) 0%, transparent 50%);
+      text-align: center;
+    }
+    .unified-spine h2 { font-size: 1.125rem; margin-bottom: var(--space-md); }
+    .unified-spine p { color: var(--muted); font-size: 0.9375rem; margin-bottom: var(--space-md); }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-tech-hero.png" alt="Phyllotactic technology — four pillars" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>Technology <span class="seq-badge">Position 2</span></h1>
+  <p class="intro">Four pillars built on the golden angle. WAVE (antenna arrays), MESH (neural interfaces), VAULT (post-quantum crypto), CORE (integration spine). Each uses 137.508° phyllotactic spacing as the geometric blueprint.</p>
+
+  <div class="pillar-grid">
+    <article class="pillar-card">
+      <h2>📡 WAVE</h2>
+      <p class="subtitle">Golden-Angle Phyllotactic Antenna Arrays (GAFAA)</p>
+      <p>Antenna arrays using 137.508° phyllotactic spacing. Aperiodic, low mutual coupling, 360° coverage. Scalable layouts for curved and planar surfaces.</p>
+      <div class="spec-grid">
+        <div class="spec-row"><span>Frequency</span><span>1–100 GHz</span></div>
+        <div class="spec-row"><span>Elements</span><span>121-node (89, 233, 377+)</span></div>
+        <div class="spec-row"><span>Mutual coupling</span><span>&lt;-20 dB</span></div>
+        <div class="spec-row"><span>Beamforming</span><span>360° azimuth, ±60° elevation</span></div>
+        <div class="spec-row"><span>Applications</span><span>Starlink, 5G/6G, radar, deep-space</span></div>
+        <div class="spec-row"><span>Target partners</span><span>SpaceX, aerospace, telecom</span></div>
+      </div>
+      <a href="docs/wave/" class="doc-link">Public docs →</a>
+    </article>
+
+    <article class="pillar-card">
+      <h2>🧠 MESH</h2>
+      <p class="subtitle">Phyllotactic Neural Mesh (PNM)</p>
+      <img src="assets/phyllux-mesh-visual.png" alt="Neural electrode array" class="card-img" />
+      <p>Neural electrode arrays with golden-angle placement. &gt;95% cortical coverage, conformable substrates. 3–5× channel density vs conventional grids.</p>
+      <div class="spec-grid">
+        <div class="spec-row"><span>Coverage</span><span>&gt;95% surface</span></div>
+        <div class="spec-row"><span>Materials</span><span>Platinum, iridium, PEDOT</span></div>
+        <div class="spec-row"><span>Applications</span><span>BCI, epilepsy, Parkinson's, stroke rehab</span></div>
+        <div class="spec-row"><span>Target partners</span><span>Neuralink, medical device companies</span></div>
+        <div class="spec-row"><span>Status</span><span>Development deferred pending partnerships</span></div>
+      </div>
+      <a href="docs/mesh/" class="doc-link">Public docs →</a>
+    </article>
+
+    <article class="pillar-card">
+      <h2>🔐 VAULT</h2>
+      <p class="subtitle">Phyllotactic Key Derivation (PhiKey)</p>
+      <img src="assets/phyllux-vault-visual.png" alt="Post-quantum cryptography" class="card-img" />
+      <p>Golden-angle rotations in high-dimensional phase space. Quantum-resistant. 2^256+ equivalent keyspace. No backdoors.</p>
+      <div class="spec-grid">
+        <div class="spec-row"><span>Key generation</span><span>Golden angle rotation sequences</span></div>
+        <div class="spec-row"><span>Keyspace</span><span>2^256+ equivalent</span></div>
+        <div class="spec-row"><span>Quantum resistance</span><span>Yes</span></div>
+        <div class="spec-row"><span>Applications</span><span>Military, finance, blockchain, IoT</span></div>
+        <div class="spec-row"><span>Status</span><span>Software prototype planned Q1–Q2 2026</span></div>
+      </div>
+      <a href="docs/vault/" class="doc-link">Public docs →</a>
+      <a href="ip.html" class="doc-link" style="margin-left: var(--space-md);">IP posture →</a>
+    </article>
+
+    <article class="pillar-card">
+      <h2>🧩 CORE</h2>
+      <p class="subtitle">Integrated Biomimetic System (IBS)</p>
+      <p>Unified coordinate system across WAVE, MESH, VAULT. Cross-domain timing and phase synchronization. Emergent property detection. Nanosecond-level phase alignment.</p>
+      <div class="spec-grid">
+        <div class="spec-row"><span>Coordinate system</span><span>Unified phyllotactic</span></div>
+        <div class="spec-row"><span>Sync</span><span>RESTful + WebSocket</span></div>
+        <div class="spec-row"><span>Applications</span><span>Multi-domain defense, secure neural telemetry</span></div>
+        <div class="spec-row"><span>Status</span><span>Integration demo planned Q4 2026</span></div>
+      </div>
+      <a href="docs/core/" class="doc-link">Public docs →</a>
+    </article>
+  </div>
+
+  <section class="unified-spine">
+    <h2>One geometry. Four domains.</h2>
+    <p>All pillars share the same positioning formula: r = k × √n, θ = n × 137.508°. Position 61 is the phase reference. Scale from micrometers to meters.</p>
+    <p><a href="vision.html">The vision behind it →</a> · <a href="partners.html">Partner with us →</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="vision.html">Vision</a>
+    <a href="engenica.html">ENGENICA</a>
+    <a href="proof.html">Proof</a>
+    <a href="partners.html">Partners</a>
+    <a href="ip.html">IP</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="docs.html">Docs</a>
+    <a href="about.html">About</a>
+    <a href="ecosystem.html">Ecosystem</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508° • φ = 1.618033988749895
+  </div>
+</footer>
+</body>
+</html>

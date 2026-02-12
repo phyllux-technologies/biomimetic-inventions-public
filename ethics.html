@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ethics | Phyllux Technologies</title>
+  <meta name="description" content="Defense not offense. Privacy & human rights. Transparent security. No backdoors. Responsible deployment posture for high-impact domains." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(232, 197, 71, 0.02) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
+    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    main { max-width: 720px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .commitments-block {
+      margin: var(--space-2xl) 0;
+      padding: var(--space-xl);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.4);
+      text-align: center;
+    }
+    .commitments-block img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      margin: 0 auto var(--space-lg);
+      display: block;
+      border-radius: 8px;
+    }
+    .commitment {
+      text-align: left;
+      padding: var(--space-lg) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .commitment:last-child { border-bottom: none; padding-bottom: 0; }
+    .commitment h3 { font-size: 1.125rem; margin-bottom: var(--space-sm); color: var(--fg); }
+    .commitment p { color: var(--muted); font-size: 0.9375rem; line-height: 1.7; }
+    .ethical-requirements {
+      margin: var(--space-2xl) 0;
+      padding: var(--space-lg);
+      border-left: 3px solid var(--accent);
+      background: var(--accent-soft);
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+    .ethical-requirements h3 { color: var(--fg); margin-bottom: var(--space-md); }
+    .ethical-requirements ul { margin: 0; padding-left: 1.25rem; }
+    footer { border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-ethics-hero.png" alt="Ethics — responsible deployment" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>Ethics <span class="seq-badge">Position 21</span></h1>
+  <p class="intro">Responsible deployment posture for high-impact domains. All licensing tiers require ethical commitments. No exceptions.</p>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Three commitments</h2>
+  <div class="commitments-block">
+    <img src="assets/phyllux-ethics-commitments.png" alt="Ethics commitments" />
+    <div class="commitment">
+      <h3>Defense, not offense</h3>
+      <p>No licensing for weapons, autonomous kill chains, or offensive military applications. Our technology serves protection and resilience—not aggression.</p>
+    </div>
+    <div class="commitment">
+      <h3>Privacy & human rights</h3>
+      <p>No mass surveillance, abusive monitoring, or oppression-enabling technologies. We will not enable systems that harm human dignity or violate fundamental rights.</p>
+    </div>
+    <div class="commitment">
+      <h3>Transparent security</h3>
+      <p>No backdoors. Security through mathematics, not obscurity. Our cryptographic and secure systems are designed to be auditable and trustworthy.</p>
+    </div>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Ethical requirements (all tiers)</h2>
+  <div class="ethical-requirements">
+    <h3>Every partnership must uphold:</h3>
+    <ul>
+      <li>Fair compensation</li>
+      <li>Responsible pricing</li>
+      <li>Respectful practices</li>
+      <li>Transparency</li>
+      <li>Positive impact</li>
+    </ul>
+  </div>
+
+  <p>These commitments are non-negotiable. Licensing discussions include ethical review. We reserve the right to decline partnerships that do not align with these principles.</p>
+
+  <p style="margin-top: var(--space-2xl);"><a href="partners.html">Partner tier requirements →</a> · <a href="technology.html">Technology applications →</a> · <a href="ip.html">IP posture →</a></p>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="vision.html">Vision</a>
+    <a href="technology.html">Technology</a>
+    <a href="engenica.html">ENGENICA</a>
+    <a href="proof.html">Proof</a>
+    <a href="partners.html">Partners</a>
+    <a href="ip.html">IP</a>
+    <a href="docs.html">Docs</a>
+    <a href="about.html">About</a>
+    <a href="ecosystem.html">Ecosystem</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508°
+  </div>
+</footer>
+</body>
+</html>

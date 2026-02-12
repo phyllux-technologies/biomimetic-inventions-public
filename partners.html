@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Partners | Phyllux Technologies</title>
+  <meta name="description" content="Partner with Phyllux: 30-minute intake, paid technical evaluation, licensing ladder. Pioneer, Mission-Aligned, Commercial, Academic tiers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 30% 0%, rgba(94, 234, 212, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
+    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    main { max-width: 900px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .process-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: var(--space-sm);
+      margin: var(--space-2xl) 0;
+      text-align: center;
+    }
+    @media (max-width: 768px) { .process-flow { grid-template-columns: 1fr; } }
+    .process-step {
+      padding: var(--space-lg);
+      background: rgba(12, 15, 20, 0.6);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .process-step strong { display: block; color: var(--fg); margin-bottom: 4px; }
+    .ladder-block {
+      display: flex;
+      gap: var(--space-xl);
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: var(--space-2xl) 0;
+      padding: var(--space-xl);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5);
+    }
+    .ladder-block img { flex: 0 0 240px; max-width: 100%; height: auto; border-radius: 8px; }
+    .tier-table { width: 100%; border-collapse: collapse; margin: var(--space-lg) 0; font-size: 0.875rem; }
+    .tier-table th, .tier-table td { padding: var(--space-md); text-align: left; border-bottom: 1px solid var(--line); }
+    .tier-table th { color: var(--fg); font-weight: 600; }
+    .tier-table td { color: var(--muted); }
+    .tier-table .tier-name { color: var(--accent); font-weight: 500; }
+    .target-partners { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); margin: var(--space-xl) 0; }
+    .target-card {
+      padding: var(--space-md);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .target-card strong { color: var(--fg); display: block; margin-bottom: 4px; }
+    .cta-block {
+      margin-top: var(--space-2xl);
+      padding: var(--space-xl);
+      border: 1px solid rgba(94, 234, 212, 0.2);
+      border-radius: var(--radius);
+      background: var(--accent-soft);
+      text-align: center;
+    }
+    .cta-block a.btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: var(--space-md);
+      text-decoration: none;
+    }
+    .cta-block a.btn:hover { opacity: 0.9; }
+    footer { border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-partners-hero.png" alt="Partner with Phyllux" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>Partners <span class="seq-badge">Position 8</span></h1>
+  <p class="intro">Paid technical evaluation → license → prototype. Start with a scoped evaluation: partner pack (method overview, interfaces, benchmarks summary) + integration plan. Deep implementation remains NDA/partner-only. ~30 minutes to onboard.</p>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Process</h2>
+  <div class="process-flow">
+    <div class="process-step"><strong>1</strong> Inquiry</div>
+    <div class="process-step"><strong>2</strong> NDA / tier</div>
+    <div class="process-step"><strong>3</strong> Negotiation</div>
+    <div class="process-step"><strong>4</strong> Agreement</div>
+    <div class="process-step"><strong>5</strong> Implementation</div>
+  </div>
+  <p>Initial inquiry → phibronotchi@gmail.com · NDA & tier assessment · Negotiation · 2–3 page agreement · Specs, guides, support · Quarterly or annual check-ins.</p>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Licensing ladder</h2>
+  <div class="ladder-block">
+    <img src="assets/phyllux-partners-ladder.png" alt="Licensing tiers" />
+    <div style="flex: 1;">
+      <table class="tier-table">
+        <tr><th>Tier</th><th>Who</th><th>Terms</th></tr>
+        <tr><td class="tier-name">Pioneer</td><td>Strategic partners (SpaceX, Neuralink)</td><td>0.5–1% + equity; $5K–25K upfront, 0% royalty</td></tr>
+        <tr><td class="tier-name">Mission-Aligned</td><td>Healthcare, clean energy, humanitarian</td><td>1–3%; $10K–100K upfront</td></tr>
+        <tr><td class="tier-name">Commercial</td><td>For-profit corporations</td><td>3–5%; $100K–1M upfront</td></tr>
+        <tr><td class="tier-name">Academic</td><td>Universities, researchers</td><td>Free (citation only)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Target partners</h2>
+  <div class="target-partners">
+    <div class="target-card"><strong>Neuralink</strong> PNM electrode placement; 1.5% royalty; joint research</div>
+    <div class="target-card"><strong>SpaceX / Starlink</strong> GAFAA for constellation; 0.75% + equity</div>
+    <div class="target-card"><strong>Defense / Aerospace</strong> Radar, encrypted comms; 3–5%; ethical use only</div>
+    <div class="target-card"><strong>Medical devices</strong> PNM for epilepsy, Parkinson's; 1–3%</div>
+    <div class="target-card"><strong>Academic</strong> Full access; non-commercial; attribution</div>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Evaluation offer</h2>
+  <p>Scoped evaluation includes: partner pack (method overview, interfaces, benchmarks summary) and integration plan. Contact with your use case, constraints, and timeline.</p>
+  <p><a href="docs/partner/offer.html">Evaluation offer details →</a> · <a href="docs/partner/license.html">Licensing ladder (docs) →</a></p>
+
+  <div class="cta-block">
+    <p><strong>Ready to partner?</strong></p>
+    <a href="mailto:phibronotchi@gmail.com?subject=Technical%20Evaluation%20Request" class="btn">Request evaluation</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="vision.html">Vision</a>
+    <a href="technology.html">Technology</a>
+    <a href="engenica.html">ENGENICA</a>
+    <a href="proof.html">Proof</a>
+    <a href="ip.html">IP</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="docs.html">Docs</a>
+    <a href="about.html">About</a>
+    <a href="ecosystem.html">Ecosystem</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508°
+  </div>
+</footer>
+</body>
+</html>

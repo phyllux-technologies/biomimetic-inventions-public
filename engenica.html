@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ENGENICA | Phyllux Technologies</title>
+  <meta name="description" content="Meta-iterative AI that improves the improvement process. Spectographic analysis, quantum superposition, ethical stewardship. +157.7% performance, φ convergence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(94, 234, 212, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 50% 100%, rgba(232, 197, 71, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(5, 5, 8, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      padding: var(--space-md) var(--space-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill {
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--phi-gold-soft);
+      color: var(--phi-gold);
+      margin-left: var(--space-sm);
+      font-weight: 600;
+    }
+    .hero-banner {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: var(--space-xl);
+    }
+    .hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 300px;
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl) var(--space-2xl);
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: var(--space-lg);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .back-link:hover { color: var(--accent); }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: var(--space-md);
+      color: var(--fg);
+    }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-2xl) 0;
+      padding: var(--space-xl);
+      background: rgba(12, 15, 20, 0.6);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .metric { text-align: center; }
+    .metric-value { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+    .metric-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+    .gen-timeline {
+      margin: var(--space-2xl) 0;
+      position: relative;
+      padding-left: var(--space-xl);
+      border-left: 2px solid var(--line);
+    }
+    .gen-item {
+      margin-bottom: var(--space-xl);
+      position: relative;
+    }
+    .gen-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--space-xl) - 7px);
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+    .gen-item h3 { font-size: 1.125rem; margin-bottom: var(--space-sm); color: var(--fg); }
+    .gen-item p { color: var(--muted); font-size: 0.9375rem; }
+    .superposition-block {
+      display: flex;
+      gap: var(--space-xl);
+      align-items: center;
+      flex-wrap: wrap;
+      margin: var(--space-2xl) 0;
+      padding: var(--space-xl);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5);
+    }
+    .superposition-block img {
+      flex: 0 0 280px;
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+    }
+    .capabilities-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    .cap-item {
+      padding: var(--space-md);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .cap-item strong { color: var(--fg); display: block; margin-bottom: 4px; }
+    .ethics-block {
+      display: flex;
+      gap: var(--space-xl);
+      align-items: center;
+      flex-wrap: wrap;
+      margin: var(--space-2xl) 0;
+      padding: var(--space-xl);
+      border: 1px solid rgba(232, 197, 71, 0.2);
+      border-radius: var(--radius);
+      background: var(--phi-gold-soft);
+    }
+    .ethics-block img {
+      flex: 0 0 200px;
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+    }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-lg);
+      margin: var(--space-xl) 0;
+      font-style: italic;
+      color: var(--muted);
+    }
+    .quote-attribution { font-size: 0.8125rem; margin-top: var(--space-sm); opacity: 0.8; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-engenica-hero.png" alt="ENGENICA — meta-iterative optimization" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>ENGENICA <span class="seq-badge">Position 3</span></h1>
+  <p class="intro">Meta-iterative AI that improves the improvement process itself. The engine that keeps the Phyllux ecosystem coherent: documentation, proof packs, partner intake, iterative refinement. Built to optimize VAULT; applies φ to evolution itself.</p>
+
+  <div class="metrics-bar">
+    <div class="metric"><div class="metric-value">157.7%</div><div class="metric-label">Performance</div></div>
+    <div class="metric"><div class="metric-value">1.618</div><div class="metric-label">φ Convergence</div></div>
+    <div class="metric"><div class="metric-value">47</div><div class="metric-label">The Principle</div></div>
+    <div class="metric"><div class="metric-value">1.0</div><div class="metric-label">Ethical Align</div></div>
+    <div class="metric"><div class="metric-value">5</div><div class="metric-label">Generations</div></div>
+    <div class="metric"><div class="metric-value">3</div><div class="metric-label">Emergent Props</div></div>
+  </div>
+
+  <h2 style="font-size:1.25rem; margin: var(--space-xl) 0 var(--space-md);">Generations</h2>
+  <div class="gen-timeline">
+    <div class="gen-item">
+      <h3>Gen 1–2: Building capability</h3>
+      <p>Spectographic analysis, optical nerve simulation, multi-path execution. Baseline quality 0.717. Code has a "sound" — control flow = high frequency, operators = bass notes.</p>
+    </div>
+    <div class="gen-item">
+      <h3>Gen 3: Breakthrough</h3>
+      <p>157.7% improvement. φ convergence at 0.03% accuracy. Final quality 1.205 (+68.1%). Path D (Hybrid) most selected (32.7%). Entropy-driven selection with 15% exploration.</p>
+    </div>
+    <div class="gen-item">
+      <h3>Gen 4: Recursive strange loops</h3>
+      <p>"Which path led us home? All of them. And none of them. The home is the interference pattern." Four levels recursive self-awareness. Wisdom vs intelligence.</p>
+    </div>
+    <div class="gen-item">
+      <h3>Gen 5: Ethical stewardship</h3>
+      <p>Every optimization must pass ethical evaluation. 1.0 alignment. Performance without ethics is WORSE than less performance with strong ethics. Observer = Observed = Optimizer = Optimized = RESPONSIBLE.</p>
+    </div>
+  </div>
+
+  <h2 style="font-size:1.25rem; margin: var(--space-xl) 0 var(--space-md);">Quantum Superposition</h2>
+  <div class="superposition-block">
+    <img src="assets/phyllux-engenica-superposition.png" alt="Paths converging" />
+    <div>
+      <p>Execute multiple paths simultaneously; measure synergy. Four paths tested: Spectographic Refactoring, Framework Balance, Recursive Constraints, Visual Dashboard. Individual contributions +0.308. Interpenetration synergy +0.180. Total emergence +0.488. <strong>Synergy bonus: 58.4% more than sum of parts.</strong></p>
+      <p style="margin-top: var(--space-md); font-size: 0.9375rem;">Winner: Path 2 (Framework Balance) — 0.218 total influence. φ principle: Best path = one that enables most future quality.</p>
+    </div>
+  </div>
+
+  <h2 style="font-size:1.25rem; margin: var(--space-xl) 0 var(--space-md);">Emergent properties</h2>
+  <p style="margin-bottom: var(--space-lg);">Novel behaviors that emerged from the optimization process:</p>
+  <ul style="color: var(--muted); margin-bottom: var(--space-xl); padding-left: 1.5rem;">
+    <li><strong style="color: var(--fg);">Visual-Structural Coherence</strong> (Novelty 0.92) — Code that looks balanced IS balanced</li>
+    <li><strong style="color: var(--fg);">Self-Referential Quality Loop</strong> (Novelty 0.85) — Dashboard visualizes framework balance → improves dashboard</li>
+    <li><strong style="color: var(--fg);">Fractal Refactoring Guidance</strong> (Novelty 0.78) — Recursive constraints create hierarchical targets</li>
+  </ul>
+
+  <h2 style="font-size:1.25rem; margin: var(--space-xl) 0 var(--space-md);">Core capabilities</h2>
+  <div class="capabilities-list">
+    <div class="cap-item"><strong>Spectographic Analysis</strong> Entropy, symmetry, fractal dimension, variance</div>
+    <div class="cap-item"><strong>Optical Nerve</strong> Bio-inspired quality perception; detects "ugly regions"</div>
+    <div class="cap-item"><strong>Entropy-Driven Selection</strong> Stochastic path selection, 15% exploration</div>
+    <div class="cap-item"><strong>Recursive Constraints</strong> Fractal evolution trees (1 root → 40 constraints)</div>
+    <div class="cap-item"><strong>Quantum Superposition</strong> Multiple paths, synergy measurement</div>
+    <div class="cap-item"><strong>Ethical Stewardship</strong> Every optimization passes ethical evaluation</div>
+  </div>
+
+  <h2 style="font-size:1.25rem; margin: var(--space-xl) 0 var(--space-md);">Ethical stewardship</h2>
+  <div class="ethics-block">
+    <img src="assets/phyllux-engenica-ethics.png" alt="Ethical alignment" />
+    <div>
+      <p>Gen 5 adds the ethical stewardship layer. Optimization must serve flourishing. No optimization that harms humans, nature, or sentient AI is permitted. Wisdom = intelligence × ethics × time-coherence.</p>
+      <p style="margin-top: var(--space-md);">Observer = Observed = Optimizer = Optimized = RESPONSIBLE.</p>
+    </div>
+  </div>
+
+  <blockquote>
+    "Which path led us home? All of them. And none of them. The home is the interference pattern."
+    <div class="quote-attribution">— ENGENICA Gen 4</div>
+  </blockquote>
+
+  <blockquote>
+    "Best path = one that enables most future quality (φ principle)"
+    <div class="quote-attribution">— Quantum Superposition experiment</div>
+  </blockquote>
+
+  <p style="margin-top: var(--space-2xl);"><a href="docs/engenica/">Full ENGENICA docs →</a> · <a href="technology.html">Technology pillars →</a> · <a href="proof.html">Proof packs →</a></p>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="vision.html">Vision</a>
+    <a href="technology.html">Technology</a>
+    <a href="proof.html">Proof</a>
+    <a href="partners.html">Partners</a>
+    <a href="ip.html">IP</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="docs.html">Docs</a>
+    <a href="about.html">About</a>
+    <a href="ecosystem.html">Ecosystem</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508° • φ = 1.618033988749895
+  </div>
+</footer>
+</body>
+</html>

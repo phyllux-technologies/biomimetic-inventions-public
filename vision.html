@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vision | Phyllux Technologies</title>
+  <meta name="description" content="The story behind Phyllux: from antenna arrays to the sunflower. Golden angle, phyllotaxis, and a foundation field-tested for 400 million years." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(94, 234, 212, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(232, 197, 71, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(5, 5, 8, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      padding: var(--space-md) var(--space-xl);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill {
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: var(--phi-gold-soft);
+      color: var(--phi-gold);
+      margin-left: var(--space-sm);
+      font-weight: 600;
+    }
+    .hero-banner {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: var(--space-xl);
+    }
+    .hero-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 320px;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 var(--space-xl) var(--space-2xl);
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: var(--space-lg);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .back-link:hover { color: var(--accent); }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: var(--space-md);
+      color: var(--fg);
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: var(--space-2xl) 0 var(--space-md);
+      color: var(--fg);
+    }
+    p { color: var(--muted); margin-bottom: var(--space-lg); }
+    .lead { font-size: 1.125rem; color: var(--fg-soft, #e2e8f0); }
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: var(--space-lg);
+      margin: var(--space-xl) 0;
+      font-style: italic;
+      color: var(--muted);
+    }
+    .golden-angle-block {
+      display: flex;
+      gap: var(--space-xl);
+      align-items: center;
+      flex-wrap: wrap;
+      margin: var(--space-2xl) 0;
+      padding: var(--space-xl);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5);
+    }
+    .golden-angle-block img {
+      flex: 0 0 280px;
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+    }
+    .promise-list {
+      list-style: none;
+      padding: 0;
+    }
+    .promise-list li {
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      display: flex;
+      gap: var(--space-md);
+      align-items: flex-start;
+    }
+    .promise-list li:last-child { border-bottom: none; }
+    .promise-list strong { color: var(--fg); font-size: 0.9375rem; min-width: 180px; }
+    .vision-timeline {
+      display: grid;
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    .vision-timeline-item {
+      padding: var(--space-lg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.4);
+      transition: border-color 0.2s;
+    }
+    .vision-timeline-item:hover { border-color: rgba(94, 234, 212, 0.2); }
+    .vision-timeline-item strong { color: var(--accent); font-size: 0.875rem; }
+    .cta-block {
+      margin-top: var(--space-2xl);
+      padding: var(--space-xl);
+      border: 1px solid rgba(94, 234, 212, 0.2);
+      border-radius: var(--radius);
+      background: var(--accent-soft);
+      text-align: center;
+    }
+    .cta-block a.btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: var(--space-md);
+      transition: opacity 0.2s;
+    }
+    .cta-block a.btn:hover { opacity: 0.9; }
+    .embellish {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      opacity: 0.2;
+      pointer-events: none;
+      right: var(--space-xl);
+      top: 400px;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-vision-hero.png" alt="Phyllotactic spiral — nature's optimization" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>Vision <span class="seq-badge">Position 1</span></h1>
+  <p class="lead">The story behind Phyllux: from antenna arrays to the sunflower. One geometry, field-tested for 400 million years.</p>
+
+  <h2>The Vision Story</h2>
+  <blockquote>
+    I spent years designing antenna arrays, trying every grid pattern and spacing formula I could find. Better beam steering. Lower sidelobes. Cleaner signals. Every optimization hit the same wall: regular geometries create regular problems.
+  </blockquote>
+  <blockquote>
+    Then I found phyllotaxis. Not in an engineering journal—in a sunflower. That spiral pattern in seed heads, pinecones, and galaxies isn't decorative. It's a mathematical optimization that nature has deployed for hundreds of millions of years to solve exactly the problems I was trying to crack: maximum coverage, minimum interference, graceful scaling.
+  </blockquote>
+  <blockquote>
+    The golden angle (≈137.508°) is what you get when you divide a circle by the golden ratio squared. It's the only angle that prevents resonant repetition no matter how many times you apply it. Nature uses it everywhere efficiency matters. I realized: if it works for distributing seeds and petals, why not antenna elements? Or brain electrodes? Or cryptographic key rotations?
+  </blockquote>
+  <p><strong>Phyllux Technologies exists because that question had answers.</strong></p>
+
+  <div class="golden-angle-block">
+    <img src="assets/phyllux-golden-angle.png" alt="Golden angle: 137.508°" />
+    <div>
+      <h2>The Golden Angle</h2>
+      <p><strong>137.508°</strong> — θ_g = 360° × (2 − φ) where φ ≈ 1.618</p>
+      <p>Found in sunflowers, pinecones, pineapples, rose petals, galaxies. The only angle that prevents resonant repetition. Our geometric blueprint.</p>
+      <p><a href="technology.html">See how we apply it →</a></p>
+    </div>
+  </div>
+
+  <h2>The Invitation</h2>
+  <blockquote>
+    If you're building: Neural interfaces, satellite constellations, security systems, next-generation infrastructure... and you want a foundation that's been field-tested for 400 million years, not 40 years—Let's talk.
+  </blockquote>
+  <p><a href="partners.html">Partner with us →</a></p>
+
+  <h2>The Phyllux Promise</h2>
+  <ul class="promise-list">
+    <li><strong>To Researchers:</strong> Your work will never be blocked by paywalls. Use freely, cite properly.</li>
+    <li><strong>To Mission-Aligned Companies:</strong> Pay fairly based on your resources. Get preferential terms.</li>
+    <li><strong>To Commercial Entities:</strong> Standard rates ensure inventors aren't compensated while you profit.</li>
+    <li><strong>To Patent Trolls:</strong> These inventions are documented, dated, and protected.</li>
+    <li><strong>To Humanity:</strong> Innovation should be accessible. Inventors should be compensated. Both are possible.</li>
+  </ul>
+
+  <h2>Ultimate Vision</h2>
+  <div class="vision-timeline">
+    <div class="vision-timeline-item"><strong>Short-Term</strong> — Secure fair licensing deals with companies that value innovation.</div>
+    <div class="vision-timeline-item"><strong>Mid-Term</strong> — Prove that open prior art + ethical licensing > traditional patent hoarding.</div>
+    <div class="vision-timeline-item"><strong>Long-Term</strong> — Inspire other inventors to adopt Phyllux model, collectively reform broken IP system.</div>
+    <div class="vision-timeline-item"><strong>Ultimate Goal</strong> — A world where knowledge flows freely to accelerate discovery, and compensation flows fairly to reward inventors.</div>
+  </div>
+
+  <div class="cta-block">
+    <p><strong>Ready to build on a foundation that's been field-tested for 400 million years?</strong></p>
+    <a href="mailto:phibronotchi@gmail.com?subject=Partnership%20Inquiry" class="btn">Get in touch</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="technology.html">Technology</a>
+    <a href="engenica.html">ENGENICA</a>
+    <a href="proof.html">Proof</a>
+    <a href="partners.html">Partners</a>
+    <a href="ip.html">IP</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="docs.html">Docs</a>
+    <a href="about.html">About</a>
+    <a href="ecosystem.html">Ecosystem</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508° • φ = 1.618033988749895
+  </div>
+</footer>
+</body>
+</html>

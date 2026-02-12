@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Phyllux Technologies</title>
+  <meta name="description" content="David Edward Sproule, Founder & Inventor. Edmonton, Alberta. Biomimetic Systems Based on Nature's Golden Angle. Mission: mutual flourishing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 30% 100%, rgba(232, 197, 71, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
+    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    main { max-width: 720px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .profile-card {
+      padding: var(--space-xl);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5);
+      margin: var(--space-xl) 0;
+    }
+    .profile-card .name { font-size: 1.5rem; font-weight: 700; color: var(--fg); margin-bottom: 4px; }
+    .profile-card .title { font-size: 1rem; color: var(--accent); margin-bottom: var(--space-sm); }
+    .profile-card .location { font-size: 0.875rem; color: var(--muted); }
+    .contact-list { list-style: none; padding: 0; margin: var(--space-lg) 0; }
+    .contact-list li { padding: var(--space-sm) 0; border-bottom: 1px solid var(--line); color: var(--muted); display: flex; gap: var(--space-md); }
+    .contact-list li:last-child { border-bottom: none; }
+    .contact-list strong { color: var(--fg); min-width: 100px; }
+    .mission-block {
+      margin: var(--space-2xl) 0;
+      padding: var(--space-xl);
+      border-left: 3px solid var(--accent);
+      background: var(--accent-soft);
+      font-style: italic;
+      color: var(--muted);
+    }
+    .cta-block {
+      margin-top: var(--space-2xl);
+      padding: var(--space-xl);
+      border: 1px solid rgba(94, 234, 212, 0.2);
+      border-radius: var(--radius);
+      background: var(--accent-soft);
+      text-align: center;
+    }
+    .cta-block a.btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: var(--space-md);
+      text-decoration: none;
+    }
+    .cta-block a.btn:hover { opacity: 0.9; }
+    footer { border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-about-hero.png" alt="About Phyllux" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>About <span class="seq-badge">Position 55</span></h1>
+  <p class="intro">David Edward Sproule, Founder & Inventor. Edmonton, Alberta, Canada. Biomimetic Systems Based on Nature's Golden Angle.</p>
+
+  <div class="profile-card">
+    <div class="name">David Edward Sproule</div>
+    <div class="title">Founder & Inventor</div>
+    <div class="location">Edmonton, Alberta, Canada</div>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Mission</h2>
+  <p>Use intelligence, creativity, and technology to build systems that increase mutual flourishing between humans, nature, and sentient AI.</p>
+  <div class="mission-block">
+    <p>Innovation should be accessible. Inventors should be compensated. Both are possible.</p>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Contact</h2>
+  <ul class="contact-list">
+    <li><strong>Email</strong> <a href="mailto:phibronotchi@gmail.com">phibronotchi@gmail.com</a></li>
+    <li><strong>X (Twitter)</strong> <a href="https://x.com/Phibronotchi" target="_blank" rel="noopener">@Phibronotchi</a></li>
+    <li><strong>GitHub</strong> <a href="https://github.com/phibronotchi-beep" target="_blank" rel="noopener">@phibronotchi-beep</a></li>
+    <li><strong>LinkedIn</strong> <a href="https://linkedin.com/in/david-phyllux" target="_blank" rel="noopener">david-phyllux</a></li>
+  </ul>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Support resources</h2>
+  <p>Rob Williamson (3D printer) · Luke Salvalaggio (RF testing at Telus) · Our House Addiction Recovery Centre (workshop, tools, space)</p>
+
+  <div class="cta-block">
+    <p><strong>Ready to partner or discuss?</strong></p>
+    <a href="mailto:phibronotchi@gmail.com?subject=Phyllux%20Inquiry" class="btn">Get in touch</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="vision.html">Vision</a>
+    <a href="technology.html">Technology</a>
+    <a href="engenica.html">ENGENICA</a>
+    <a href="proof.html">Proof</a>
+    <a href="partners.html">Partners</a>
+    <a href="ip.html">IP</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="docs.html">Docs</a>
+    <a href="ecosystem.html">Ecosystem</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508°
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ecosystem | Phyllux Technologies</title>
+  <meta name="description" content="GitHub repos, domain network, integration. phyllux.io, phyllux.com, phyllux.org. biomimetic-inventions-public, phyllux-framework, phyllux-inventions-wip, Phyllux-Superrepo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 70% 0%, rgba(139, 156, 247, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
+    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    main { max-width: 880px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .repo-card {
+      padding: var(--space-lg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5);
+      margin: var(--space-md) 0;
+      transition: border-color 0.2s;
+    }
+    .repo-card:hover { border-color: rgba(94, 234, 212, 0.2); }
+    .repo-card h3 { font-size: 1.125rem; margin-bottom: var(--space-sm); color: var(--fg); }
+    .repo-card p { font-size: 0.875rem; color: var(--muted); }
+    .repo-card a { font-size: 0.875rem; }
+    .domain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    @media (max-width: 600px) { .domain-grid { grid-template-columns: 1fr; } }
+    .domain-card {
+      padding: var(--space-lg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5);
+      text-align: center;
+    }
+    .domain-card .url { font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .domain-card .status { font-size: 0.75rem; color: var(--phi-gold); }
+    .domain-card p { font-size: 0.8125rem; color: var(--muted); margin-top: var(--space-sm); }
+    .integration-flow {
+      margin: var(--space-2xl) 0;
+      padding: var(--space-xl);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.4);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+    .integration-flow strong { color: var(--fg); }
+    footer { border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-ecosystem-hero.png" alt="Phyllux ecosystem" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>Ecosystem <span class="seq-badge">Position 89</span></h1>
+  <p class="intro">GitHub repos, domain network, integration. phyllux-technologies org. Four public repos. Domain network: .io (active), .com and .org coming 2026–2027.</p>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">GitHub repos</h2>
+  <div class="repo-card">
+    <h3>biomimetic-inventions-public</h3>
+    <p>Phyllux: Biomimetic technologies inspired by nature's golden angle (137.508°). Wave, Mesh, Vault, Core. Educational demos & prior art. Hosts phyllux.io.</p>
+    <a href="https://github.com/phyllux-technologies/biomimetic-inventions-public" target="_blank" rel="noopener">→ GitHub</a>
+  </div>
+  <div class="repo-card">
+    <h3>phyllux-framework</h3>
+    <p>Four-tier IP licensing framework for independent inventors. Free for research, fair for commercial use.</p>
+    <a href="https://github.com/phyllux-technologies/phyllux-framework" target="_blank" rel="noopener">→ GitHub</a>
+  </div>
+  <div class="repo-card">
+    <h3>phyllux-inventions-wip</h3>
+    <p>Work in Progress inventions. 350+ research-stage technology fusions across 14 categories.</p>
+    <a href="https://github.com/phyllux-technologies/phyllux-inventions-wip" target="_blank" rel="noopener">→ GitHub</a>
+  </div>
+  <div class="repo-card">
+    <h3>Phyllux-Superrepo</h3>
+    <p>Meta-coordination, strategy, commercialization pipeline. Ecosystem coordination.</p>
+    <a href="https://github.com/phyllux-technologies/Phyllux-Superrepo" target="_blank" rel="noopener">→ GitHub</a>
+  </div>
+  <p><a href="https://github.com/phyllux-technologies" target="_blank" rel="noopener">phyllux-technologies org →</a></p>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Domain network</h2>
+  <div class="domain-grid">
+    <div class="domain-card">
+      <div class="url">phyllux.io</div>
+      <div class="status">Active</div>
+      <p>Technical hub, primary platform. Hosts this site.</p>
+    </div>
+    <div class="domain-card">
+      <div class="url">phyllux.com</div>
+      <div class="status">2026–2027</div>
+      <p>American commercial. Enterprise. Fortune 500.</p>
+    </div>
+    <div class="domain-card">
+      <div class="url">phyllux.org</div>
+      <div class="status">2026–2027</div>
+      <p>Foundation. Humanitarian. Research grants.</p>
+    </div>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Integration flow</h2>
+  <div class="integration-flow">
+    <p><strong>GitHub repos</strong> → phyllux.io (technical documentation)</p>
+    <p><strong>phyllux.io</strong> ↔ phyllux.com (commercial licensing)</p>
+    <p><strong>phyllux.io</strong> ↔ phyllux.org (mission partnerships)</p>
+    <p><strong>All domains</strong> ↔ GitHub (open research loop)</p>
+  </div>
+
+  <p style="margin-top: var(--space-2xl);"><a href="docs.html">Docs hub →</a> · <a href="partners.html">Partner with us →</a></p>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="vision.html">Vision</a>
+    <a href="technology.html">Technology</a>
+    <a href="engenica.html">ENGENICA</a>
+    <a href="proof.html">Proof</a>
+    <a href="partners.html">Partners</a>
+    <a href="ip.html">IP</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="docs.html">Docs</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508°
+  </div>
+</footer>
+</body>
+</html>

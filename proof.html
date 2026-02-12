@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proof | Phyllux Technologies</title>
+  <meta name="description" content="Prior art registry, integrity method, disclosures. January 7, 2026 defensive publication. USPTO grace period through January 7, 2027." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(94, 234, 212, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
+    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    main { max-width: 800px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .registry-card {
+      background: rgba(12, 15, 20, 0.6);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+    .registry-card h2 { font-size: 1.125rem; margin-bottom: var(--space-md); color: var(--fg); }
+    .registry-card p { color: var(--muted); font-size: 0.9375rem; }
+    .registry-card .meta { font-size: 0.8125rem; color: var(--phi-gold); margin-top: var(--space-sm); }
+    .registry-table { width: 100%; border-collapse: collapse; margin: var(--space-md) 0; font-size: 0.875rem; }
+    .registry-table th, .registry-table td { padding: var(--space-sm) var(--space-md); text-align: left; border-bottom: 1px solid var(--line); }
+    .registry-table th { color: var(--fg); font-weight: 600; }
+    .registry-table td { color: var(--muted); }
+    .disclosure-date { font-size: 1.25rem; font-weight: 700; color: var(--accent); margin: var(--space-xl) 0; }
+    .integrity-list { list-style: none; padding: 0; }
+    .integrity-list li { padding: var(--space-sm) 0; border-bottom: 1px solid var(--line); color: var(--muted); display: flex; gap: var(--space-md); }
+    .integrity-list li:last-child { border-bottom: none; }
+    .integrity-list strong { color: var(--fg); min-width: 140px; }
+    footer { border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-proof-hero.png" alt="Proof — prior art and integrity" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>Proof <span class="seq-badge">Position 5</span></h1>
+  <p class="intro">Prior art registry, integrity method, and public disclosures. Defensive publication establishes a clear timeline. USPTO grace period through January 7, 2027.</p>
+
+  <div class="disclosure-date">January 7, 2026</div>
+  <p>Public disclosure via GitHub. Repos published. Names and timestamps tied to pillars. Announcements and artifacts linked.</p>
+
+  <div class="registry-card">
+    <h2>Prior Art & Disclosures Registry</h2>
+    <p>Public registry tying names and timestamps to pillars. Links to announcements and artifacts.</p>
+    <div class="meta">Naming continuity: GAFAA → WAVE · PNM → MESH · PhiKey → VAULT · IBS → CORE</div>
+    <p style="margin-top: var(--space-md);"><a href="docs/proof/prior-art/">Open registry →</a></p>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Public announcements</h2>
+  <table class="registry-table">
+    <tr><th>Channel</th><th>Handle / URL</th></tr>
+    <tr><td>X (Twitter)</td><td><a href="https://x.com/Phibronotchi" target="_blank" rel="noopener">@Phibronotchi</a></td></tr>
+    <tr><td>GitHub</td><td><a href="https://github.com/phyllux-technologies/biomimetic-inventions-public" target="_blank" rel="noopener">biomimetic-inventions-public</a></td></tr>
+  </table>
+
+  <div class="registry-card">
+    <h2>Integrity method</h2>
+    <p>Checksums, manifests, and provenance discipline for public artifacts and releases. All public artifacts are timestamped and versioned. GitHub commits provide immutable prior art.</p>
+    <ul class="integrity-list">
+      <li><strong>Verification</strong> Checksums for all published artifacts</li>
+      <li><strong>Manifests</strong> Versioned, reproducible</li>
+      <li><strong>Provenance</strong> Clear chain of ownership and timestamps</li>
+    </ul>
+    <p style="margin-top: var(--space-md);"><a href="docs/proof/integrity/">Integrity method details →</a></p>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Demos (non-enabling)</h2>
+  <p>Visualizations and toy demos that illustrate behavior without disclosing competitive details.</p>
+  <p><a href="docs/demos/">View demos →</a></p>
+
+  <p style="margin-top: var(--space-2xl);"><a href="ip.html">IP posture →</a> · <a href="technology.html">Technology pillars →</a></p>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="vision.html">Vision</a>
+    <a href="technology.html">Technology</a>
+    <a href="engenica.html">ENGENICA</a>
+    <a href="partners.html">Partners</a>
+    <a href="ip.html">IP</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="docs.html">Docs</a>
+    <a href="about.html">About</a>
+    <a href="ecosystem.html">Ecosystem</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508° • Patent Deadline: January 7, 2027
+  </div>
+</footer>
+</body>
+</html>

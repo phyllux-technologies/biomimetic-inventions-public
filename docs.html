@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Docs | Phyllux Technologies</title>
+  <meta name="description" content="Documentation hub: pillars, partner resources, proof, IP, ethics, demos. Non-enabling, public-safe. Diagrams, plots, proof registry, partner templates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(94, 234, 212, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
+    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    main { max-width: 900px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    @media (max-width: 600px) { .doc-grid { grid-template-columns: 1fr; } }
+    .doc-card {
+      padding: var(--space-lg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5);
+      transition: border-color 0.2s;
+    }
+    .doc-card:hover { border-color: rgba(94, 234, 212, 0.2); }
+    .doc-card h3 { font-size: 1rem; margin-bottom: var(--space-sm); color: var(--fg); }
+    .doc-card p { font-size: 0.875rem; color: var(--muted); }
+    .non-enabling {
+      margin: var(--space-2xl) 0;
+      padding: var(--space-lg);
+      border: 1px dashed rgba(252, 211, 77, 0.35);
+      border-radius: var(--radius);
+      background: rgba(252, 211, 77, 0.05);
+      font-size: 0.9375rem;
+      color: var(--muted);
+    }
+    footer { border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/phyllux-docs-hero.png" alt="Documentation" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Back to Phyllux</a>
+  
+  <h1>Docs <span class="seq-badge">Position 34</span></h1>
+  <p class="intro">Comprehensive, non-enabling documentation for Phyllux Technologies. Includes diagrams, plots, proof registry, and partner templates. Public-safe by default.</p>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Pillars</h2>
+  <div class="doc-grid">
+    <a href="docs/wave/" class="doc-card">
+      <h3>📡 WAVE</h3>
+      <p>Golden-angle antenna arrays. GAFAA public specs, examples.</p>
+    </a>
+    <a href="docs/mesh/" class="doc-card">
+      <h3>🧠 MESH</h3>
+      <p>Phyllotactic neural mapping. PNM electrode placement.</p>
+    </a>
+    <a href="docs/vault/" class="doc-card">
+      <h3>🔐 VAULT</h3>
+      <p>PhiKey cryptography. Post-quantum key derivation.</p>
+    </a>
+    <a href="docs/core/" class="doc-card">
+      <h3>🧩 CORE</h3>
+      <p>Integrated Biomimetic System. Unified coordinate spine.</p>
+    </a>
+  </div>
+
+  <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Resources</h2>
+  <div class="doc-grid">
+    <a href="docs/engenica/" class="doc-card">
+      <h3>ENGENICA</h3>
+      <p>Meta-iterative AI. Engine + product.</p>
+    </a>
+    <a href="docs/partner/" class="doc-card">
+      <h3>Partner</h3>
+      <p>Intake, evaluation offer, licensing ladder.</p>
+    </a>
+    <a href="docs/proof/prior-art/" class="doc-card">
+      <h3>Prior art</h3>
+      <p>Registry, disclosures, January 7 2026.</p>
+    </a>
+    <a href="docs/proof/integrity/" class="doc-card">
+      <h3>Integrity</h3>
+      <p>Checksums, manifests, provenance.</p>
+    </a>
+    <a href="docs/ip/" class="doc-card">
+      <h3>IP posture</h3>
+      <p>Strategy, protection lanes.</p>
+    </a>
+    <a href="docs/ethics/" class="doc-card">
+      <h3>Ethics</h3>
+      <p>Commitments, responsible deployment.</p>
+    </a>
+    <a href="docs/demos/" class="doc-card">
+      <h3>Demos</h3>
+      <p>Non-enabling visualizations, toy demos.</p>
+    </a>
+  </div>
+
+  <div class="non-enabling">
+    <strong>Public-safe default:</strong> This documentation explains <em>what</em> and <em>why</em> with non-enabling visuals. Implementation details remain private/partner/NDA as chosen.
+  </div>
+
+  <p style="margin-top: var(--space-2xl);"><a href="docs/">Open docs index →</a> · <a href="technology.html">Technology pillars →</a></p>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="vision.html">Vision</a>
+    <a href="technology.html">Technology</a>
+    <a href="engenica.html">ENGENICA</a>
+    <a href="proof.html">Proof</a>
+    <a href="partners.html">Partners</a>
+    <a href="ip.html">IP</a>
+    <a href="ethics.html">Ethics</a>
+    <a href="about.html">About</a>
+    <a href="ecosystem.html">Ecosystem</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies • Golden Angle: 137.508°
+  </div>
+</footer>
+</body>
+</html>
