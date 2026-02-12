@@ -30,9 +30,9 @@ All extensions are unified under phyllotactic system principles per PPA embodime
 
 ## Cross-Repo Links
 
-- **Public Demos/Prior Art**: https://github.com/phibronotchi-beep/biomimetic-inventions-public
-- **Core Framework**: https://github.com/phibronotchi-beep/phyllux-framework
-- **WIP Inventions**: https://github.com/phibronotchi-beep/phyllux-inventions-wip
+- **Public Demos/Prior Art**: https://github.com/phyllux-technologies/biomimetic-inventions-public
+- **Core Framework**: https://github.com/phyllux-technologies/phyllux-framework
+- **WIP Inventions**: https://github.com/phyllux-technologies/phyllux-inventions-wip
 - **Full Scope Hub (Private)**: Phyllux-Monollux (contact for NDA access)
 
 ## Ethical IP Tiers

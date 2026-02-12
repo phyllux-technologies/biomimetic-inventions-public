@@ -12,18 +12,18 @@ try:
 except NameError:
     SCRIPT_DIR = os.getcwd()
 
-# Find repository root by looking for README.md or LICENSE.md
+# Find biomimetic-inventions-public root (has images/ and generate_plot_images.py)
 REPO_ROOT = SCRIPT_DIR
-for _ in range(5):  # Max 5 levels up
-    if os.path.exists(os.path.join(REPO_ROOT, 'README.md')) and \
-       os.path.exists(os.path.join(REPO_ROOT, 'LICENSE.md')):
+for _ in range(6):  # Up to biomimetic-inventions-public root
+    has_images = os.path.exists(os.path.join(REPO_ROOT, 'images'))
+    has_generate = os.path.exists(os.path.join(REPO_ROOT, 'generate_plot_images.py'))
+    if has_images and has_generate:
         break
     parent = os.path.dirname(REPO_ROOT)
-    if parent == REPO_ROOT:  # Reached filesystem root
-        REPO_ROOT = SCRIPT_DIR  # Fallback to script directory
+    if parent == REPO_ROOT:
+        REPO_ROOT = SCRIPT_DIR
         break
     REPO_ROOT = parent
-
 IMAGE_DIR = os.path.join(REPO_ROOT, 'images')
 os.makedirs(IMAGE_DIR, exist_ok=True)
 print(f"Image output directory: {IMAGE_DIR}")
@@ -35,14 +35,15 @@ try:
     golden_angle = 137.508
     theta = np.arange(N) * np.deg2rad(golden_angle)
     r = np.sqrt(theta)
-    fig = plt.figure(figsize=(8, 8))
+    fig = plt.figure(figsize=(8, 8), facecolor='#FAFAFA')
     ax = fig.add_subplot(111, projection='polar')
-    ax.scatter(theta, r, s=10, c='blue')
+    ax.set_facecolor('#FAFAFA')
+    ax.scatter(theta, r, s=45, c='#0066B3', alpha=0.9, edgecolors='#003366', linewidths=0.8)
     ax.set_rlim(0, r.max() * 1.05)
-    ax.plot([0, 2*np.pi], [r.max(), r.max()], color='red', linewidth=1)
-    ax.set_title("PNM Phyllotactic Electrode Array (121 electrodes)")
-    fig.suptitle("Golden Angle ~137.508° Pattern for Neural Interfaces")
-    plt.savefig(os.path.join(IMAGE_DIR, 'toy_electrode_array.png'), dpi=300, bbox_inches='tight')
+    ax.set_title("PNM Phyllotactic Electrode Array (121 electrodes)", fontsize=12, fontweight='bold')
+    fig.suptitle("Golden Angle ~137.508° Pattern for Neural Interfaces", fontsize=14, fontweight='bold', y=1.02)
+    plt.tight_layout()
+    plt.savefig(os.path.join(IMAGE_DIR, 'toy_electrode_array.png'), dpi=300, bbox_inches='tight', facecolor='#FAFAFA')
     plt.close(fig)
     print("Generated: toy_electrode_array.png")
 except Exception as e:

@@ -32,31 +32,31 @@ if __name__ == "__main__":
         print(f"  Element {i+1}: x={x[i]:.3f}, y={y[i]:.3f}")
 
     # Plot
-    plt.figure(figsize=(8, 8), facecolor='white')
-    plt.scatter(x, y, s=100, c='red', alpha=0.7, edgecolors='black', linewidths=1.5)
-    plt.plot(x, y, 'b-', alpha=0.3, linewidth=1.0)
-    plt.xlabel('X position (mm)', fontsize=12, fontweight='bold')
-    plt.ylabel('Y position (mm)', fontsize=12, fontweight='bold')
-    plt.title('GAFAA: 121 Antenna Elements (Golden Angle Spiral)', fontsize=14, fontweight='bold')
-    plt.axis('equal')
-    plt.grid(True, alpha=0.4, linewidth=0.8)
+    fig, ax = plt.subplots(figsize=(8, 8), facecolor='#FAFAFA')
+    ax.set_facecolor('#FAFAFA')
+    ax.scatter(x, y, s=100, c='#C41E3A', alpha=0.9, edgecolors='#8B0000', linewidths=1.2, zorder=3)
+    ax.set_xlabel('X position (mm)', fontsize=11, fontweight='bold')
+    ax.set_ylabel('Y position (mm)', fontsize=11, fontweight='bold')
+    ax.set_title('GAFAA: 121 Antenna Elements (Golden Angle Spiral)', fontsize=13, fontweight='bold')
+    ax.axis('equal')
+    ax.grid(True, alpha=0.35, linewidth=0.7, color='#CCCCCC')
     plt.tight_layout()
-    # Find repository root for proper path
+    # Find biomimetic-inventions-public root (has images/ and generate_plot_images.py)
     import os
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
     REPO_ROOT = SCRIPT_DIR
-    for _ in range(5):
-        if os.path.exists(os.path.join(REPO_ROOT, 'README.md')) and \
-           os.path.exists(os.path.join(REPO_ROOT, 'LICENSE.md')):
+    for _ in range(6):
+        if os.path.exists(os.path.join(REPO_ROOT, 'images')) and \
+           os.path.exists(os.path.join(REPO_ROOT, 'generate_plot_images.py')):
             break
         parent = os.path.dirname(REPO_ROOT)
         if parent == REPO_ROOT:
-            REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(SCRIPT_DIR))))
+            REPO_ROOT = SCRIPT_DIR
             break
         REPO_ROOT = parent
     IMAGE_DIR = os.path.join(REPO_ROOT, 'images')
     os.makedirs(IMAGE_DIR, exist_ok=True)
     image_path = os.path.join(IMAGE_DIR, 'gafaa_121_clean.png')
-    plt.savefig(image_path, dpi=300, bbox_inches='tight', facecolor='white')
+    plt.savefig(image_path, dpi=300, bbox_inches='tight', facecolor='#FAFAFA')
     print(f"\nFigure saved to {image_path}")
     plt.close()

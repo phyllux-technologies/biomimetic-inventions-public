@@ -37,15 +37,15 @@ for script_path, expected_image in scripts:
             if result.returncode == 0:
                 image_path = os.path.join(IMAGE_DIR, expected_image)
                 if os.path.exists(image_path):
-                    print(f"  ✅ Generated: {expected_image}")
+                    print(f"  [OK] Generated: {expected_image}")
                 else:
-                    print(f"  ⚠️  Script ran but {expected_image} not found")
+                    print(f"  [WARN] Script ran but {expected_image} not found")
             else:
-                print(f"  ❌ Error: {result.stderr}")
+                print(f"  [ERROR] {result.stderr}")
         except Exception as e:
-            print(f"  ❌ Exception: {e}")
+            print(f"  [ERROR] Exception: {e}")
     else:
-        print(f"  ⚠️  Script not found: {full_script}")
+            print(f"  [WARN] Script not found: {full_script}")
 
 # Generate GAFAA image (needs path fix)
 print("\nGenerating GAFAA image...")
@@ -60,9 +60,9 @@ if os.path.exists(gafaa_script):
         if result.returncode == 0:
             gafaa_image = os.path.join(IMAGE_DIR, 'gafaa_121_clean.png')
             if os.path.exists(gafaa_image):
-                print(f"  ✅ Generated: gafaa_121_clean.png")
+                print(f"  [OK] Generated: gafaa_121_clean.png")
             else:
-                print(f"  ⚠️  Script ran but gafaa_121_clean.png not found")
+                print(f"  [WARN] Script ran but gafaa_121_clean.png not found")
         else:
             print(f"  ❌ Error: {result.stderr}")
     except Exception as e:
@@ -79,7 +79,7 @@ if os.path.exists(svg_script):
                                text=True,
                                timeout=60)
         if result.returncode == 0:
-            print("  ✅ SVG generation completed")
+            print("  [OK] SVG generation completed")
         else:
             print(f"  ❌ Error: {result.stderr}")
     except Exception as e:

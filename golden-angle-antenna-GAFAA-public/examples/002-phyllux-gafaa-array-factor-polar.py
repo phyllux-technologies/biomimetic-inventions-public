@@ -12,15 +12,15 @@ try:
 except NameError:
     SCRIPT_DIR = os.getcwd()
 
-# Find repository root by looking for README.md or LICENSE
+# Find biomimetic-inventions-public root (has images/ and generate_plot_images.py)
 REPO_ROOT = SCRIPT_DIR
-for _ in range(5):  # Max 5 levels up
-    if os.path.exists(os.path.join(REPO_ROOT, 'README.md')) and \
-       os.path.exists(os.path.join(REPO_ROOT, 'LICENSE')):
+for _ in range(6):
+    if os.path.exists(os.path.join(REPO_ROOT, 'images')) and \
+       os.path.exists(os.path.join(REPO_ROOT, 'generate_plot_images.py')):
         break
     parent = os.path.dirname(REPO_ROOT)
-    if parent == REPO_ROOT:  # Reached filesystem root
-        REPO_ROOT = SCRIPT_DIR  # Fallback to script directory
+    if parent == REPO_ROOT:
+        REPO_ROOT = SCRIPT_DIR
         break
     REPO_ROOT = parent
 
@@ -46,14 +46,17 @@ try:
                  positions[:, 1, np.newaxis, np.newaxis] * np.sin(theta_grid) * np.sin(phi_grid))
     AF = np.sum(np.exp(1j * phase), axis=0) / N
     AF_dB = 20 * np.log10(np.abs(AF) + 1e-10)
-    fig = plt.figure(figsize=(8, 8))
+    fig = plt.figure(figsize=(8, 8), facecolor='#FAFAFA')
     ax = fig.add_subplot(111, projection='polar')
-    contour = ax.contourf(phi_grid, theta_grid * (180/np.pi), AF_dB, levels=30, cmap='viridis')
+    ax.set_facecolor('#FAFAFA')
+    contour = ax.contourf(phi_grid, theta_grid * (180/np.pi), AF_dB, levels=30, cmap='plasma')
     ax.set_theta_zero_location('N')
     ax.set_theta_direction(-1)
-    ax.set_title("Array Factor Polar Plot (dB)")
-    fig.colorbar(contour)
-    plt.savefig(os.path.join(IMAGE_DIR, 'array_factor_polar.png'), dpi=300, bbox_inches='tight')
+    ax.set_title("Array Factor Polar Plot (dB)", fontsize=13, fontweight='bold')
+    cbar = fig.colorbar(contour, shrink=0.8, pad=0.1)
+    cbar.ax.tick_params(labelsize=9)
+    plt.tight_layout()
+    plt.savefig(os.path.join(IMAGE_DIR, 'array_factor_polar.png'), dpi=300, bbox_inches='tight', facecolor='#FAFAFA')
     plt.close(fig)
     print("Generated: array_factor_polar.png")
 except Exception as e:

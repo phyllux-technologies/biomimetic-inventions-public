@@ -62,3 +62,6 @@ Desktop.ini
 *.bak
 *.swp
 *~
+
+# GAFAA outputs to main images/ - ignore submodule images
+golden-angle-antenna-GAFAA-public/images/

@@ -26,7 +26,6 @@ biomimetic-inventions-public/
 ├── CONTRIBUTING.md                # Contribution guidelines
 ├── project_overview.md            # PPA reference and extensions
 ├── PITCH.md                       # Market and partnership info
-├── DUPLICATES_NOTE.md            # Note on intentional duplicates
 └── [other documentation files]    # Prior art, patents, etc.
 ```
 

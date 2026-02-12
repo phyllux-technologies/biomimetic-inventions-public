@@ -48,4 +48,4 @@ https://github.com/phibronotchi-beep/biomimetic-inventions-public
 
 **For code licensing, see [LICENSE](LICENSE) (MIT License).**  
 **For intellectual property notices, see [LICENSE-IP-NOTICE.md](LICENSE-IP-NOTICE.md).**  
-**For a summary of all licensing, see [LICENSE_SUMMARY.md](LICENSE_SUMMARY.md).**
+**For IP and commercial licensing, see [LICENSE-IP-NOTICE.md](LICENSE-IP-NOTICE.md).**

@@ -12,15 +12,15 @@ try:
 except NameError:
     SCRIPT_DIR = os.getcwd()
 
-# Find repository root by looking for README.md or LICENSE.md
+# Find biomimetic-inventions-public root (has images/ and generate_plot_images.py)
 REPO_ROOT = SCRIPT_DIR
-for _ in range(5):  # Max 5 levels up
-    if os.path.exists(os.path.join(REPO_ROOT, 'README.md')) and \
-       os.path.exists(os.path.join(REPO_ROOT, 'LICENSE.md')):
+for _ in range(6):
+    if os.path.exists(os.path.join(REPO_ROOT, 'images')) and \
+       os.path.exists(os.path.join(REPO_ROOT, 'generate_plot_images.py')):
         break
     parent = os.path.dirname(REPO_ROOT)
-    if parent == REPO_ROOT:  # Reached filesystem root
-        REPO_ROOT = SCRIPT_DIR  # Fallback to script directory
+    if parent == REPO_ROOT:
+        REPO_ROOT = SCRIPT_DIR
         break
     REPO_ROOT = parent
 
@@ -37,15 +37,17 @@ try:
     r = np.sqrt(np.arange(N)) * 0.5
     x = r * np.cos(theta)
     y = r * np.sin(theta)
-    fig, ax = plt.subplots(figsize=(8, 8))
-    ax.scatter(x, y, s=10, c='green', alpha=0.7)
-    ax.plot(x, y, color='blue', linewidth=0.5, alpha=0.5)
-    ax.set_title("121-Node Lattice Growth (Golden Angle)")
-    ax.set_xlabel("X Position (arbitrary units)")
-    ax.set_ylabel("Y Position (arbitrary units)")
+    fig, ax = plt.subplots(figsize=(8, 8), facecolor='#FAFAFA')
+    ax.set_facecolor('#FAFAFA')
+    ax.scatter(x, y, s=80, c='#2E7D32', alpha=0.9, edgecolors='#1B5E20', linewidths=1.2, zorder=3)
+    ax.plot(x, y, color='#0066B3', linewidth=1.0, alpha=0.2, zorder=1)
+    ax.set_title("121-Node Lattice Growth (Golden Angle)", fontsize=13, fontweight='bold')
+    ax.set_xlabel("X Position (arbitrary units)", fontsize=11, fontweight='bold')
+    ax.set_ylabel("Y Position (arbitrary units)", fontsize=11, fontweight='bold')
     ax.set_aspect('equal')
-    ax.grid(True)
-    plt.savefig(os.path.join(IMAGE_DIR, 'phikey_121_clean.png'), dpi=300, bbox_inches='tight')
+    ax.grid(True, alpha=0.35, linewidth=0.7, color='#CCCCCC')
+    plt.tight_layout()
+    plt.savefig(os.path.join(IMAGE_DIR, 'phikey_121_clean.png'), dpi=300, bbox_inches='tight', facecolor='#FAFAFA')
     plt.close(fig)
     print("Generated: phikey_121_clean.png")
 except Exception as e:

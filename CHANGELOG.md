@@ -8,16 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Comprehensive ecosystem optimization and documentation improvements
-- Enhanced README with standard structure (Overview, Installation, Usage, Integration)
-- CODE_OF_CONDUCT.md for contributor guidelines
-- Enhanced CONTRIBUTING.md with development setup and testing instructions
-- Improved .gitignore with comprehensive patterns
+- phyllux-repo-archive (workspace) for deprecated process/docs
 
 ### Changed
-- README restructured to follow ecosystem standard format
-- CONTRIBUTING.md expanded with detailed setup and troubleshooting
-- .gitignore enhanced for better coverage
+- README streamlined to match phyllux.io quality
+- README links updated to phyllux-technologies org
+
+### Removed (moved to d:\Workspace\phyllux-repo-archive\biomimetic-inventions-public\)
+- Internal alignment/audit/review/polish reports
+- CI badge notes, dependabot merge plan, duplicate notes
+- Image regeneration/reset plans, license detection fix reports
+- REGENERATION_GUIDE, REPOSITORY_SUMMARY, WEBSITE_DEPLOYMENT
+- test_generation.py
 
 ## [2026-01-25] - Repository Optimization
 
