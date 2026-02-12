@@ -14,19 +14,12 @@ jobs:
       - uses: actions/checkout@v6
       
       - name: Lint Markdown
-        uses: DavidAnson/markdownlint@v0.40.0
-        with:
-          config_file: .markdownlint.json
-          result_output: markdownlint-results.txt
+        uses: DavidAnson/markdownlint-cli2-action@v16
         continue-on-error: true
-      
-      - name: Display lint results
-        run: |
-          if [ -f markdownlint-results.txt ]; then
-            cat markdownlint-results.txt
-          else
-            echo "No linting issues found"
-          fi
+        with:
+          config: .markdownlint.json
+          globs: |
+            **/*.md
       
       - name: Check internal links
         uses: lycheeverse/lychee-action@v2.7.0
