@@ -132,6 +132,28 @@
       transition: opacity 0.2s;
     }
     .cta-block a.btn:hover { opacity: 0.9; text-decoration: none; }
+    .visual-story { margin: var(--space-2xl) 0; }
+    .visual-story figure {
+      margin: var(--space-2xl) 0;
+      break-inside: avoid;
+    }
+    .visual-story img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      display: block;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      margin: 0 auto var(--space-md);
+    }
+    .visual-story figcaption {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .visual-story figcaption strong { color: var(--fg); }
     footer { border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl); }
     .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
     .footer-nav a { font-size: 0.875rem; }
@@ -270,93 +292,47 @@
   <h2>Join the Ecosystem</h2>
   <p>We want partners. <strong>Affiliates</strong> who promote and earn commission. <strong>Resellers</strong> who sell to teams. <strong>Integration partners</strong> who connect MASTERMIND to their tools. <strong>Module creators</strong> who build add-ons and share revenue. Mutually beneficial. Transparent. <a href="partners.html">Partners →</a></p>
 
-  <h2>MASTERMIND in visuals</h2>
-  <p style="margin-bottom: var(--space-lg); color: var(--muted);">Concept diagrams, workflows, modules, benefits, principles — the complete visual story.</p>
-  <div class="module-teaser" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: var(--space-sm);">
-    <img src="assets/marketing/mastermind-hero-banner-1920x600.png" alt="Hero" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-quality-hierarchy.png" alt="Quality Hierarchy" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-system-overview.png" alt="System overview" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-value-proposition.png" alt="Value proposition" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-ecosystem-modules.png" alt="Ecosystem modules" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-benefits-coordination.png" alt="Benefits" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-add-idea-flow.png" alt="Add idea flow" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-aligned-incentives.png" alt="Aligned incentives" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-atomic-vs-compound.png" alt="Atomic vs compound" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-benefits-ai-memory.png" alt="AI memory" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-benefits-learnings-propagated.png" alt="Learnings propagated" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-benefits-main-memory.png" alt="Main memory" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-benefits-mission-alignment.png" alt="Mission alignment" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-benefits-traceability.png" alt="Traceability" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-built-on-great-ideas.png" alt="Built on great ideas" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-cli-commands.png" alt="CLI commands" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-code-workflow.png" alt="Code workflow" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-comparison-vs-adhoc.png" alt="vs adhoc" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-core-structure.png" alt="Core structure" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-agency.png" alt="Counter agency" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-flourishing.png" alt="Counter flourishing" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-free-to-leave.png" alt="Counter free to leave" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-harmony.png" alt="Counter harmony" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-human-first.png" alt="Counter human first" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-improve-not-control.png" alt="Counter improve not control" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-individuals-matter.png" alt="Counter individuals matter" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-question-welcome.png" alt="Counter question welcome" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-systems-uplift.png" alt="Counter systems uplift" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-transparent.png" alt="Counter transparent" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-trust-earned.png" alt="Counter trust earned" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-counter-voluntary.png" alt="Counter voluntary" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-cross-pollination.png" alt="Cross pollination" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-cross-project-propagation.png" alt="Propagation" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-cta-start-today.png" alt="CTA" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-cursor-rule-integration.png" alt="Cursor integration" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-data-flow.png" alt="Data flow" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-evaluation-matrix.png" alt="Evaluation matrix" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-explainer-dq-sq.png" alt="DQ/SQ" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-feature-grid.png" alt="Feature grid" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-file-tree.png" alt="File tree" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-first-run-success.png" alt="First run" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-free-core-premium.png" alt="Free core premium" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-governor-flow.png" alt="Governor flow" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-governor-safety.png" alt="Governor safety" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-gumption-traps.png" alt="Gumption traps" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-hero.png" alt="Hero" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-hero-dark.png" alt="Hero dark" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-improve-system-flow.png" alt="Improve system" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-improvement-levels.png" alt="Improvement levels" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-inspire-every-idea.png" alt="Inspire ideas" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-inspire-virtuous-loop.png" alt="Virtuous loop" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-install-one-at-a-time.png" alt="Install" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-install-steps.png" alt="Install steps" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-integration-ecosystem.png" alt="Integration" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-key-files-map.png" alt="Key files" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-logo-mark.png" alt="Logo" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-main-memory-structure.png" alt="Main memory" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-atomic.png" alt="Module atomic" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-care-lens.png" alt="Care lens" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-engenica.png" alt="ENGENICA" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-flux.png" alt="Flux" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-governor.png" alt="Governor" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-gtd-bridge.png" alt="GTD bridge" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-lexical-chain.png" alt="Lexical chain" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-licensed-badge.png" alt="Licensed badge" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-quality-lens.png" alt="Quality lens" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-second-brain.png" alt="Second brain" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-module-tacit-capture.png" alt="Tacit capture" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-modules-showcase.png" alt="Modules" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-propagation-steps.png" alt="Propagation" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-quanton-concept.png" alt="Quanton" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-quote-card.png" alt="Quote" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-quote-ideas-improvements.png" alt="Ideas improvements" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-quote-system-improves.png" alt="System improves" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-registry-config.png" alt="Registry" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-revenue-model.png" alt="Revenue" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-social-card-1200x630.png" alt="Social card" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-social-card-1.png" alt="Social 1" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-social-card-2.png" alt="Social 2" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-sources-attribution.png" alt="Attribution" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-totality-check.png" alt="Totality" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/mastermind-use-cases.png" alt="Use cases" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
-    <img src="assets/marketing/cta-get-mastermind-400x80.png" alt="Get MASTERMIND" loading="lazy" style="width:100%;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)" onerror="this.style.display='none'" />
+  <h2>The Visual Story</h2>
+  <p style="margin-bottom: var(--space-xl); color: var(--muted);">Seven key diagrams that show how MASTERMIND works — from the big picture to the details. Each explains a piece of the coordination system and how it all connects.</p>
+
+  <div class="visual-story">
+    <figure>
+      <img src="assets/marketing/mastermind-system-overview.png" alt="MASTERMIND system overview" loading="lazy" />
+      <figcaption><strong>1. The system at a glance.</strong> Main Memory sits at the center — one place for ideas. Projects orbit around it. When you add an idea, propagation evaluates it against every project and applies it where it fits. This is the core architecture: one source of truth, many targets.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/marketing/mastermind-value-proposition.png" alt="MASTERMIND value proposition" loading="lazy" />
+      <figcaption><strong>2. Why MASTERMIND exists.</strong> Without it: ideas stay siloed, learnings don't spread, projects stay disconnected. With it: one idea propagates to every project that needs it. Learn once, improve everywhere. Coordination that compounds.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/marketing/mastermind-add-idea-flow.png" alt="Add idea and propagate flow" loading="lazy" />
+      <figcaption><strong>3. Your daily flow.</strong> Add an idea to Main Memory (or capture it from a session). Run <code>mm propagate</code>. The system evaluates the idea against your mission and every registered project. If it fits, it gets applied. If it fits multiple places, it propagates. Simple loop, big impact.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/marketing/mastermind-cross-project-propagation.png" alt="One idea propagates to many projects" loading="lazy" />
+      <figcaption><strong>4. Cross-project propagation.</strong> This is the magic. One insight — e.g. "always verify external links" — gets added once. Propagation finds it applies to Project A, Project B, and Project C. One lesson becomes three improvements. No copy-paste. No forgetting. Documented and traceable.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/marketing/mastermind-quality-hierarchy.png" alt="Quality Hierarchy framework" loading="lazy" />
+      <figcaption><strong>5. Quality Hierarchy (Pirsig).</strong> Premium modules add evaluation frameworks. Quality Hierarchy — from Pirsig's Zen and the Art of Motorcycle Maintenance — lets you assess ideas by Classic/Romantic, Static/Dynamic, subject-object. You choose which lenses to install. The core works without them; modules add depth.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/marketing/mastermind-cursor-rule-integration.png" alt="Cursor rule integration with Main Memory" loading="lazy" />
+      <figcaption><strong>6. AI and human aligned.</strong> Cursor (and VS Code) can read Main Memory via rules. Your ideas, mission, and learnings become persistent context for the AI. Every session benefits from what you've captured. No re-explaining. No memory reset. Human and AI share one coordination layer.</figcaption>
+    </figure>
+
+    <figure>
+      <img src="assets/marketing/mastermind-free-core-premium.png" alt="Free core, optional premium modules" loading="lazy" />
+      <figcaption><strong>7. Free core, optional premium.</strong> Coordination is free. Main Memory, propagation, CLI, integration — you get it all. Premium modules add frameworks: Quality Lens, GTD Bridge, Tacit Capture, Flux Mode, and more. You buy only what improves you. No lock-in. Voluntary.</figcaption>
+    </figure>
   </div>
+
+  <p style="margin-top: var(--space-xl); color: var(--muted); font-size: 0.9rem;">Together these seven images tell the full story: one place for ideas, propagation to all projects, optional frameworks, and AI integration. That's MASTERMIND.</p>
 
   <div class="cta-block" style="margin-top: var(--space-2xl);">
     <h3>The coordination system that improves all systems.</h3>
