@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vault — Phyllux Backstage</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <style>
+    :root { --bg:#050508; --fg:#f0f4f8; --muted:#94a3b8; --accent:#5eead4; --line:rgba(30,41,59,0.6); --radius:8px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Inter, sans-serif; background: var(--bg); color: var(--fg); padding: 1rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .subtitle { font-size: 0.875rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .vault-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+    .vault-item { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: rgba(12,15,20,0.5); }
+    .vault-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .vault-item figcaption { padding: 0.5rem; font-size: 0.75rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .back { display: inline-block; margin-bottom: 1rem; color: var(--accent); font-size: 0.875rem; }
+    .back:hover { text-decoration: underline; }
+    .section-title { font-size: 1rem; color: var(--muted); margin: 2rem 0 0.75rem; }
+  </style>
+</head>
+<body>
+<a href="index.html" class="back">← Back to Phyllux</a>
+<h1>Vault</h1>
+<p class="subtitle">Backstage. Drafts. Iterations. Things we don't lead with — but you found the key.</p>
+
+<div class="section-title">Vault-exclusive (drafts, WIP, experiments)</div>
+<div class="vault-grid" id="vault-exclusive"></div>
+
+<div class="section-title">Internal & placeholders</div>
+<div class="vault-grid" id="vault-internal"></div>
+
+<div class="section-title">Extended backstage (alternates, iterations, experiments)</div>
+<div class="vault-grid" id="vault-extended"></div>
+
+<div class="section-title">Full catalog</div>
+<div id="vault-all"></div>
+
+<script>
+(function() {
+  const STORAGE_KEY = 'phyllux_vault_keys';
+  function getKeys() { try { const r = localStorage.getItem(STORAGE_KEY); return r ? JSON.parse(r) : {}; } catch(e) { return {}; } }
+  if (Object.keys(getKeys()).length < 5) {
+    document.body.innerHTML = '<div style="max-width:400px;margin:4rem auto;text-align:center;"><h1 style="font-size:1.25rem;margin-bottom:1rem;">Vault Locked</h1><p style="color:#94a3b8;margin-bottom:1.5rem;">Find the five key fragments hidden across the site. Click each one. The key is phyllotactic.</p><a href="index.html" style="color:#5eead4;">← Return</a></div>';
+    document.title = 'Vault — Locked';
+    throw 'unlocked';
+  }
+  const exclusive = [
+    'assets/vault/vault-draft-phi-600x400.png',
+    'assets/vault/vault-wip-wave-600x400.png',
+    'assets/vault/vault-scrapped-concept-600x400.png',
+    'assets/vault/vault-iteration-v3-600x400.png',
+    'assets/vault/vault-raw-mesh-600x400.png',
+    'assets/vault/vault-brainstorm-600x400.png',
+    'assets/vault/vault-internal-only-600x400.png',
+    'assets/vault/vault-prototype-01-600x400.png',
+    'assets/vault/vault-late-night-600x400.png'
+  ];
+  const internal = [
+    'assets/marketing/testimonial-placeholder-card.png',
+    'assets/marketing/c__Users_phibr_AppData_Roaming_Cursor_User_workspaceStorage_ffb4cb51292a6462bf20d9558292b1dd_images_image-48002df2-d272-4745-87d6-43d759117c58.png',
+    'assets/marketing/c__Users_phibr_AppData_Roaming_Cursor_User_workspaceStorage_ffb4cb51292a6462bf20d9558292b1dd_images_image-6d8edbac-b704-443e-b7ea-e8dfbdeb173c.png',
+    'assets/marketing/c__Users_phibr_AppData_Roaming_Cursor_User_workspaceStorage_ffb4cb51292a6462bf20d9558292b1dd_images_image-e085c579-255f-4afc-9c32-37ece72d2a84.png',
+    'assets/marketing/blog-header-template-1200x400.png',
+    'assets/marketing/blog-header-creator-notes-1200x400.png',
+    'assets/marketing/video-thumbnail-template-1280x720.png',
+    'assets/marketing/launch-announcement-template-1200x630.png',
+    'assets/products/mastermind-social-card-1.png',
+    'assets/products/mastermind-social-card-2.png',
+    'assets/products/mastermind-hero.png',
+    'assets/products/mastermind-hero-dark.png'
+  ];
+  const extended = [
+    'assets/products/mastermind-add-idea-flow.png','assets/products/mastermind-aligned-incentives.png','assets/products/mastermind-atomic-vs-compound.png',
+    'assets/products/mastermind-benefits-ai-memory.png','assets/products/mastermind-benefits-learnings-propagated.png','assets/products/mastermind-benefits-main-memory.png',
+    'assets/products/mastermind-benefits-mission-alignment.png','assets/products/mastermind-benefits-traceability.png','assets/products/mastermind-built-on-great-ideas.png',
+    'assets/products/mastermind-counter-agency.png','assets/products/mastermind-counter-flourishing.png','assets/products/mastermind-counter-free-to-leave.png',
+    'assets/products/mastermind-counter-harmony.png','assets/products/mastermind-counter-human-first.png','assets/products/mastermind-counter-improve-not-control.png',
+    'assets/products/mastermind-counter-individuals-matter.png','assets/products/mastermind-counter-question-welcome.png','assets/products/mastermind-counter-systems-uplift.png',
+    'assets/products/mastermind-counter-transparent.png','assets/products/mastermind-counter-trust-earned.png','assets/products/mastermind-counter-voluntary.png',
+    'assets/products/mastermind-cross-pollination.png','assets/products/mastermind-cross-project-propagation.png','assets/products/mastermind-data-flow.png',
+    'assets/products/mastermind-evaluation-matrix.png','assets/products/mastermind-explainer-dq-sq.png','assets/products/mastermind-feature-grid.png',
+    'assets/products/mastermind-file-tree.png','assets/products/mastermind-first-run-success.png','assets/products/mastermind-free-core-premium.png',
+    'assets/products/mastermind-governor-flow.png','assets/products/mastermind-governor-safety.png','assets/products/mastermind-gumption-traps.png',
+    'assets/products/mastermind-improve-system-flow.png','assets/products/mastermind-improvement-levels.png','assets/products/mastermind-inspire-every-idea.png',
+    'assets/products/mastermind-inspire-virtuous-loop.png','assets/products/mastermind-install-one-at-a-time.png','assets/products/mastermind-install-steps.png',
+    'assets/products/mastermind-integration-ecosystem.png','assets/products/mastermind-key-files-map.png','assets/products/mastermind-logo-mark.png',
+    'assets/products/mastermind-main-memory-structure.png','assets/products/mastermind-module-atomic.png','assets/products/mastermind-module-care-lens.png',
+    'assets/products/mastermind-module-engenica.png','assets/products/mastermind-module-flux.png','assets/products/mastermind-module-governor.png',
+    'assets/products/mastermind-module-gtd-bridge.png','assets/products/mastermind-module-lexical-chain.png','assets/products/mastermind-module-licensed-badge.png',
+    'assets/products/mastermind-module-quality-lens.png','assets/products/mastermind-module-second-brain.png','assets/products/mastermind-module-tacit-capture.png',
+    'assets/products/mastermind-modules-showcase.png','assets/products/mastermind-propagation-steps.png','assets/products/mastermind-quanton-concept.png',
+    'assets/products/mastermind-quote-card.png','assets/products/mastermind-quote-ideas-improvements.png','assets/products/mastermind-quote-system-improves.png',
+    'assets/products/mastermind-registry-config.png','assets/products/mastermind-revenue-model.png','assets/products/mastermind-sources-attribution.png',
+    'assets/products/mastermind-totality-check.png','assets/products/mastermind-use-cases.png','assets/marketing/icon-chain.png',
+    'assets/marketing/icon-create.png','assets/marketing/icon-design.png','assets/marketing/icon-pipeline.png','assets/marketing/icon-projects.png',
+    'assets/marketing/bg-pattern.png','assets/marketing/newsletter-header-600x200.png'
+  ];
+
+  function renderGrid(containerId, paths) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    paths.forEach(function(p) {
+      const name = p.split('/').pop().replace(/\.[^.]+$/, '').replace(/[-_]/g, ' ');
+      const fig = document.createElement('figure');
+      fig.className = 'vault-item';
+      fig.innerHTML = '<img src="' + p + '" alt="" loading="lazy" onerror="this.parentElement.remove()">' +
+        '<figcaption>' + name + '</figcaption>';
+      el.appendChild(fig);
+    });
+  }
+
+  renderGrid('vault-exclusive', exclusive);
+  renderGrid('vault-internal', internal);
+  renderGrid('vault-extended', extended);
+
+  document.getElementById('vault-all').innerHTML = '<p style="color:var(--muted);font-size:0.875rem;">The complete ROOT catalog lives in the <a href="gallery.html" style="color:var(--accent);">Gallery</a>. This vault surfaces the ones we keep off the main pages — drafts, templates, internal iterations, alternate versions, and the full MASTERMIND diagram library.</p>';
+})();
+</script>
+</body>
+</html>

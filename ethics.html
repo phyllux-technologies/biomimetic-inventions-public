@@ -50,8 +50,8 @@
     .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
     .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
     .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
-    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
-    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); display: flex; justify-content: center; background: #050508; }
+    .hero-banner img { width: 100%; max-width: 900px; height: auto; display: block; object-fit: contain; max-height: 320px; object-position: center; }
     main { max-width: 720px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
     .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
     .back-link:hover { color: var(--accent); }
@@ -103,7 +103,9 @@
     <a href="index.html" class="brand">🌻 PHYLLUX</a>
     <div class="nav-links">
       <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="products.html">Products</a>
       <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="path.html">Path</a>
       <a class="pill" href="technology.html">Technology</a>
       <a class="pill" href="engenica.html">ENGENICA</a>
       <a class="pill" href="proof.html">Proof</a>
@@ -113,23 +115,24 @@
       <a class="pill" href="docs.html">Docs</a>
       <a class="pill" href="about.html">About</a>
       <a class="pill" href="ecosystem.html">Ecosystem</a>
+      <a class="pill" href="gallery.html">Gallery</a>
     </div>
   </nav>
 </header>
 
 <div class="hero-banner">
-  <img src="assets/phyllux-ethics-hero.png" alt="Ethics — responsible deployment" />
+  <img src="assets/products/phyllux-ethics-hero.png" alt="Ethics — responsible deployment" onerror="this.src='assets/phyllux-ethics-hero.png'" />
 </div>
 
 <main>
   <a href="index.html" class="back-link">← Back to Phyllux</a>
   
-  <h1>Ethics <span class="seq-badge">Position 21</span></h1>
+  <h1>Ethics <span class="seq-badge" title="Phyllotactic sequence · refinement chain">Position 21 · Stage 7</span></h1>
   <p class="intro">Responsible deployment posture for high-impact domains. All licensing tiers require ethical commitments. No exceptions.</p>
 
   <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Three commitments</h2>
   <div class="commitments-block">
-    <img src="assets/phyllux-ethics-commitments.png" alt="Ethics commitments" />
+    <img src="assets/products/phyllux-ethics-commitments.png" alt="Ethics commitments" onerror="this.src='assets/phyllux-ethics-commitments.png'" />
     <div class="commitment">
       <h3>Defense, not offense</h3>
       <p>No licensing for weapons, autonomous kill chains, or offensive military applications. Our technology serves protection and resilience—not aggression.</p>

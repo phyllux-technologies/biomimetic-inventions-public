@@ -186,13 +186,18 @@
       padding: 0 var(--space-xl);
       overflow: hidden;
       border-radius: var(--radius-lg);
+      display: flex;
+      justify-content: center;
+      background: var(--bg-elevated);
     }
     .hero-banner img {
       width: 100%;
+      max-width: 1200px;
       height: auto;
+      max-height: 360px;
       display: block;
-      object-fit: cover;
-      max-height: 280px;
+      object-fit: contain;
+      object-position: center;
     }
     .hero-with-embellish {
       position: relative;
@@ -757,7 +762,9 @@
       <span class="ip-badge">🔒 Proprietary Technology | Patent Application In Preparation</span>
     </div>
     <div class="nav-links">
+      <a class="pill" href="products.html">Products</a>
       <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="path.html">Path</a>
       <a class="pill" href="technology.html">Technology</a>
       <a class="pill" href="engenica.html">ENGENICA</a>
       <a class="pill" href="proof.html">Proof</a>
@@ -767,20 +774,21 @@
       <a class="pill" href="docs.html">Docs</a>
       <a class="pill" href="about.html">About</a>
       <a class="pill" href="ecosystem.html">Ecosystem</a>
+      <a class="pill" href="gallery.html">Gallery</a>
     </div>
   </nav>
 </header>
 
 <div class="hero-banner">
-  <img src="assets/phyllux-hero-banner.png" alt="" role="presentation" />
+  <img src="assets/david/david-desk-mastermind-hero.png" alt="David Edward Sproule — at work with MASTERMIND" onerror="this.src='assets/phyllux-hero-banner.png'" />
 </div>
 
 <main class="wrap">
   <section class="hero hero-with-embellish">
-    <img class="hero-embellish hero-embellish--tl" src="assets/phyllux-embellishment.png" alt="" role="presentation" />
-    <img class="hero-embellish hero-embellish--br" src="assets/phyllux-embellishment.png" alt="" role="presentation" />
+    <img class="hero-embellish hero-embellish--tl" src="assets/products/phyllux-embellishment.png" alt="" role="presentation" onerror="this.src='assets/phyllux-embellishment.png';this.onerror=null" />
+    <img class="hero-embellish hero-embellish--br" src="assets/products/phyllux-embellishment.png" alt="" role="presentation" onerror="this.src='assets/phyllux-embellishment.png';this.onerror=null" />
     <div class="hero-meta">
-      <div class="hero-tagline">Golden Angle: <span class="mono">137.508°</span> • Phyllotaxis spine</div>
+      <div class="hero-tagline">David Edward Sproule · Phyllux Technologies</div>
       <div class="timeline-ticker">
         <span>⏰</span>
         <span id="deadline-counter">Loading...</span>
@@ -788,44 +796,72 @@
     </div>
     
     <h1>
-      Four Billion Years of R&D.<br/>
-      One Golden Angle.<br/>
-      Infinite Applications.
-      <span class="hero-sub">One geometry. Four domains. A pipeline to products.</span>
+      Who I Am. What I Offer.<br/>
+      Where I'm Going. How I Get There.
+      <span class="hero-sub">Mutual flourishing for AI, human, nature, technology.</span>
     </h1>
     
     <p>
-      Phyllux applies golden-angle phyllotactic spacing to communications (WAVE), neural interfaces (MESH),
-      cryptography (VAULT), and integrated systems (CORE).
-      <b>ENGENICA</b> is the engine that keeps the ecosystem coherent: documentation, proof packs, partner intake, and iterative refinement.
+      <b>Phyllux</b> — Nature-inspired innovation. Wave, Mesh, Vault, Core. Golden angle (137.508°) across four domains.
+      <b>MASTERMIND</b> — Coordination that improves all systems. Main Memory, propagation, one idea → many improvements.
+      <b>ENGENICA</b> — Meta-iterative polish. BWURM — AI-augmented authorship. All designed voluntary, transparent, free to leave.
     </p>
     
     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); align-items: center;">
       <div class="kpi">
-        <span class="pill">GAFAA→WAVE</span>
-        <span class="pill">PNM→MESH</span>
-        <span class="pill">PhiKey→VAULT</span>
-        <span class="pill">IBS→CORE</span>
+        <span class="pill"><a href="products.html" style="color:inherit;text-decoration:none;">Products</a></span>
+        <span class="pill"><a href="vision.html" style="color:inherit;text-decoration:none;">Vision</a></span>
+        <span class="pill"><a href="path.html" style="color:inherit;text-decoration:none;">Path</a></span>
+        <span class="pill"><a href="ecosystem.html" style="color:inherit;text-decoration:none;">Ecosystem</a></span>
       </div>
       
-      <a href="engenica.html" class="engenica-badge" style="text-decoration:none;">
+      <a href="products.html" class="engenica-badge" style="text-decoration:none;">
         <span class="pulse"></span>
-        <span>⚡ ENGENICA: +157.7%</span>
+        <span>Everything I offer →</span>
       </a>
     </div>
     
-    <p class="small" style="margin-top: var(--space-sm);"><a href="engenica.html" style="color:var(--accent);">Full ENGENICA methodology →</a></p>
-    
     <div class="cta">
-      <a class="btn primary" href="mailto:phibronotchi@gmail.com?subject=Technical%20Evaluation%20Request">Request a Technical Evaluation</a>
-      <a class="btn alt" href="vision.html">The Vision</a>
-      <a class="btn" href="docs.html">Docs</a>
+      <a class="btn primary" href="products.html">All Products</a>
+      <a class="btn alt" href="path.html">How I Get There</a>
+      <a class="btn" href="vision.html">Destination</a>
+      <a class="btn" href="about.html">About Me</a>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-lg); align-items: center;">
+      <a href="products.html#mastermind"><img src="assets/marketing/cta-get-mastermind-400x80.png" alt="Get MASTERMIND" style="height: 40px; width: auto;" onerror="this.style.display='none'"></a>
+      <a href="technology.html"><img src="assets/marketing/cta-try-phyllux-400x80.png" alt="Try Phyllux" style="height: 40px; width: auto;" onerror="this.style.display='none'"></a>
+      <a href="partners.html"><img src="assets/marketing/cta-partner-with-us-400x80.png" alt="Partner with us" style="height: 40px; width: auto;" onerror="this.style.display='none'"></a>
+      <img src="assets/marketing/badge-open-source.png" alt="Open source" style="height: 28px; width: auto;" onerror="this.style.display='none'">
     </div>
     
     <div class="note">
-      <b>Public-safe default:</b> This site explains <i>what</i> and <i>why</i> with non-enabling visuals.
-      Implementation details remain private/partner/NDA as chosen.
+      <b>Four products. One mission.</b> Phyllux, MASTERMIND, BWURM, ENGENICA — systems that improve all systems.
+      Values: voluntary, transparent, human-centered. No lock-in.
     </div>
+  </section>
+
+  <img src="assets/marketing/index-hub-card-400x250.png" alt="" role="presentation" style="width:100%;max-width:500px;height:auto;display:block;margin:0 auto var(--space-lg);opacity:0.9;" onerror="this.style.display='none'" />
+  <section id="hub-grid" class="grid section" style="grid-template-columns: repeat(2, 1fr);">
+    <article class="card">
+      <h3>What I Offer</h3>
+      <p class="small">16 MASTERMIND modules. Phyllux licensing (Wave, Mesh, Vault, Core). BOOKWURM, Content Studio. ENGENICA polish. Consulting, workshops, partnerships.</p>
+      <p class="small" style="margin-top: var(--space-md);"><a class="pill" href="products.html">Full catalog →</a></p>
+    </article>
+    <article class="card">
+      <h3>Where I'm Going</h3>
+      <p class="small">APEX: Phyllux global, 50+ patents, BOOKWURM at scale. Personal flourishing. Mutual flourishing lived. Recovery leadership. Legacy.</p>
+      <p class="small" style="margin-top: var(--space-md);"><a class="pill" href="vision.html">The destination →</a></p>
+    </article>
+    <article class="card">
+      <h3>How I Get There</h3>
+      <p class="small">Reality Architect: APEX → TRAIL (Year 10→0) → Critical Path → Segment builds. Patent by Jan 7 2027. First module selling. One step at a time.</p>
+      <p class="small" style="margin-top: var(--space-md);"><a class="pill" href="path.html">The path →</a></p>
+    </article>
+    <article class="card">
+      <h3>Who I Am</h3>
+      <p class="small">David Edward Sproule. Founder, Phyllux Technologies. Creator of MASTERMIND (with Cursor AI). Systems thinker. Canada.</p>
+      <p class="small" style="margin-top: var(--space-md);"><a class="pill" href="about.html">Full profile →</a></p>
+    </article>
   </section>
 
   <section id="pillars" class="grid grid-pillars section">
@@ -851,8 +887,34 @@
     </article>
   </section>
 
+  <section id="david-at-work" class="section">
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:var(--space-md);">At work</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-md);">
+      <img src="assets/david/david-desk-mastermind-hero.png" alt="David with MASTERMIND" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-coding-hands-on-keyboard.png" alt="David coding" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-confident-founder-pose.png" alt="David founder" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-explaining-whiteboard.png" alt="David explaining" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-tablet-phyllux-casual.png" alt="David with Phyllux" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-side-profile-engenica.png" alt="David with ENGENICA" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-celebrating-success.png" alt="David celebrating" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-nature-tech-outdoor.png" alt="David nature & tech" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-workshop-leading.png" alt="David workshop" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-collaborative-pair.png" alt="David collaborating" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-conference-speaking.png" alt="David speaking" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-podcast-recording.png" alt="David podcast" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-workspace-behind-scenes.png" alt="David workspace" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-deep-work-thoughtful.png" alt="David in deep work" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-reviewing-documents.png" alt="David reviewing" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+      <img src="assets/david/david-reviewing-tech-contemplative.png" alt="David contemplative" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+    </div>
+  </section>
+
   <section id="about" class="section">
     <article class="about-card">
+      <div style="margin-bottom: var(--space-md);">
+        <img src="assets/david/david-about-page-headshot.png" alt="David Edward Sproule" style="max-width: 200px; border-radius: 50%; border: 2px solid var(--line-soft);" onerror="this.src='assets/phyllux-about-hero.png'" />
+      </div>
       <div class="name">David Edward Sproule</div>
       <div class="title">Founder & Inventor</div>
       <div class="location">Edmonton, Alberta, Canada</div>
@@ -894,6 +956,11 @@
     <div class="pill">Docs • Position 34</div>
     <h2>Documentation</h2>
     <p>Diagrams, plots, proof registry, partner templates. Non-enabling, public-safe.</p>
+    <div style="display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center;margin:var(--space-md) 0;">
+      <a href="products.html#mastermind"><img src="assets/marketing/cta-get-mastermind-400x80.png" alt="Get MASTERMIND" style="height:40px;width:auto" onerror="this.style.display='none'"></a>
+      <a href="partners.html"><img src="assets/marketing/cta-partner-with-us-400x80.png" alt="Partner with us" style="height:40px;width:auto" onerror="this.style.display='none'"></a>
+      <img src="assets/marketing/badge-open-source.png" alt="Open source" style="height:36px;width:auto" onerror="this.style.display='none'">
+    </div>
     <div class="cta">
       <a class="btn primary" href="docs.html">Docs hub →</a>
     </div>
@@ -911,24 +978,26 @@
   <section class="sequence-section">
     <div class="pill" style="font-size: 0.75rem; opacity: 0.8;">Phyllotactic sequence</div>
     <div class="sequence-spiral">
-      <a href="index.html" class="seq-dot seq-origin" title="Origin">0</a>
+      <a href="index.html" class="seq-dot seq-origin" title="Hub">0</a>
+      <a href="products.html" class="seq-dot" title="Products">1</a>
       <a href="vision.html" class="seq-dot" title="Vision">1</a>
-      <a href="technology.html" class="seq-dot" title="Technology">2</a>
-      <a href="engenica.html" class="seq-dot" title="ENGENICA">3</a>
-      <a href="proof.html" class="seq-dot" title="Proof">5</a>
-      <a href="partners.html" class="seq-dot" title="Partners">8</a>
-      <a href="ip.html" class="seq-dot" title="IP">13</a>
-      <a href="ethics.html" class="seq-dot" title="Ethics">21</a>
-      <a href="docs.html" class="seq-dot" title="Docs">34</a>
-      <a href="about.html" class="seq-dot" title="About">55</a>
-      <a href="ecosystem.html" class="seq-dot" title="Ecosystem">89</a>
+      <a href="path.html" class="seq-dot" title="Path">2</a>
+      <a href="technology.html" class="seq-dot" title="Technology">3</a>
+      <a href="engenica.html" class="seq-dot" title="ENGENICA">5</a>
+      <a href="proof.html" class="seq-dot" title="Proof">8</a>
+      <a href="partners.html" class="seq-dot" title="Partners">13</a>
+      <a href="ip.html" class="seq-dot" title="IP">21</a>
+      <a href="ethics.html" class="seq-dot" title="Ethics">34</a>
+      <a href="docs.html" class="seq-dot" title="Docs">55</a>
+      <a href="about.html" class="seq-dot" title="About">89</a>
+      <a href="ecosystem.html" class="seq-dot" title="Ecosystem">144</a>
     </div>
     <p class="small" style="margin-top: var(--space-sm); opacity: 0.7;">Fibonacci positions · traverse the spiral</p>
   </section>
 </main>
 
 <div class="footer-divider">
-  <img src="assets/phyllux-footer-divider.png" alt="" role="presentation" />
+  <img src="assets/products/phyllux-footer-divider.png" alt="" role="presentation" onerror="this.src='assets/phyllux-footer-divider.png';this.onerror=null" />
 </div>
 <footer>
   <div class="footer-inner">
@@ -947,8 +1016,8 @@
       <a href="https://github.com/phyllux-technologies/Phyllux-Superrepo" target="_blank" rel="noopener">Phyllux-Superrepo</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p class="small" style="margin-bottom: var(--space-sm);"><a href="vision.html" style="color:var(--accent);">Vision</a> · <a href="technology.html" style="color:var(--accent);">Technology</a> · <a href="engenica.html" style="color:var(--accent);">ENGENICA</a> · <a href="proof.html" style="color:var(--accent);">Proof</a> · <a href="partners.html" style="color:var(--accent);">Partners</a> · <a href="ip.html" style="color:var(--accent);">IP</a> · <a href="ethics.html" style="color:var(--accent);">Ethics</a> · <a href="docs.html" style="color:var(--accent);">Docs</a> · <a href="about.html" style="color:var(--accent);">About</a> · <a href="ecosystem.html" style="color:var(--accent);">Ecosystem</a></p>
+  <div class="footer-bottom" style="position:relative;">
+    <p class="small" style="margin-bottom: var(--space-sm);"><a href="products.html" style="color:var(--accent);">Products</a> · <a href="vision.html" style="color:var(--accent);">Vision</a> · <a href="path.html" style="color:var(--accent);">Path</a> · <a href="technology.html" style="color:var(--accent);">Technology</a> · <a href="engenica.html" style="color:var(--accent);">ENGENICA</a> · <a href="proof.html" style="color:var(--accent);">Proof</a> · <a href="partners.html" style="color:var(--accent);">Partners</a> · <a href="ip.html" style="color:var(--accent);">IP</a> · <a href="ethics.html" style="color:var(--accent);">Ethics</a> · <a href="docs.html" style="color:var(--accent);">Docs</a> · <a href="about.html" style="color:var(--accent);">About</a> · <a href="ecosystem.html" style="color:var(--accent);">Ecosystem</a> · <a href="gallery.html" style="color:var(--accent);">Gallery</a></p>
     <p>© 2026 Phyllux Technologies • ENGENICA • <span class="small">Public pages are non-enabling by default</span></p>
     <p class="small" style="margin-top: var(--space-sm); opacity: 0.7;">
       Golden Angle: 137.508° | φ = 1.618033988749895 | Patent Deadline: January 7, 2027
@@ -956,9 +1025,11 @@
     <p class="small" style="margin-top: var(--space-xs); opacity: 0.5; font-size: 11px;">
       Optimized by ENGENICA Gen 5 • φ Convergence: 0.03% • Ethical Alignment: 1.0
     </p>
+    <span class="egg" data-egg-key="1" title="" style="position:absolute;bottom:0.5rem;right:0.5rem;width:12px;height:12px;opacity:0.25;cursor:pointer;display:block;border-radius:50%;background:linear-gradient(135deg,#5eead4,#e8c547);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.5'" onmouseout="this.style.opacity='0.25'" aria-hidden="true"></span>
   </div>
 </footer>
 
+<script src="assets/egg-unlock.js"></script>
 <script>
 function updateDeadline() {
   const deadline = new Date('2027-01-07T23:59:59');

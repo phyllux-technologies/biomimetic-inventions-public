@@ -94,13 +94,18 @@
       width: 100%;
       overflow: hidden;
       margin-bottom: var(--space-xl);
+      display: flex;
+      justify-content: center;
+      background: var(--bg);
     }
     .hero-banner img {
       width: 100%;
+      max-width: 900px;
       height: auto;
       display: block;
-      object-fit: cover;
+      object-fit: contain;
       max-height: 320px;
+      object-position: center;
     }
     main {
       max-width: 720px;
@@ -230,8 +235,9 @@
   <nav>
     <a href="index.html" class="brand">🌻 PHYLLUX</a>
     <div class="nav-links">
-      <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="products.html">Products</a>
       <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="path.html">Path</a>
       <a class="pill" href="technology.html">Technology</a>
       <a class="pill" href="engenica.html">ENGENICA</a>
       <a class="pill" href="proof.html">Proof</a>
@@ -241,18 +247,19 @@
       <a class="pill" href="docs.html">Docs</a>
       <a class="pill" href="about.html">About</a>
       <a class="pill" href="ecosystem.html">Ecosystem</a>
+      <a class="pill" href="gallery.html">Gallery</a>
     </div>
   </nav>
 </header>
 
 <div class="hero-banner">
-  <img src="assets/phyllux-vision-hero.png" alt="Phyllotactic spiral — nature's optimization" />
+  <img src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux — nature's optimization" onerror="this.src='assets/phyllux-vision-hero.png'" />
 </div>
 
 <main>
   <a href="index.html" class="back-link">← Back to Phyllux</a>
   
-  <h1>Vision <span class="seq-badge">Position 1</span></h1>
+  <h1>Vision <span class="seq-badge" title="Phyllotactic sequence · refinement chain">Position 1 · Stage 1</span></h1>
   <p class="lead">The story behind Phyllux: from conceptual exploration to the sunflower. One geometry, field-tested for 400 million years.</p>
 
   <h2>The Vision Story</h2>
@@ -270,8 +277,13 @@
     A radical shift in dedication over the last holidays changed everything. Progress stacking, clarity, momentum—most of what you see here has been built since just before Christmas 2025.
   </blockquote>
 
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); margin: var(--space-2xl) 0;">
+    <img src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);" onerror="this.style.display='none'">
+    <img src="assets/david/david-nature-tech-outdoor.png" alt="Nature and tech" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);" onerror="this.style.display='none'">
+  </div>
+
   <div class="golden-angle-block">
-    <img src="assets/phyllux-golden-angle.png" alt="Golden angle: 137.508°" />
+    <img src="assets/products/phyllux-golden-angle.png" alt="Golden angle: 137.508°" onerror="this.src='assets/phyllux-golden-angle.png';this.onerror=null" />
     <div>
       <h2>The Golden Angle</h2>
       <p><strong>137.508°</strong> — θ_g = 360° × (2 − φ) where φ ≈ 1.618</p>
@@ -280,6 +292,7 @@
     </div>
   </div>
 
+  <img src="assets/marketing/vision-invitation-800x300.png" alt="" role="presentation" style="width:100%;max-width:800px;height:auto;border-radius:var(--radius);margin-bottom:var(--space-md);" onerror="this.style.display='none'" />
   <h2>The Invitation</h2>
   <blockquote>
     If you're building: Neural interfaces, satellite constellations, security systems, next-generation infrastructure... and you want a foundation that's been field-tested for 400 million years, not 40 years—Let's talk.
@@ -303,15 +316,29 @@
     <div class="vision-timeline-item"><strong>Ultimate Goal</strong> — A world where knowledge flows freely to accelerate discovery, and compensation flows fairly to reward inventors.</div>
   </div>
 
+  <img src="assets/marketing/vision-apex-800x300.png" alt="APEX — ultimate destination" style="width:100%;max-width:800px;height:auto;border-radius:var(--radius);margin-bottom:var(--space-md);" onerror="this.style.display='none'" />
+  <h2>The APEX — Ultimate Complete State</h2>
+  <p>Where I'm going. The fixed point for backcasting. Year 10.</p>
+  <div class="vision-timeline">
+    <div class="vision-timeline-item"><strong>Phyllux</strong> — Wave, Mesh, Vault, Core in production. 50+ patents. Licensing globally. Manufacturing partners.</div>
+    <div class="vision-timeline-item"><strong>MASTERMIND</strong> — Standard for coordination. 100+ adopters. Modules selling. Partners, affiliates.</div>
+    <div class="vision-timeline-item"><strong>BOOKWURM</strong> — 1000+ books/year. Content Studio as industry standard. Film/TV adaptations.</div>
+    <div class="vision-timeline-item"><strong>Personal</strong> — Optimal health. Recovery leadership scaled. Family thriving. Legacy systems in place.</div>
+    <div class="vision-timeline-item"><strong>Mission</strong> — Mutual flourishing for AI, human, nature. Measurable impact. Values lived.</div>
+  </div>
+  <p><a href="path.html">How I get there (Reality Architect) →</a></p>
+
   <div class="cta-block">
     <p><strong>Ready to build on a foundation that's been field-tested for 400 million years?</strong></p>
     <a href="mailto:phibronotchi@gmail.com?subject=Partnership%20Inquiry" class="btn">Get in touch</a>
   </div>
 </main>
 
-<footer>
+<footer style="position:relative;">
   <div class="footer-nav">
     <a href="index.html">Hub</a>
+    <a href="products.html">Products</a>
+    <a href="path.html">Path</a>
     <a href="technology.html">Technology</a>
     <a href="engenica.html">ENGENICA</a>
     <a href="proof.html">Proof</a>
@@ -322,9 +349,11 @@
     <a href="about.html">About</a>
     <a href="ecosystem.html">Ecosystem</a>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom" style="position:relative;">
     © 2026 Phyllux Technologies • Golden Angle: 137.508° • φ = 1.618033988749895
+    <span class="egg" data-egg-key="4" style="position:absolute;bottom:0.25rem;right:1rem;width:10px;height:10px;opacity:0.2;cursor:pointer;border-radius:50%;background:linear-gradient(315deg,#e8c547,#5eead4);" aria-hidden="true"></span>
   </div>
 </footer>
+<script src="assets/egg-unlock.js"></script>
 </body>
 </html>

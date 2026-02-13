@@ -1,0 +1,83 @@
+# Sync ALL images from ROOT (every folder and subfolder) into website/assets
+# Run from: d:\Workspace\website
+# Also: Me images/output, mastermind/assets
+
+$websiteAssets = "d:\Workspace\website\assets"
+$rootBase = "d:\Workspace\ROOT"
+$meOutput = "d:\Workspace\Me images\output"
+$mastermindAssets = "d:\Workspace\mastermind\assets"
+
+# Folder mapping: ROOT/images/X -> assets/Y
+$rootFolders = @{
+    "images\david-tech" = "david"
+    "images\products" = "products"
+    "images\platform" = "platform"
+    "images\marketing" = "marketing"
+}
+
+# Ensure base subfolders exist
+@("david", "products", "platform", "marketing", "root", "embellishments", "modules") | ForEach-Object {
+    $p = Join-Path $websiteAssets $_
+    if (!(Test-Path $p)) { New-Item -ItemType Directory -Path $p -Force | Out-Null }
+}
+
+# Recursively copy ALL images from entire ROOT tree
+$extensions = @("*.png", "*.jpg", "*.jpeg", "*.webp", "*.gif", "*.svg")
+$count = 0
+Get-ChildItem $rootBase -Recurse -File | Where-Object { $_.Extension -match '\.(png|jpg|jpeg|webp|gif|svg)$' } | ForEach-Object {
+    $rel = $_.FullName.Substring($rootBase.Length).TrimStart("\")
+    $matched = $false
+    foreach ($map in $rootFolders.GetEnumerator()) {
+        if ($rel.StartsWith($map.Key, [StringComparison]::OrdinalIgnoreCase)) {
+            $subpath = $rel.Substring($map.Key.Length).TrimStart("\")
+            $dstDir = Join-Path $websiteAssets $map.Value
+            if ($subpath) {
+                $subdir = Split-Path $subpath -Parent
+                $dstDir = Join-Path $dstDir $subdir
+            }
+            if (!(Test-Path $dstDir)) { New-Item -ItemType Directory -Path $dstDir -Force | Out-Null }
+            $dst = Join-Path $dstDir (Split-Path $rel -Leaf)
+            Copy-Item $_.FullName $dst -Force
+            Write-Host "  ROOT/$rel"
+            $count++
+            $matched = $true
+            break
+        }
+    }
+    if (-not $matched) {
+        $dstDir = Join-Path $websiteAssets "root"
+        $dstPath = Join-Path $dstDir $rel
+        $dstParent = Split-Path $dstPath -Parent
+        if (!(Test-Path $dstParent)) { New-Item -ItemType Directory -Path $dstParent -Force | Out-Null }
+        Copy-Item $_.FullName $dstPath -Force
+        Write-Host "  ROOT/$rel (-> root/)"
+        $count++
+    }
+}
+
+# Me images
+if (Test-Path $meOutput) {
+    Get-ChildItem $meOutput -Include *.png,*.jpg,*.jpeg,*.webp | ForEach-Object {
+        $name = $_.Name
+        $dest = $websiteAssets
+        if ($name -match "^david-") { $dest = Join-Path $websiteAssets "david" }
+        elseif ($name -match "hero-banner|social-card|embellishment") { $dest = Join-Path $websiteAssets "products" }
+        elseif ($name -match "cta-|badge-|newsletter-|blog-|contact-|about-|video-") { $dest = Join-Path $websiteAssets "marketing" }
+        Copy-Item $_.FullName (Join-Path $dest $name) -Force
+        Write-Host "  Me: $name"
+        $count++
+    }
+}
+
+# Mastermind
+if (Test-Path $mastermindAssets) {
+    $modDest = Join-Path $websiteAssets "modules"
+    Get-ChildItem $mastermindAssets -Include *.png,*.jpg,*.jpeg | ForEach-Object {
+        Copy-Item $_.FullName (Join-Path $modDest $_.Name) -Force
+        Write-Host "  MASTERMIND: $($_.Name)"
+        $count++
+    }
+}
+
+Write-Host "`nSync complete. $count images from ROOT (+ Me/MASTERMIND)." -ForegroundColor Cyan
+Write-Host "Do NOT push to any repo without explicit approval." -ForegroundColor Yellow

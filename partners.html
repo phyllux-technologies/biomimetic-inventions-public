@@ -50,8 +50,8 @@
     .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
     .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
     .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
-    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
-    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); display: flex; justify-content: center; background: var(--bg); }
+    .hero-banner img { width: 100%; max-width: 900px; height: auto; display: block; object-fit: contain; max-height: 320px; object-position: center; }
     main { max-width: 900px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
     .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
     .back-link:hover { color: var(--accent); }
@@ -131,7 +131,9 @@
     <a href="index.html" class="brand">🌻 PHYLLUX</a>
     <div class="nav-links">
       <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="products.html">Products</a>
       <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="path.html">Path</a>
       <a class="pill" href="technology.html">Technology</a>
       <a class="pill" href="engenica.html">ENGENICA</a>
       <a class="pill" href="proof.html">Proof</a>
@@ -141,20 +143,27 @@
       <a class="pill" href="docs.html">Docs</a>
       <a class="pill" href="about.html">About</a>
       <a class="pill" href="ecosystem.html">Ecosystem</a>
+      <a class="pill" href="gallery.html">Gallery</a>
     </div>
   </nav>
 </header>
 
 <div class="hero-banner">
-  <img src="assets/phyllux-partners-hero.png" alt="Partner with Phyllux" />
+  <img src="assets/david/david-collaborative-pair.png" alt="Partnership — David collaborating" onerror="this.src='assets/phyllux-partners-hero.png'" />
 </div>
 
 <main>
   <a href="index.html" class="back-link">← Back to Phyllux</a>
   
-  <h1>Partners <span class="seq-badge">Position 8</span></h1>
+  <h1>Partners <span class="seq-badge" title="Phyllotactic sequence · refinement chain">Position 8 · Stage 5</span></h1>
   <p class="intro">Paid technical evaluation → license → prototype. Start with a scoped evaluation: partner pack (method overview, interfaces, benchmarks summary) + integration plan. Deep implementation remains NDA/partner-only. ~30 minutes to onboard.</p>
 
+  <div style="margin-bottom: var(--space-2xl); display: flex; gap: var(--space-md); flex-wrap: wrap;">
+    <img src="assets/david/david-collaborative-pair.png" alt="Collaboration" style="max-width: 400px; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line);" onerror="this.style.display='none'">
+    <img src="assets/david/david-workshop-leading.png" alt="Workshop" style="max-width: 400px; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line);" onerror="this.style.display='none'">
+  </div>
+
+  <img src="assets/marketing/partners-process-800x300.png" alt="Partnership process" style="width:100%;max-width:800px;height:auto;border-radius:var(--radius);border:1px solid var(--line);margin-bottom:var(--space-lg);" onerror="this.style.display='none'" />
   <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Process</h2>
   <div class="process-flow">
     <div class="process-step"><strong>1</strong> Inquiry</div>
@@ -167,7 +176,7 @@
 
   <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Licensing ladder</h2>
   <div class="ladder-block">
-    <img src="assets/phyllux-partners-ladder.png" alt="Licensing tiers" />
+    <img src="assets/products/phyllux-partners-ladder.png" alt="Licensing tiers" onerror="this.src='assets/phyllux-partners-ladder.png'" />
     <div style="flex: 1;">
       <table class="tier-table">
         <tr><th>Tier</th><th>Who</th><th>Terms</th></tr>
@@ -192,8 +201,10 @@
   <p>Scoped evaluation includes: partner pack (method overview, interfaces, benchmarks summary) and integration plan. Contact with your use case, constraints, and timeline.</p>
   <p><a href="docs/partner/offer.html">Evaluation offer details →</a> · <a href="docs/partner/license.html">Licensing ladder (docs) →</a></p>
 
+  <img src="assets/marketing/contact-section-header-1200x300.png" alt="" role="presentation" style="width:100%;max-height:100px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-lg);border:1px solid var(--line)" onerror="this.style.display='none'" />
   <div class="cta-block">
     <p><strong>Ready to partner?</strong></p>
+    <a href="mailto:phibronotchi@gmail.com?subject=Technical%20Evaluation%20Request"><img src="assets/marketing/cta-partner-with-us-400x80.png" alt="Partner with us" style="height:44px;width:auto;display:inline-block;margin-bottom:var(--space-md)" onerror="this.style.display='none'"></a>
     <a href="mailto:phibronotchi@gmail.com?subject=Technical%20Evaluation%20Request" class="btn">Request evaluation</a>
   </div>
 </main>

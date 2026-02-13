@@ -50,8 +50,8 @@
     .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
     .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
     .seq-badge { display: inline-block; font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; background: var(--phi-gold-soft); color: var(--phi-gold); margin-left: var(--space-sm); font-weight: 600; }
-    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); }
-    .hero-banner img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 260px; }
+    .hero-banner { width: 100%; overflow: hidden; margin-bottom: var(--space-xl); display: flex; justify-content: center; background: #050508; }
+    .hero-banner img { width: 100%; max-width: 900px; height: auto; display: block; object-fit: contain; max-height: 320px; object-position: center; }
     main { max-width: 900px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
     .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
     .back-link:hover { color: var(--accent); }
@@ -95,7 +95,9 @@
     <a href="index.html" class="brand">🌻 PHYLLUX</a>
     <div class="nav-links">
       <a class="pill" href="index.html">Hub</a>
+      <a class="pill" href="products.html">Products</a>
       <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="path.html">Path</a>
       <a class="pill" href="technology.html">Technology</a>
       <a class="pill" href="engenica.html">ENGENICA</a>
       <a class="pill" href="proof.html">Proof</a>
@@ -105,35 +107,40 @@
       <a class="pill" href="docs.html">Docs</a>
       <a class="pill" href="about.html">About</a>
       <a class="pill" href="ecosystem.html">Ecosystem</a>
+      <a class="pill" href="gallery.html">Gallery</a>
     </div>
   </nav>
 </header>
 
 <div class="hero-banner">
-  <img src="assets/phyllux-docs-hero.png" alt="Documentation" />
+  <img src="assets/products/phyllux-docs-hero.png" alt="Documentation" onerror="this.src='assets/phyllux-docs-hero.png'" />
 </div>
 
 <main>
   <a href="index.html" class="back-link">← Back to Phyllux</a>
   
-  <h1>Docs <span class="seq-badge">Position 34</span></h1>
+  <h1>Docs <span class="seq-badge" title="Phyllotactic sequence · refinement chain">Position 34 · Stage 8</span></h1>
   <p class="intro">Comprehensive, non-enabling documentation for Phyllux Technologies. Includes diagrams, plots, proof registry, and partner templates. Public-safe by default.</p>
 
   <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Pillars</h2>
   <div class="doc-grid">
     <a href="docs/wave/" class="doc-card">
+      <img src="assets/products/docs-wave-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>📡 WAVE</h3>
       <p>Golden-angle antenna arrays. GAFAA public specs, examples.</p>
     </a>
     <a href="docs/mesh/" class="doc-card">
+      <img src="assets/products/docs-mesh-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>🧠 MESH</h3>
       <p>Phyllotactic neural mapping. PNM electrode placement.</p>
     </a>
     <a href="docs/vault/" class="doc-card">
+      <img src="assets/products/docs-vault-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>🔐 VAULT</h3>
       <p>PhiKey cryptography. Post-quantum key derivation.</p>
     </a>
     <a href="docs/core/" class="doc-card">
+      <img src="assets/products/docs-core-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>🧩 CORE</h3>
       <p>Integrated Biomimetic System. Unified coordinate spine.</p>
     </a>
@@ -142,26 +149,32 @@
   <h2 style="font-size: 1.25rem; margin: var(--space-xl) 0 var(--space-md);">Resources</h2>
   <div class="doc-grid">
     <a href="docs/engenica/" class="doc-card">
+      <img src="assets/products/docs-engenica-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>ENGENICA</h3>
       <p>Meta-iterative AI. Engine + product.</p>
     </a>
     <a href="docs/partner/" class="doc-card">
+      <img src="assets/products/docs-partner-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>Partner</h3>
       <p>Intake, evaluation offer, licensing ladder.</p>
     </a>
     <a href="docs/proof/prior-art/" class="doc-card">
+      <img src="assets/marketing/proof-registry-visual-800x300.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>Prior art</h3>
       <p>Registry, disclosures, January 7 2026.</p>
     </a>
     <a href="docs/proof/integrity/" class="doc-card">
+      <img src="assets/products/docs-integrity-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>Integrity</h3>
       <p>Checksums, manifests, provenance.</p>
     </a>
     <a href="docs/ip/" class="doc-card">
+      <img src="assets/products/docs-ip-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>IP posture</h3>
       <p>Strategy, protection lanes.</p>
     </a>
     <a href="docs/ethics/" class="doc-card">
+      <img src="assets/products/docs-ethics-thumb-400x250.png" alt="" style="width:100%;height:120px;object-fit:cover;border-radius:8px;margin-bottom:var(--space-sm);" onerror="this.style.display='none'" />
       <h3>Ethics</h3>
       <p>Commitments, responsible deployment.</p>
     </a>
@@ -176,6 +189,9 @@
   </div>
 
   <p style="margin-top: var(--space-2xl);"><a href="docs/">Open docs index →</a> · <a href="technology.html">Technology pillars →</a></p>
+  <div style="margin-top: var(--space-xl);">
+    <img src="assets/marketing/badge-open-source.png" alt="Open source" style="height:48px;width:auto" onerror="this.style.display='none'">
+  </div>
 </main>
 
 <footer>
