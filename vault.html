@@ -19,9 +19,31 @@
     .back { display: inline-block; margin-bottom: 1rem; color: var(--accent); font-size: 0.875rem; }
     .back:hover { text-decoration: underline; }
     .section-title { font-size: 1rem; color: var(--muted); margin: 2rem 0 0.75rem; }
+    #vault-locked { max-width: 400px; margin: 4rem auto; text-align: center; }
+    #vault-locked h1 { font-size: 1.25rem; margin-bottom: 1rem; }
+    #vault-locked p { color: var(--muted); margin-bottom: 1.5rem; }
+    .vault-form { margin: 1.5rem 0; }
+    .vault-form input { background: rgba(12,15,20,0.8); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.75rem 1rem; color: var(--fg); font-size: 1rem; width: 100%; max-width: 280px; }
+    .vault-form input:focus { outline: none; border-color: var(--accent); }
+    .vault-form button { margin-top: 0.75rem; padding: 0.6rem 1.5rem; background: var(--accent); color: var(--bg); border: none; border-radius: var(--radius); font-weight: 600; cursor: pointer; font-size: 0.9rem; }
+    .vault-form button:hover { opacity: 0.9; }
+    .vault-err { color: #f87171; font-size: 0.875rem; margin-top: 0.5rem; }
   </style>
 </head>
 <body>
+<div id="vault-locked">
+  <a href="index.html" class="back">← Back to Phyllux</a>
+  <h1>Vault Locked</h1>
+  <p>Backstage. Drafts. Iterations. Enter the key to peek behind the curtain.</p>
+  <form class="vault-form" id="vault-form" onsubmit="return false;">
+    <input type="password" id="vault-key" placeholder="Enter key…" autocomplete="off" autofocus />
+    <br /><button type="submit">Unlock</button>
+    <p class="vault-err" id="vault-err" style="display:none;">Wrong key. Try again.</p>
+  </form>
+  <p style="font-size:0.75rem;opacity:0.6;">Hint: golden angle, spirals, nature.</p>
+</div>
+
+<div id="vault-content" style="display:none;">
 <a href="index.html" class="back">← Back to Phyllux</a>
 <h1>Vault</h1>
 <p class="subtitle">Backstage. Drafts. Iterations. Things we don't lead with — but you found the key.</p>
@@ -37,16 +59,38 @@
 
 <div class="section-title">Full catalog</div>
 <div id="vault-all"></div>
+</div>
 
 <script>
 (function() {
-  const STORAGE_KEY = 'phyllux_vault_keys';
-  function getKeys() { try { const r = localStorage.getItem(STORAGE_KEY); return r ? JSON.parse(r) : {}; } catch(e) { return {}; } }
-  if (Object.keys(getKeys()).length < 5) {
-    document.body.innerHTML = '<div style="max-width:400px;margin:4rem auto;text-align:center;"><h1 style="font-size:1.25rem;margin-bottom:1rem;">Vault Locked</h1><p style="color:#94a3b8;margin-bottom:1.5rem;">Find the five key fragments hidden across the site. Click each one. The key is phyllotactic.</p><a href="index.html" style="color:#5eead4;">← Return</a></div>';
-    document.title = 'Vault — Locked';
-    throw 'unlocked';
+  const STORAGE_KEY = 'phyllux_vault_unlocked';
+  const PASSWORD = 'phyllotactic';
+
+  function isUnlocked() { return sessionStorage.getItem(STORAGE_KEY) === '1'; }
+
+  function showContent() {
+    document.getElementById('vault-locked').style.display = 'none';
+    document.getElementById('vault-content').style.display = 'block';
+    document.title = 'Vault — Phyllux Backstage';
   }
+
+  if (isUnlocked()) { showContent(); initVault(); } else {
+    document.getElementById('vault-form').addEventListener('submit', function() {
+      const key = document.getElementById('vault-key').value.trim().toLowerCase();
+      if (key === PASSWORD) {
+        sessionStorage.setItem(STORAGE_KEY, '1');
+        showContent();
+        initVault();
+      } else {
+        document.getElementById('vault-err').style.display = 'block';
+        document.getElementById('vault-key').value = '';
+        document.getElementById('vault-key').focus();
+      }
+      return false;
+    });
+  }
+
+  function initVault() {
   const exclusive = [
     'assets/vault/vault-draft-phi-600x400.png',
     'assets/vault/vault-wip-wave-600x400.png',
@@ -117,6 +161,7 @@
   renderGrid('vault-extended', extended);
 
   document.getElementById('vault-all').innerHTML = '<p style="color:var(--muted);font-size:0.875rem;">The complete ROOT catalog lives in the <a href="gallery.html" style="color:var(--accent);">Gallery</a>. This vault surfaces the ones we keep off the main pages — drafts, templates, internal iterations, alternate versions, and the full MASTERMIND diagram library.</p>';
+  }
 })();
 </script>
 </body>
