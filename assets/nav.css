@@ -1,5 +1,20 @@
-/* Dropdown nav — single Menu button, no pill buttons */
-.nav-dropdown { position: relative; }
+/* Nav layout — consistent across hub and all other pages */
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Dropdown nav — single Menu button */
+.nav-dropdown {
+  position: relative;
+  margin-left: auto; /* Keep Menu button right-aligned even when nav wraps */
+}
 .nav-dropdown-btn {
   display: flex; align-items: center; gap: 6px;
   padding: 8px 16px; border: 1px solid rgba(30,41,59,0.6);
@@ -34,4 +49,12 @@
 }
 .nav-dropdown-panel a:hover {
   background: rgba(212,168,75,0.12); color: #d4a84b;
+}
+
+/* Responsive — keep Menu right-aligned on all viewports */
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: row; /* Keep row so brand left, menu right */
+    flex-wrap: wrap;
+  }
 }
