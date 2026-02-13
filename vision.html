@@ -66,9 +66,11 @@
       flex-wrap: wrap;
       gap: var(--space-md);
       padding: var(--space-md) var(--space-xl);
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
     }
+    .menu-toggle { display: none; background: none; border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; color: var(--muted); font-size: 0.8125rem; cursor: pointer; }
+    @media (max-width: 900px) { .menu-toggle { display: inline-flex; } .nav-links { display: none; } .nav-links.open { display: flex; flex-direction: column; width: 100%; padding-top: var(--space-md); } }
     .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
     .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
     .pill {
@@ -234,6 +236,7 @@
 <header>
   <nav>
     <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu ▾</button>
     <div class="nav-links">
       <a class="pill" href="products.html">Products</a>
       <a class="pill" href="vision.html">Vision</a>

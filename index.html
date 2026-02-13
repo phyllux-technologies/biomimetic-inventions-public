@@ -726,6 +726,33 @@
       margin-bottom: var(--space-xs);
     }
     
+    /* Mobile nav */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line-soft);
+      padding: var(--space-xs) var(--space-md);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .menu-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    
+    @media (max-width: 900px) {
+      .menu-toggle { display: inline-flex; align-items: center; gap: 6px; }
+      .nav-links { display: none; flex-direction: column; width: 100%; padding-top: var(--space-md); }
+      .nav-links.open { display: flex; }
+    }
+    
+    /* Scroll fade-in */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    
+    /* Focus visible for a11y */
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -756,11 +783,12 @@
   <nav>
     <div class="brand">
       <span class="brand-icon">🌻</span>
-      PHYLLUX
+      <a href="index.html" style="color:inherit;text-decoration:none;">PHYLLUX</a>
       <span class="brand-badge">• ENGENICA</span>
-      <span class="pill">PUBLIC • Non-enabling</span>
-      <span class="ip-badge">🔒 Proprietary Technology | Patent Application In Preparation</span>
+      <span class="pill" style="margin-left:var(--space-xs);">PUBLIC • Non-enabling</span>
+      <span class="ip-badge">🔒 Patent Application In Preparation</span>
     </div>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu ▾</button>
     <div class="nav-links">
       <a class="pill" href="mastermind.html" style="border-color: rgba(94,234,212,0.4); color: var(--accent);">MASTERMIND</a>
       <a class="pill" href="products.html">Products</a>
@@ -846,8 +874,8 @@
     </div>
   </section>
 
-  <img src="assets/marketing/index-hub-card-400x250.png" alt="" role="presentation" style="width:100%;max-width:500px;height:auto;display:block;margin:0 auto var(--space-lg);opacity:0.9;" onerror="this.style.display='none'" />
-  <section id="hub-grid" class="grid section" style="grid-template-columns: repeat(2, 1fr);">
+  <img src="assets/marketing/index-hub-card-400x250.png" alt="" role="presentation" style="width:100%;max-width:500px;height:auto;display:block;margin:0 auto var(--space-lg);opacity:0.9;" onerror="this.style.display='none'" loading="lazy" />
+  <section id="hub-grid" class="grid section fade-in" style="grid-template-columns: repeat(2, 1fr);">
     <article class="card">
       <h3>What I Offer</h3>
       <p class="small">16 MASTERMIND modules. Phyllux licensing (Wave, Mesh, Vault, Core). BOOKWURM, Content Studio. ENGENICA polish. Consulting, workshops, partnerships.</p>
@@ -870,7 +898,7 @@
     </article>
   </section>
 
-  <section id="pillars" class="grid grid-pillars section">
+  <section id="pillars" class="grid grid-pillars section fade-in">
     <article class="card">
       <h3>📡 WAVE</h3>
       <p class="small">Golden-angle antenna arrays; scalable layouts. Satellite, 5G/6G, radar.</p>
@@ -893,30 +921,20 @@
     </article>
   </section>
 
-  <section id="david-at-work" class="section">
+  <section id="david-at-work" class="section fade-in">
     <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:var(--space-md);">At work</h2>
-    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: var(--space-md);">
-      <img src="assets/david/david-desk-mastermind-hero.png" alt="David with MASTERMIND" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-coding-hands-on-keyboard.png" alt="David coding" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-confident-founder-pose.png" alt="David founder" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-explaining-whiteboard.png" alt="David explaining" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-tablet-phyllux-casual.png" alt="David with Phyllux" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-side-profile-engenica.png" alt="David with ENGENICA" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-celebrating-success.png" alt="David celebrating" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-nature-tech-outdoor.png" alt="David nature & tech" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-workshop-leading.png" alt="David workshop" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-collaborative-pair.png" alt="David collaborating" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-conference-speaking.png" alt="David speaking" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-podcast-recording.png" alt="David podcast" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-workspace-behind-scenes.png" alt="David workspace" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-deep-work-thoughtful.png" alt="David in deep work" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-reviewing-documents.png" alt="David reviewing" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
-      <img src="assets/david/david-reviewing-tech-contemplative.png" alt="David contemplative" style="width:100%;height:160px;object-fit:cover;border-radius:var(--radius-md);border:1px solid var(--line-soft)" onerror="this.style.display='none'">
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:var(--space-lg);">Founder, builder, systems thinker — David at the intersection of nature-inspired tech and coordination.</p>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-lg);">
+      <div><img src="assets/david/david-desk-mastermind-hero.png" alt="David with MASTERMIND coordination system" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div><img src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div><img src="assets/david/david-coding-hands-on-keyboard.png" alt="David building" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div><img src="assets/david/david-explaining-whiteboard.png" alt="David explaining concepts" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div><img src="assets/david/david-nature-tech-outdoor.png" alt="David — nature and technology" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div><img src="assets/david/david-celebrating-success.png" alt="David celebrating" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="about" class="section fade-in">
     <article class="about-card">
       <div style="margin-bottom: var(--space-md);">
         <img src="assets/david/david-about-page-headshot.png" alt="David Edward Sproule" style="max-width: 200px; border-radius: 50%; border: 2px solid var(--line-soft);" onerror="this.src='assets/phyllux-about-hero.png'" />
@@ -931,7 +949,7 @@
     </article>
   </section>
 
-  <section id="engenica" class="hero section">
+  <section id="engenica" class="hero section fade-in">
     <div class="pill">ENGENICA • Position 3</div>
     <h2>What ENGENICA does</h2>
     <p>Turns messy reality into partner-ready artifacts: indexes, registries, documentation, proof packs. +157.7% performance, φ convergence.</p>
@@ -940,7 +958,7 @@
     </div>
   </section>
 
-  <section id="proof" class="grid section">
+  <section id="proof" class="grid section fade-in">
     <article class="card">
       <h3>📚 Proof</h3>
       <p class="small">Prior art, integrity, disclosures. January 7, 2026.</p>
@@ -958,7 +976,7 @@
     </article>
   </section>
 
-  <section id="docs" class="hero section">
+  <section id="docs" class="hero section fade-in">
     <div class="pill">Docs • Position 34</div>
     <h2>Documentation</h2>
     <p>Diagrams, plots, proof registry, partner templates. Non-enabling, public-safe.</p>
@@ -972,7 +990,7 @@
     </div>
   </section>
 
-  <section id="ecosystem" class="hero section">
+  <section id="ecosystem" class="hero section fade-in">
     <div class="pill">Ecosystem</div>
     <h2>GitHub, domains & friends</h2>
     <p>Repos, domain network. We support <a href="https://filexai.com" target="_blank" rel="noopener" style="color:var(--accent);">Filex AI</a> — Lokesh's AI-powered file organization.</p>
@@ -1071,6 +1089,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>

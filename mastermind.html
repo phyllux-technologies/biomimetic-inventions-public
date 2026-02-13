@@ -44,7 +44,9 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
-    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1200px; margin: 0 auto; }
+    .menu-toggle { display: none; background: none; border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; color: var(--muted); font-size: 0.8125rem; cursor: pointer; }
+    @media (max-width: 900px) { .menu-toggle { display: inline-flex; } .nav-links { display: none; } .nav-links.open { display: flex; flex-direction: column; width: 100%; padding-top: var(--space-md); } }
     .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
     .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
     .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
@@ -169,6 +171,7 @@
 <header>
   <nav>
     <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu ▾</button>
     <div class="nav-links">
       <a class="pill" href="index.html">Hub</a>
       <a class="pill highlight" href="mastermind.html">MASTERMIND</a>
