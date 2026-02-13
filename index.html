@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/nav.css">
   <style>
     :root {
       --bg: #050508;
@@ -154,13 +155,7 @@
       letter-spacing: 0.05em;
     }
     
-    .nav-links {
-      display: flex;
-      gap: var(--space-xs);
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    
+    .nav-links { display: none; }
     .pill {
       border: 1px solid var(--line-soft);
       padding: var(--space-xs) var(--space-md);
@@ -173,7 +168,6 @@
       gap: 6px;
       align-items: center;
     }
-    
     .pill:hover {
       border-color: rgba(94, 234, 212, 0.3);
       color: var(--accent);
@@ -793,23 +787,25 @@
       <span class="pill" style="margin-left:var(--space-xs);">PUBLIC • Non-enabling</span>
       <span class="ip-badge">🔒 Patent Application In Preparation</span>
     </div>
-    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu ▾</button>
-    <div class="nav-links">
-      <a class="pill" href="mastermind.html" style="border-color: rgba(94,234,212,0.4); color: var(--accent);">MASTERMIND</a>
-      <a class="pill" href="products.html">Products</a>
-      <a class="pill" href="vision.html">Vision</a>
-      <a class="pill" href="path.html">Path</a>
-      <a class="pill" href="technology.html">Technology</a>
-      <a class="pill" href="engenica.html">ENGENICA</a>
-      <a class="pill" href="proof.html">Proof</a>
-      <a class="pill" href="partners.html">Partners</a>
-      <a class="pill" href="ip.html">IP</a>
-      <a class="pill" href="ethics.html">Ethics</a>
-      <a class="pill" href="docs.html">Docs</a>
-      <a class="pill" href="about.html">About</a>
-      <a class="pill" href="ecosystem.html">Ecosystem</a>
-      <a class="pill" href="gallery.html">Gallery</a>
-      <a class="pill" href="vault.html">Vault</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn" aria-label="Open menu" aria-expanded="false">Menu ▾</button>
+      <div class="nav-dropdown-panel">
+        <a href="mastermind.html">MASTERMIND</a>
+        <a href="products.html">Products</a>
+        <a href="vision.html">Vision</a>
+        <a href="path.html">Path</a>
+        <a href="technology.html">Technology</a>
+        <a href="engenica.html">ENGENICA</a>
+        <a href="proof.html">Proof</a>
+        <a href="partners.html">Partners</a>
+        <a href="ip.html">IP</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="vault.html">Vault</a>
+      </div>
     </div>
   </nav>
 </header>
@@ -819,7 +815,7 @@
 </div>
 
 <div class="hero-banner">
-  <img src="assets/david/david-desk-mastermind-hero.png" alt="David Edward Sproule — at work with MASTERMIND" onerror="this.src='assets/phyllux-hero-banner.png'" />
+  <img data-reveal-fact data-fact="MASTERMIND was built with Cursor AI — coordination that improves all systems. One idea propagates to many improvements." src="assets/david/david-desk-mastermind-hero.png" alt="David Edward Sproule — at work with MASTERMIND" onerror="this.src='assets/phyllux-hero-banner.png'" />
 </div>
 
 <main class="wrap">
@@ -879,7 +875,7 @@
     </div>
   </section>
 
-  <img src="assets/marketing/index-hub-card-400x250.png" alt="" role="presentation" style="width:100%;max-width:500px;height:auto;display:block;margin:0 auto var(--space-lg);opacity:0.9;" onerror="this.style.display='none'" loading="lazy" />
+  <img data-reveal-fact data-fact="One hub. Products. Vision. Path. Proof. Partners. All voluntary, transparent, free to leave." src="assets/marketing/index-hub-card-400x250.png" alt="" role="presentation" style="width:100%;max-width:500px;height:auto;display:block;margin:0 auto var(--space-lg);opacity:0.9;" onerror="this.style.display='none'" loading="lazy" />
   <section id="hub-grid" class="grid section fade-in" style="grid-template-columns: repeat(2, 1fr);">
     <article class="card">
       <h3>What I Offer</h3>
@@ -930,19 +926,19 @@
     <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:var(--space-md);">At work</h2>
     <p style="color:var(--muted);font-size:0.9rem;margin-bottom:var(--space-lg);">Founder, builder, systems thinker — David at the intersection of nature-inspired tech and coordination.</p>
     <div class="grid at-work-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-lg);">
-      <div><img src="assets/david/david-desk-mastermind-hero.png" alt="David with MASTERMIND coordination system" loading="lazy" onerror="this.style.display='none'"></div>
-      <div><img src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux" loading="lazy" onerror="this.style.display='none'"></div>
-      <div><img src="assets/david/david-coding-hands-on-keyboard.png" alt="David building" loading="lazy" onerror="this.style.display='none'"></div>
-      <div><img src="assets/david/david-explaining-whiteboard.png" alt="David explaining concepts" loading="lazy" onerror="this.style.display='none'"></div>
-      <div><img src="assets/david/david-nature-tech-outdoor.png" alt="David — nature and technology" loading="lazy" onerror="this.style.display='none'"></div>
-      <div><img src="assets/david/david-celebrating-success.png" alt="David celebrating" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img data-reveal-fact data-fact="MASTERMIND was built with Cursor AI. Coordination that improves all systems. One idea propagates to many improvements." src="assets/david/david-desk-mastermind-hero.png" alt="David with MASTERMIND coordination system" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img data-reveal-fact data-fact="David presents Phyllux at workshops and to partners. 30-min onboarding. Evaluation → License → Prototype." src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img data-reveal-fact data-fact="Systems thinker. Creator of MASTERMIND, this site, and the propagation engine. Documents are memory." src="assets/david/david-coding-hands-on-keyboard.png" alt="David building" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img data-reveal-fact data-fact="Quality Hierarchy: Pirsig levels from inorganic → intellectual. One concept per module." src="assets/david/david-explaining-whiteboard.png" alt="David explaining concepts" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img data-reveal-fact data-fact="Nature-inspired innovation. Four billion years of R&D. One golden angle — 137.508°. Biomimetic systems." src="assets/david/david-nature-tech-outdoor.png" alt="David — nature and technology" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img data-reveal-fact data-fact="ENGENICA: +157.7% performance. Meta-iterative polish. Entropy, symmetry, fractal convergence." src="assets/david/david-celebrating-success.png" alt="David celebrating" loading="lazy" onerror="this.style.display='none'"></div>
     </div>
   </section>
 
   <section id="about" class="section fade-in">
     <article class="about-card">
       <div style="margin-bottom: var(--space-md);">
-        <img src="assets/david/david-about-page-headshot.png" alt="David Edward Sproule" style="max-width: 200px; border-radius: 50%; border: 2px solid var(--line-soft);" onerror="this.src='assets/phyllux-about-hero.png'" />
+        <img data-reveal-fact data-fact="David Edward Sproule. Edmonton, Alberta. Founder & Inventor. Mission: mutual flourishing for AI, human, nature, technology." src="assets/david/david-about-page-headshot.png" alt="David Edward Sproule" style="max-width: 200px; border-radius: 50%; border: 2px solid var(--line-soft);" onerror="this.src='assets/phyllux-about-hero.png'" />
       </div>
       <div class="name">David Edward Sproule</div>
       <div class="title">Founder & Inventor</div>
@@ -1101,5 +1097,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
+<script src="assets/nav.js"></script>
+<script src="assets/image-facts.js"></script>
 </body>
 </html>

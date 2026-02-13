@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@0,400;0,600;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/nav.css">
   <style>
     :root {
       --bg: #050508;
@@ -129,28 +130,32 @@
 <header>
   <nav>
     <a href="index.html" class="brand">🌻 PHYLLUX</a>
-    <div class="nav-links">
-      <a class="pill" href="index.html">Hub</a>
-      <a class="pill" href="products.html">Products</a>
-      <a class="pill" href="vision.html">Vision</a>
-      <a class="pill" href="path.html">Path</a>
-      <a class="pill" href="technology.html">Technology</a>
-      <a class="pill" href="engenica.html">ENGENICA</a>
-      <a class="pill" href="proof.html">Proof</a>
-      <a class="pill" href="partners.html">Partners</a>
-      <a class="pill" href="ip.html">IP</a>
-      <a class="pill" href="ethics.html">Ethics</a>
-      <a class="pill" href="docs.html">Docs</a>
-      <a class="pill" href="about.html">About</a>
-      <a class="pill" href="ecosystem.html">Ecosystem</a>
-      <a class="pill" href="gallery.html">Gallery</a>
-      <a class="pill" href="vault.html">Vault</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn" aria-label="Open menu" aria-expanded="false">Menu ▾</button>
+      <div class="nav-dropdown-panel">
+        <a href="index.html">Hub</a>
+        <a href="mastermind.html">MASTERMIND</a>
+        <a href="products.html">Products</a>
+        <a href="vision.html">Vision</a>
+        <a href="path.html">Path</a>
+        <a href="technology.html">Technology</a>
+        <a href="engenica.html">ENGENICA</a>
+        <a href="proof.html">Proof</a>
+        <a href="partners.html">Partners</a>
+        <a href="ip.html">IP</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="vault.html">Vault</a>
+      </div>
     </div>
   </nav>
 </header>
 
 <div class="hero-banner">
-  <img src="assets/david/david-collaborative-pair.png" alt="Partnership — David collaborating" onerror="this.src='assets/phyllux-partners-hero.png'" />
+  <img data-reveal-fact data-fact="30-min intake. Evaluation → License → Prototype. Pioneer, Mission-Aligned, Commercial, Academic tiers. Voluntary partnership." src="assets/david/david-collaborative-pair.png" alt="Partnership — David collaborating" onerror="this.src='assets/phyllux-partners-hero.png'" />
 </div>
 
 <main>
@@ -239,5 +244,7 @@
     © 2026 Phyllux Technologies • Golden Angle: 137.508°
   </div>
 </footer>
+<script src="assets/nav.js"></script>
+<script src="assets/image-facts.js"></script>
 </body>
 </html>
