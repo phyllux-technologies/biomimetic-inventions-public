@@ -25,7 +25,7 @@
 ### index.html
 - Hero: assets/david/david-desk-mastermind-hero.png → fallback phyllux-hero-banner
 - CTAs: assets/marketing/cta-get-mastermind-400x80.png, cta-try-phyllux-400x80.png, cta-partner-with-us-400x80.png, badge-open-source.png
-- At work: 16 David images grid (desk, presenting, coding, founder, whiteboard, tablet, engenica, celebrating, nature-tech, workshop, collaborating, conference, podcast, workspace, deep work, reviewing, contemplative)
+- At work: 6 David images grid (desk, presenting, coding, whiteboard, nature-tech, celebrating)
 - About section: assets/david/david-about-page-headshot.png → fallback assets/phyllux-about-hero.png
 - Embellishments: assets/products/phyllux-embellishment.png (hero corners)
 - Footer: assets/products/phyllux-footer-divider.png
@@ -43,7 +43,7 @@
 - Golden angle: assets/phyllux-golden-angle.png
 
 ### about.html
-- Hero: assets/marketing/about-david-section-header-1200x350.png → fallback phyllux-about-hero.png
+- Hero: assets/david/david-desk-mastermind-hero.png → fallback phyllux-about-hero.png
 - Profile: assets/david/david-about-page-headshot.png
 - At work gallery: 15 David images
 - Find me: assets/platform/x-banner-1500x500.png, linkedin-banner-1584x396.png, github-org-500x500.png

@@ -76,6 +76,24 @@ if (Test-Path $meOutput) {
     }
 }
 
+# Fallbacks: copy key phyllux-* from products to assets root (for onerror fallbacks)
+$fallbacks = @(
+    @{ from = 'phyllux-hero-banner-1920x600.png'; to = 'phyllux-hero-banner.png' },
+    @{ from = 'phyllux-about-hero.png'; to = 'phyllux-about-hero.png' },
+    @{ from = 'phyllux-embellishment.png'; to = 'phyllux-embellishment.png' },
+    @{ from = 'phyllux-footer-divider.png'; to = 'phyllux-footer-divider.png' },
+    @{ from = 'phyllux-engenica-hero.png'; to = 'phyllux-engenica-hero.png' },
+    @{ from = 'phyllux-tech-hero.png'; to = 'phyllux-tech-hero.png' }
+)
+foreach ($fb in $fallbacks) {
+    $src = Join-Path (Join-Path $websiteAssets "products") $fb.from
+    if (Test-Path $src) {
+        Copy-Item $src (Join-Path $websiteAssets $fb.to) -Force
+        Write-Host "  Fallback: $($fb.to)"
+        $count++
+    }
+}
+
 # Mastermind
 if (Test-Path $mastermindAssets) {
     $modDest = Join-Path $websiteAssets "modules"
