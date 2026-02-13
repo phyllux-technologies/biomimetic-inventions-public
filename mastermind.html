@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MASTERMIND — Coordination That Improves All Systems | Phyllux</title>
+  <meta name="description" content="One place for ideas. One process. Every project gets better. MASTERMIND: Main Memory + Improvement Propagation. Free core. Premium modules. Built the site you're on." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <meta property="og:title" content="MASTERMIND — Coordination That Improves All Systems" />
+  <meta property="og:url" content="https://phyllux.io/mastermind.html" />
+  <meta property="og:description" content="One place for ideas. One process. Every project gets better. Modules launching in &lt; 24 hours." />
+  <meta property="og:image" content="https://phyllux.io/assets/products/mastermind-hero-banner-1920x600.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --success: #34d399;
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 20% 0%, rgba(94, 234, 212, 0.05) 0%, transparent 50%);
+      pointer-events: none; z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .pill.highlight { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    .launch-banner {
+      text-align: center;
+      padding: var(--space-md) var(--space-xl);
+      background: linear-gradient(90deg, rgba(52, 211, 153, 0.15), rgba(94, 234, 212, 0.15));
+      border-bottom: 1px solid rgba(94, 234, 212, 0.3);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+    .hero-banner { width: 100%; margin-bottom: var(--space-xl); display: flex; justify-content: center; background: var(--bg); }
+    .hero-banner img { width: 100%; max-width: 900px; height: auto; display: block; object-fit: contain; max-height: 320px; border-radius: var(--radius); }
+    main { max-width: 880px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin: var(--space-2xl) 0 var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); font-size: 1.125rem; }
+    .proof-badge {
+      display: inline-block;
+      padding: var(--space-sm) var(--space-lg);
+      border: 1px solid rgba(94, 234, 212, 0.4);
+      border-radius: var(--radius);
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: var(--space-xl) 0;
+    }
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    .value-card {
+      padding: var(--space-lg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5);
+      transition: border-color 0.2s;
+    }
+    .value-card:hover { border-color: rgba(94, 234, 212, 0.2); }
+    .value-card h3 { font-size: 1rem; margin-bottom: var(--space-sm); color: var(--fg); }
+    .value-card p { font-size: 0.875rem; color: var(--muted); }
+    .module-teaser {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: var(--space-md);
+      margin: var(--space-xl) 0;
+    }
+    .module-pill {
+      padding: var(--space-sm) var(--space-md);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .cta-block {
+      padding: var(--space-2xl);
+      border: 1px solid rgba(94, 234, 212, 0.25);
+      border-radius: var(--radius);
+      background: var(--accent-soft);
+      text-align: center;
+      margin: var(--space-2xl) 0;
+    }
+    .cta-block h3 { font-size: 1.25rem; margin-bottom: var(--space-md); color: var(--fg); }
+    .cta-block p { margin-bottom: var(--space-lg); color: var(--muted); }
+    .cta-block a.btn {
+      display: inline-block;
+      padding: var(--space-sm) var(--space-xl);
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: var(--radius);
+      font-weight: 600;
+      border: none;
+      transition: opacity 0.2s;
+    }
+    .cta-block a.btn:hover { opacity: 0.9; text-decoration: none; }
+    footer { border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl); }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-lg); }
+    .footer-nav a { font-size: 0.875rem; }
+    .footer-bottom { font-size: 0.8125rem; color: var(--muted); opacity: 0.8; }
+  </style>
+</head>
+<body>
+
+<div class="launch-banner">
+  🚀 MASTERMIND MODULES — LAUNCHING IN &lt; 24 HOURS · Free core live now · Premium modules coming imminently
+</div>
+
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="index.html">Hub</a>
+      <a class="pill highlight" href="mastermind.html">MASTERMIND</a>
+      <a class="pill" href="products.html">Products</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="path.html">Path</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+      <a class="pill" href="about.html">About</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero-banner">
+  <img src="assets/products/mastermind-hero-banner-1920x600.png" alt="MASTERMIND — Coordination that improves all systems" onerror="this.src='assets/phyllux-hero-banner.png'" />
+</div>
+
+<main>
+  <a href="index.html" class="back-link">← Hub</a>
+
+  <div class="proof-badge">BUILT WITH MASTERMIND — This website, Phyllux, the whole ecosystem. We used it to coordinate, propagate, and ship.</div>
+
+  <h1>MASTERMIND</h1>
+  <p class="intro"><strong>One place for ideas. One process. Every project gets better.</strong> A coordination system that improves all your systems. Main Memory + Improvement Propagation. Your ideas don't get lost — they propagate. Add something once, it gets evaluated everywhere. Nothing falls through the cracks.</p>
+
+  <h2>Who It's For</h2>
+  <p>Multi-project people. Idea hoarders. Improvement-minded founders, consultants, creators, researchers, teams. Anyone with several ventures who wants <em>one insight to improve many things</em> — instead of rediscovering the same lesson in different silos.</p>
+  <div class="value-grid">
+    <div class="value-card">
+      <h3>Multi-project</h3>
+      <p>Several ventures that should connect. One system, all projects.</p>
+    </div>
+    <div class="value-card">
+      <h3>AI-augmented</h3>
+      <p>Cursor, VS Code. Persistent memory + improvement process.</p>
+    </div>
+    <div class="value-card">
+      <h3>Framework fans</h3>
+      <p>Pirsig, GTD, Zettelkasten. Built into how you work.</p>
+    </div>
+  </div>
+
+  <h2>The Promise</h2>
+  <p><strong>Pain:</strong> "I have good ideas, but they never spread to my other projects."</p>
+  <p><strong>Promise:</strong> One idea → propagation → applied everywhere that matters. Documented. Traceable. You stay in control. Voluntary. Transparent. Free to leave.</p>
+
+  <h2>Modules — Launching Imminently</h2>
+  <p>Free core gets you coordination. Premium modules add frameworks: Quality Hierarchy (Pirsig), DQ/SQ Lens (Quantonics), Care Lens, Governor, ENGENICA Polish, Lexical Chain, and 15+ more. One concept per module. You buy only what improves you.</p>
+  <div class="module-teaser">
+    <span class="module-pill">Quality Hierarchy</span>
+    <span class="module-pill">Care Lens</span>
+    <span class="module-pill">DQ/SQ Lens</span>
+    <span class="module-pill">Governor</span>
+    <span class="module-pill">ENGENICA Polish</span>
+    <span class="module-pill">Lexical Chain</span>
+    <span class="module-pill">+ 18 more</span>
+  </div>
+
+  <div class="cta-block">
+    <h3>Get the free core. Modules in &lt; 24 hours.</h3>
+    <p>Clone the repo. Copy the pilot file. Add an idea. Run propagation. See what happens.</p>
+    <p><a href="https://github.com/phyllux-technologies/mastermind" target="_blank" rel="noopener" class="btn">→ GitHub · MASTERMIND</a></p>
+    <p style="margin-top: var(--space-md); font-size: 0.875rem;"><a href="products.html#mastermind">Full product lineup →</a></p>
+  </div>
+
+  <h2>Why It Works</h2>
+  <p>File-based. No servers. No lock-in. Main Memory is a markdown table. Improvement Propagation is a process you run when you add an idea. CLI: <code>mm add</code>, <code>mm propagate</code>, <code>mm check</code>. Integrates with Cursor, VS Code, Git. The system improves itself when you say "improve the improvement process."</p>
+
+  <p style="margin-top: var(--space-2xl);"><a href="ecosystem.html">Ecosystem →</a> · <a href="products.html">All products →</a> · <a href="about.html">About David →</a></p>
+</main>
+
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">Hub</a>
+    <a href="mastermind.html">MASTERMIND</a>
+    <a href="products.html">Products</a>
+    <a href="ecosystem.html">Ecosystem</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Phyllux Technologies · MASTERMIND coordinates it all
+  </div>
+</footer>
+
+</body>
+</html>
