@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Path | Phyllux Technologies</title>
+  <meta name="description" content="Reality Architect: APEX → TRAIL → Critical Path → Segment builds. How David Sproule gets from now to the destination. Patent Jan 7 2027." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <meta property="og:title" content="The Path | Phyllux Technologies" />
+  <meta property="og:url" content="https://phyllux.io/path.html" />
+  <link rel="canonical" href="https://phyllux.io/path.html" />
+  <meta property="og:image" content="https://phyllux.io/assets/phyllux-hero-banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 80% 20%, rgba(232, 197, 71, 0.04) 0%, transparent 50%);
+      pointer-events: none; z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    main { max-width: 800px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 600; margin: var(--space-2xl) 0 var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .path-block {
+      padding: var(--space-lg); border: 1px solid var(--line); border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5); margin-bottom: var(--space-lg);
+    }
+    .path-block h3 { font-size: 1rem; margin-bottom: var(--space-sm); color: var(--accent); }
+    .path-block ul { margin: 0; padding-left: 1.25rem; color: var(--muted); font-size: 0.9rem; }
+    .path-block li { margin-bottom: var(--space-xs); }
+    .deadline-badge { display: inline-block; background: var(--phi-gold-soft); color: var(--phi-gold); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; margin-bottom: var(--space-md); }
+    .sequence-flow { font-family: ui-monospace, monospace; font-size: 0.85rem; color: var(--muted); background: rgba(0,0,0,0.2); padding: var(--space-lg); border-radius: var(--radius); overflow-x: auto; white-space: pre; margin: var(--space-lg) 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    th, td { padding: var(--space-sm) var(--space-md); text-align: left; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-weight: 500; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="products.html">Products</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="path.html">Path</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <a href="index.html" class="back-link">← Hub</a>
+  <div style="margin-bottom: var(--space-lg);">
+    <img src="assets/products/mutual-flourishing-mission-card.png" alt="Mutual flourishing — The path" style="max-width: 500px; width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line);" onerror="this.src='assets/phyllux-vision-hero.png'" />
+  </div>
+  <h1>The Path</h1>
+  <p class="intro">Reality Architect: envision the destination, backcast to now, carve the critical path, build segment by segment.</p>
+
+  <div class="deadline-badge">Patent deadline: January 7, 2027</div>
+
+  <section>
+    <h2>APEX → TRAIL → Critical Path → Segments</h2>
+    <p style="margin-bottom: var(--space-md);">APEX = ultimate success state. TRAIL = Year 10 back to Year 0. Critical Path = non-negotiable steps. Segments = 1–2 week builds.</p>
+    <div class="sequence-flow">NOW → Patent engagement → Handoff → Filing prep
+    → MASTERMIND public → First module selling
+    → Phyllux: Vault polish, Wave design
+    → BOOKWURM: Content Studio Alpha
+    → Jan 7 2027: USPTO filing complete
+    → Post-filing: Continuations, licensing, scale</div>
+  </section>
+
+  <section>
+    <h2>Critical Path</h2>
+    <div class="path-block">
+      <h3>PATENT — Immovable</h3>
+      <ul>
+        <li>Robbie Nissen engagement confirmed</li>
+        <li>Handoff delivered; PPA/utility prep started</li>
+        <li><strong>Utility or PPA filed with USPTO by Jan 7 2027</strong></li>
+        <li>Continuation strategy for trade secret lanes</li>
+      </ul>
+    </div>
+    <div class="path-block">
+      <h3>PRODUCTS — Launch sequence</h3>
+      <table>
+        <tr><th>#</th><th>Product</th><th>Segment</th></tr>
+        <tr><td>1</td><td>Quality Hierarchy module</td><td>Segment 1</td></tr>
+        <tr><td>2</td><td>DQ/SQ or Care Lens</td><td>Segment 2–3</td></tr>
+        <tr><td>3</td><td>Second module; Phyllux licensing outreach</td><td>Segment 4</td></tr>
+        <tr><td>4</td><td>Third module; first paid book</td><td>Segment 5</td></tr>
+        <tr><td>5</td><td>ENGENICA Polish; Phyllux pilot</td><td>Segment 6+</td></tr>
+      </table>
+    </div>
+    <div class="path-block">
+      <h3>REVENUE — Survival path</h3>
+      <ul>
+        <li>MASTERMIND public; first adopters (Month 1)</li>
+        <li>First module (Quality Hierarchy) selling (Month 2)</li>
+        <li>Phyllux licensing LOI or pilot (Year 2)</li>
+        <li>BOOKWURM first paid book (Year 2)</li>
+      </ul>
+    </div>
+    <div class="path-block">
+      <h3>Constraints</h3>
+      <ul>
+        <li>Budget: ~$1,400 CAD for patent. Capital efficiency.</li>
+        <li>Health: No burnout. Sustainable pace.</li>
+        <li>IP: No accidental disclosure. TS-REGISTER maintained.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Segment builds</h2>
+    <div class="path-block">
+      <h3>Segment 1 (Now)</h3>
+      <ul>
+        <li>Patent: Confirm Robbie status; handoff ready</li>
+        <li>MASTERMIND: Public. Link from phyllux.io</li>
+        <li>Online presence: Images deployed (X, LinkedIn, GitHub)</li>
+        <li>Merchant: Gumroad/LS account; Quality Hierarchy product</li>
+      </ul>
+    </div>
+    <div class="path-block">
+      <h3>Segment 2 (Weeks 3–4)</h3>
+      <ul>
+        <li>Handoff delivered; filing prep underway</li>
+        <li>First module selling; first revenue</li>
+        <li>Phyllux Vault polish; Wave design iteration</li>
+        <li>BOOKWURM: Content Studio Alpha milestone</li>
+      </ul>
+    </div>
+    <div class="path-block">
+      <h3>Segment 3–5+</h3>
+      <ul>
+        <li>Draft to attorney; repeat sales</li>
+        <li>Wave pilot; second module live</li>
+        <li>First paid book; Phyllux licensing outreach</li>
+        <li>Patent filed by Jan 7 2027</li>
+      </ul>
+    </div>
+  </section>
+
+  <p style="margin-top: var(--space-2xl);"><a href="index.html">← Hub</a> · <a href="vision.html">The destination →</a> · <a href="products.html">All products →</a></p>
+</main>
+
+<footer style="border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl);">
+  <p style="font-size: 0.8125rem; color: var(--muted); text-align: center;">
+    © 2026 Phyllux Technologies · Reality Architect · February 2026
+  </p>
+</footer>
+</body>
+</html>

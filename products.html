@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products | Phyllux Technologies</title>
+  <meta name="description" content="Everything David Sproule offers: MASTERMIND modules, Phyllux licensing, BOOKWURM, ENGENICA, services. Full product catalog." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <meta property="og:title" content="Products | Phyllux Technologies" />
+  <meta property="og:url" content="https://phyllux.io/products.html" />
+  <link rel="canonical" href="https://phyllux.io/products.html" />
+  <meta property="og:image" content="https://phyllux.io/assets/phyllux-hero-banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050508;
+      --fg: #f0f4f8;
+      --muted: #94a3b8;
+      --accent: #5eead4;
+      --accent-soft: rgba(94, 234, 212, 0.15);
+      --phi-gold: #e8c547;
+      --phi-gold-soft: rgba(232, 197, 71, 0.08);
+      --line: rgba(30, 41, 59, 0.6);
+      --space-sm: 0.618rem;
+      --space-md: 1rem;
+      --space-lg: 1.618rem;
+      --space-xl: 2.618rem;
+      --space-2xl: 4.236rem;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--fg); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 30% 0%, rgba(94, 234, 212, 0.04) 0%, transparent 50%);
+      pointer-events: none; z-index: -1;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) var(--space-xl); max-width: 1000px; margin: 0 auto; }
+    .brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--fg); }
+    .nav-links { display: flex; gap: var(--space-sm); flex-wrap: wrap; }
+    .pill { border: 1px solid var(--line); padding: 6px 14px; border-radius: 999px; font-size: 0.8125rem; color: var(--muted); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+    main { max-width: 900px; margin: 0 auto; padding: 0 var(--space-xl) var(--space-2xl); }
+    .back-link { display: inline-block; margin-bottom: var(--space-lg); font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: var(--accent); }
+    h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; margin-bottom: var(--space-md); color: var(--fg); }
+    h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; margin: var(--space-2xl) 0 var(--space-md); color: var(--fg); }
+    .intro { color: var(--muted); margin-bottom: var(--space-2xl); }
+    .product-section { margin-bottom: var(--space-2xl); }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); }
+    .product-card {
+      padding: var(--space-lg); border: 1px solid var(--line); border-radius: var(--radius);
+      background: rgba(12, 15, 20, 0.5); transition: border-color 0.2s;
+    }
+    .product-card:hover { border-color: rgba(94, 234, 212, 0.2); }
+    .product-card h3 { font-size: 1rem; margin-bottom: var(--space-xs); color: var(--fg); }
+    .product-card p { font-size: 0.8125rem; color: var(--muted); }
+    .product-card .status { font-size: 0.7rem; color: var(--phi-gold); margin-top: var(--space-xs); }
+    .launch-order { margin-top: var(--space-xl); padding: var(--space-lg); border: 1px dashed rgba(94, 234, 212, 0.3); border-radius: var(--radius); background: var(--accent-soft); }
+    .launch-order h3 { font-size: 1rem; margin-bottom: var(--space-md); color: var(--accent); }
+    .launch-order ul { margin: 0; padding-left: 1.5rem; color: var(--muted); font-size: 0.875rem; }
+  </style>
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-links">
+      <a class="pill" href="products.html">Products</a>
+      <a class="pill" href="vision.html">Vision</a>
+      <a class="pill" href="path.html">Path</a>
+      <a class="pill" href="technology.html">Technology</a>
+      <a class="pill" href="engenica.html">ENGENICA</a>
+      <a class="pill" href="proof.html">Proof</a>
+      <a class="pill" href="partners.html">Partners</a>
+      <a class="pill" href="ip.html">IP</a>
+      <a class="pill" href="ethics.html">Ethics</a>
+      <a class="pill" href="docs.html">Docs</a>
+      <a class="pill" href="about.html">About</a>
+      <a class="pill" href="ecosystem.html">Ecosystem</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <a href="index.html" class="back-link">← Hub</a>
+  <h1>All Products</h1>
+  <p class="intro">Everything I offer. MASTERMIND modules. Phyllux licensing. BOOKWURM. ENGENICA. Services. Future concepts. Voluntary. Transparent. Free to leave.</p>
+
+  <section style="margin-bottom: var(--space-2xl);">
+    <h2 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Product lineup</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md);">
+      <a href="#mastermind" style="text-decoration: none; color: inherit;">
+        <div class="product-card" style="padding: 0; overflow: hidden;">
+          <img src="assets/products/mastermind-hero-banner-1920x600.png" alt="MASTERMIND" style="width: 100%; height: 140px; object-fit: cover;" onerror="this.src='assets/phyllux-hero-banner.png'" />
+          <div style="padding: var(--space-md);"><h3>MASTERMIND</h3><p>Coordination that improves all systems. Modules. Propagation.</p></div>
+        </div>
+      </a>
+      <a href="#phyllux" style="text-decoration: none; color: inherit;">
+        <div class="product-card" style="padding: 0; overflow: hidden;">
+          <img src="assets/products/phyllux-hero-banner-1920x600.png" alt="Phyllux" style="width: 100%; height: 140px; object-fit: cover;" onerror="this.src='assets/phyllux-hero-banner.png'" />
+          <div style="padding: var(--space-md);"><h3>Phyllux</h3><p>Wave, Mesh, Vault, Core. Golden-angle biomimetic tech.</p></div>
+        </div>
+      </a>
+      <a href="#engenica" style="text-decoration: none; color: inherit;">
+        <div class="product-card" style="padding: 0; overflow: hidden;">
+          <img src="assets/products/engenica-hero-banner-1920x600.png" alt="ENGENICA" style="width: 100%; height: 140px; object-fit: cover;" onerror="this.src='assets/phyllux-engenica-hero.png'" />
+          <div style="padding: var(--space-md);"><h3>ENGENICA</h3><p>Meta-iterative polish. Entropy, symmetry, fractal.</p></div>
+        </div>
+      </a>
+      <a href="#bwurm" style="text-decoration: none; color: inherit;">
+        <div class="product-card" style="padding: 0; overflow: hidden;">
+          <img src="assets/products/bwurm-hero-banner-1920x600.png" alt="BOOKWURM" style="width: 100%; height: 140px; object-fit: cover;" onerror="this.src='assets/phyllux-hero-banner.png'" />
+          <div style="padding: var(--space-md);"><h3>BOOKWURM</h3><p>AI-augmented authorship. Content Studio. LitPacks.</p></div>
+        </div>
+      </a>
+      <a href="technology.html" style="text-decoration: none; color: inherit;">
+        <div class="product-card" style="padding: 0; overflow: hidden;">
+          <img src="assets/products/phyllux-tech-hero.png" alt="Technology" style="width: 100%; height: 140px; object-fit: cover;" onerror="this.src='assets/phyllux-tech-hero.png'" />
+          <div style="padding: var(--space-md);"><h3>Technology</h3><p>WAVE · MESH · VAULT · CORE specs.</p></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section style="margin-bottom: var(--space-2xl);">
+    <h2 style="font-size: 1.25rem; margin-bottom: var(--space-md);">Product cards</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md);">
+      <img src="assets/products/mastermind-social-card-1200x630.png" alt="MASTERMIND" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/phyllux-social-card-1200x630.png" alt="Phyllux" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/engenica-social-card-1200x630.png" alt="ENGENICA" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/bwurm-social-card-1200x630.png" alt="BOOKWURM" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/mutual-flourishing-mission-card.png" alt="Mutual flourishing" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/mastermind-launch-announcement-1200x630.png" alt="MASTERMIND launch" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/event-promo-workshop-1200x630.png" alt="Events" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/ecosystem-overview-1200x800.png" alt="Ecosystem" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/testimonial-placeholder-card.png" alt="Testimonials" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/launch-announcement-template-1200x630.png" alt="Launch template" style="width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+    </div>
+  </section>
+
+  <section id="mastermind" class="product-section">
+    <h2>MASTERMIND — Coordination</h2>
+    <p style="margin-bottom: var(--space-md);">Free core. Optional paid modules. One concept per ZIP.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--space-md);margin-bottom:var(--space-xl);">
+      <img src="assets/products/mastermind-quality-hierarchy.png" alt="Quality Hierarchy" style="width:100%;height:140px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/mastermind-system-overview.png" alt="System overview" style="width:100%;height:140px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/mastermind-value-proposition.png" alt="Value proposition" style="width:100%;height:140px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/mastermind-ecosystem-modules.png" alt="Ecosystem modules" style="width:100%;height:140px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/mastermind-benefits-coordination.png" alt="Benefits" style="width:100%;height:140px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <h3>MASTERMIND Level</h3>
+        <p>Quality Hierarchy. Pirsig levels (inorganic→intellectual).</p>
+        <span class="status">Shippable now</span>
+      </div>
+      <div class="product-card">
+        <h3>MASTERMIND Pulse</h3>
+        <p>DQ/SQ Lens. Change vs. stasis. Quantonics.</p>
+        <span class="status">Planned</span>
+      </div>
+      <div class="product-card">
+        <h3>MASTERMIND Care</h3>
+        <p>Care/attention in propagation. Pirsig.</p>
+        <span class="status">Planned</span>
+      </div>
+      <div class="product-card">
+        <h3>MASTERMIND Nucleus</h3>
+        <p>Atomic Main Memory. Zettelkasten.</p>
+        <span class="status">Planned</span>
+      </div>
+      <div class="product-card">
+        <h3>MASTERMIND Next</h3>
+        <p>GTD Bridge. Next actions, contexts.</p>
+        <span class="status">Planned</span>
+      </div>
+      <div class="product-card">
+        <h3>MASTERMIND Polish</h3>
+        <p>ENGENICA integration.</p>
+        <span class="status">Planned</span>
+      </div>
+      <div class="product-card">
+        <h3>+ 10 more modules</h3>
+        <p>Lexicon, Quanton, Flux, Lexis, Gumption, Duration, Tacit, Totality, Governor.</p>
+        <span class="status">Roadmap</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section">
+    <h2>Phyllux — Biomimetic Tech</h2>
+    <p style="margin-bottom: var(--space-md);">4-tier licensing. Wave, Mesh, Vault, Core.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--space-md);margin-bottom:var(--space-xl);">
+      <img src="assets/products/phyllux-wave-visual.png" alt="Wave — antenna arrays" style="width:100%;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/phyllux-mesh-visual.png" alt="Mesh — neural" style="width:100%;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/phyllux-vault-visual.png" alt="Vault — crypto" style="width:100%;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/phyllux-core-visual.png" alt="Core — integration" style="width:100%;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/phyllux-golden-angle.png" alt="Golden angle" style="width:100%;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <h3>PhiKey (Vault)</h3>
+        <p>Golden-angle crypto. Working Python.</p>
+        <span class="status">Demos ready</span>
+      </div>
+      <div class="product-card">
+        <h3>GAFAA (Wave)</h3>
+        <p>Antenna arrays. 25–35% efficiency.</p>
+        <span class="status">Prototype path</span>
+      </div>
+      <div class="product-card">
+        <h3>PNM (Mesh)</h3>
+        <p>Neural interfaces. Computational models.</p>
+        <span class="status">Research</span>
+      </div>
+      <div class="product-card">
+        <h3>Phyllux IBS (Core)</h3>
+        <p>Integration. Wave + Vault demo.</p>
+        <span class="status">Planned</span>
+      </div>
+      <div class="product-card">
+        <h3>Phyllux Wave SDK</h3>
+        <p>Phyllotactic patterns for devs.</p>
+        <span class="status">Future</span>
+      </div>
+      <div class="product-card">
+        <h3>PhiVault</h3>
+        <p>Encrypted idea store. AI-readable.</p>
+        <span class="status">Future</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section">
+    <h2>BOOKWURM / Content Studio</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <h3>Content Studio</h3>
+        <p>Idea → outline → draft → polish → publish.</p>
+        <span class="status">Alpha</span>
+      </div>
+      <div class="product-card">
+        <h3>LitPacks</h3>
+        <p>Template packs. One concept per pack.</p>
+        <span class="status">Future</span>
+      </div>
+      <div class="product-card">
+        <h3>Lit Factory</h3>
+        <p>BWURM + ENGENICA. Book in days.</p>
+        <span class="status">Future</span>
+      </div>
+      <div class="product-card">
+        <h3>Author OS</h3>
+        <p>Calendar, projects, pipeline, royalties.</p>
+        <span class="status">Future</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section">
+    <h2>ENGENICA</h2>
+    <div style="display:flex;gap:var(--space-md);flex-wrap:wrap;margin-bottom:var(--space-xl);">
+      <img src="assets/products/phyllux-engenica-superposition.png" alt="ENGENICA superposition" style="max-width:300px;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+      <img src="assets/products/phyllux-engenica-ethics.png" alt="ENGENICA ethics" style="max-width:300px;height:120px;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line)" onerror="this.style.display='none'">
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <h3>ENGENICA</h3>
+        <p>Standalone polish. Entropy, symmetry, fractal.</p>
+        <span class="status">Internal</span>
+      </div>
+      <div class="product-card">
+        <h3>ENGENICA API</h3>
+        <p>Send text, get polished.</p>
+        <span class="status">12+ mo</span>
+      </div>
+      <div class="product-card">
+        <h3>ENGENICA Layers</h3>
+        <p>MoQ polish levels. Quality ceiling.</p>
+        <span class="status">Concept</span>
+      </div>
+      <div class="product-card">
+        <h3>Polish Guard</h3>
+        <p>Don't over-polish. Governor.</p>
+        <span class="status">Concept</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-section">
+    <h2>Services</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <h3>Phyllux Advisory</h3>
+        <p>Consulting. MASTERMIND Advisory.</p>
+      </div>
+      <div class="product-card">
+        <h3>Propagation Workshop</h3>
+        <p>MASTERMIND, MoQ, coordination.</p>
+      </div>
+      <div class="product-card">
+        <h3>Phyllux Partners</h3>
+        <p>Affiliates, resellers, integrators.</p>
+      </div>
+      <div class="product-card">
+        <h3>Phyllux IP Advisory</h3>
+        <p>Patent licensing support (with attorney).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="launch-order">
+    <h3>Launch order</h3>
+    <ul>
+      <li><strong>Now:</strong> MASTERMIND Level (Quality Hierarchy)</li>
+      <li>+2–4 weeks: Pulse or Care</li>
+      <li>+6–8 weeks: Second module, Phyllux licensing outreach</li>
+      <li>+10 weeks: Third module, first paid book</li>
+      <li>3–6 mo: ENGENICA Polish module, Phyllux pilot</li>
+      <li>6–12 mo: Content Studio, template marketplace</li>
+      <li>12+ mo: APIs, Propagation as Service, Flourishing Dashboard</li>
+    </ul>
+  </section>
+
+  <p style="margin-top: var(--space-2xl);"><a href="index.html">← Hub</a> · <a href="path.html">The path →</a></p>
+</main>
+
+<footer style="border-top: 1px solid var(--line); padding: var(--space-xl); margin-top: var(--space-2xl);">
+  <p style="font-size: 0.8125rem; color: var(--muted); text-align: center;">
+    © 2026 Phyllux Technologies · Voluntary · Transparent · Mutual flourishing
+  </p>
+</footer>
+</body>
+</html>
