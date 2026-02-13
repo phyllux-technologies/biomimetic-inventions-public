@@ -21,11 +21,18 @@ $rootFolders = @{
     if (!(Test-Path $p)) { New-Item -ItemType Directory -Path $p -Force | Out-Null }
 }
 
+# Exclude images not used on site (reduces load)
+$syncExclude = @('mastermind-launch-announcement', 'mastermind-banner-installable')
+
 # Recursively copy ALL images from entire ROOT tree
 $extensions = @("*.png", "*.jpg", "*.jpeg", "*.webp", "*.gif", "*.svg")
 $count = 0
 Get-ChildItem $rootBase -Recurse -File | Where-Object { $_.Extension -match '\.(png|jpg|jpeg|webp|gif|svg)$' } | ForEach-Object {
     $rel = $_.FullName.Substring($rootBase.Length).TrimStart("\")
+    $leaf = Split-Path $rel -Leaf
+    $skip = $false
+    foreach ($ex in $syncExclude) { if ($leaf -like "*$ex*") { $skip = $true; break } }
+    if ($skip) { return }
     $matched = $false
     foreach ($map in $rootFolders.GetEnumerator()) {
         if ($rel.StartsWith($map.Key, [StringComparison]::OrdinalIgnoreCase)) {
