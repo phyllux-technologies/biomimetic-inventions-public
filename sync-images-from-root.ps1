@@ -83,7 +83,10 @@ $fallbacks = @(
     @{ from = 'phyllux-embellishment.png'; to = 'phyllux-embellishment.png' },
     @{ from = 'phyllux-footer-divider.png'; to = 'phyllux-footer-divider.png' },
     @{ from = 'phyllux-engenica-hero.png'; to = 'phyllux-engenica-hero.png' },
-    @{ from = 'phyllux-tech-hero.png'; to = 'phyllux-tech-hero.png' }
+    @{ from = 'phyllux-tech-hero.png'; to = 'phyllux-tech-hero.png' },
+    @{ from = 'phyllux-proof-hero.png'; to = 'phyllux-proof-hero.png' },
+    @{ from = 'phyllux-ethics-hero.png'; to = 'phyllux-ethics-hero.png' },
+    @{ from = 'phyllux-docs-hero.png'; to = 'phyllux-docs-hero.png' }
 )
 foreach ($fb in $fallbacks) {
     $src = Join-Path (Join-Path $websiteAssets "products") $fb.from

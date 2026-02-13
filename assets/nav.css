@@ -8,17 +8,17 @@
   cursor: pointer; font-family: inherit; transition: all 0.2s;
 }
 .nav-dropdown-btn:hover {
-  border-color: rgba(94,234,212,0.4); color: #5eead4;
-  background: rgba(94,234,212,0.08);
+  border-color: rgba(212,168,75,0.5); color: #d4a84b;
+  background: rgba(212,168,75,0.1);
 }
 .nav-dropdown-btn[aria-expanded="true"] {
-  border-color: rgba(94,234,212,0.5); color: #5eead4;
-  background: rgba(94,234,212,0.12);
+  border-color: rgba(212,168,75,0.6); color: #d4a84b;
+  background: rgba(212,168,75,0.15);
 }
 .nav-dropdown-panel {
   position: absolute; top: calc(100% + 8px); right: 0;
   min-width: 220px; padding: 8px 0;
-  background: #0c0f14; border: 1px solid rgba(94,234,212,0.2);
+  background: #0f130e; border: 1px solid rgba(212,168,75,0.2);
   border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.5);
   opacity: 0; visibility: hidden; transform: translateY(-8px);
   transition: opacity 0.2s, transform 0.2s, visibility 0.2s;
@@ -33,5 +33,5 @@
   transition: background 0.15s, color 0.15s;
 }
 .nav-dropdown-panel a:hover {
-  background: rgba(94,234,212,0.1); color: #5eead4;
+  background: rgba(212,168,75,0.12); color: #d4a84b;
 }

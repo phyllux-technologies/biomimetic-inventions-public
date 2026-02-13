@@ -1,0 +1,165 @@
+/* Phyllux — Golden Angle Design System
+   φ = 1.618 | θ_g = 137.508° | Four billion years of R&D
+   Everything derives from the golden ratio and phyllotaxis. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Golden ratio scale */
+  --phi: 1.618033988749895;
+  --phi-inv: 0.618033988749895;
+  --theta: 137.508;
+  
+  /* φ-based spacing (× 1rem base) */
+  --s-xs: 0.382rem;
+  --s-sm: 0.618rem;
+  --s-md: 1rem;
+  --s-lg: 1.618rem;
+  --s-xl: 2.618rem;
+  --s-2xl: 4.236rem;
+  --s-3xl: 6.854rem;
+  --s-4xl: 11.09rem;
+  
+  /* Phyllotactic palette — sunflower seed to stem */
+  --bg: #080a07;
+  --bg-elevated: #0e120c;
+  --bg-card: #0f130e;
+  --bg-card-hover: #151a13;
+  --fg: #f2efe6;
+  --fg-soft: #d9d4c8;
+  --muted: #7d8a75;
+  --muted-deep: #5a6652;
+  --line: rgba(125, 138, 117, 0.25);
+  --line-soft: rgba(125, 138, 117, 0.15);
+  
+  /* Golden accent — seed head, petal */
+  --gold: #d4a84b;
+  --gold-soft: rgba(212, 168, 75, 0.12);
+  --gold-strong: #e8bc5a;
+  --accent: #9bb87a;
+  --accent-soft: rgba(155, 184, 122, 0.15);
+  --accent2: #7a9b5c;
+  --success: #6b9c4a;
+  --warn: #c9a227;
+  
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, sans-serif;
+  
+  /* φ-based radii */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 26px;
+  
+  /* Transitions */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 0.2s var(--ease);
+  --t-smooth: 0.35s var(--ease-out);
+}
+
+/* Phyllotactic background — spiral/concentric at θ_g */
+.phyllotactic-bg {
+  background: 
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(212, 168, 75, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 80% 100%, rgba(155, 184, 122, 0.03) 0%, transparent 45%),
+    conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(212, 168, 75, 0.02) 137.508deg, transparent 275deg),
+    var(--bg);
+}
+
+/* Golden angle divider — line rotated at θ_g */
+.phi-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line), transparent);
+  transform: rotate(-42.492deg);
+  transform-origin: center;
+  margin: var(--s-2xl) 0;
+}
+
+/* Image frame — golden ratio aspect, phyllotactic corner */
+.phi-frame {
+  position: relative;
+  aspect-ratio: 1 / var(--phi-inv);
+  overflow: hidden;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+}
+.phi-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 60%, rgba(212, 168, 75, 0.03) 100%);
+  pointer-events: none;
+}
+.phi-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-smooth);
+}
+.phi-frame:hover img { transform: scale(1.03); }
+
+/* Square phi frame for portraits */
+.phi-frame-square {
+  aspect-ratio: 1;
+}
+
+/* Card with golden-angle accent */
+.phi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s-xl);
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+}
+.phi-card:hover {
+  border-color: rgba(212, 168, 75, 0.3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+.phi-card--accent {
+  border-left: 3px solid var(--gold);
+}
+
+/* Section with θ_g rotated header accent */
+.phi-section h2::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: var(--s-sm);
+  transform: rotate(-42.492deg);
+  transform-origin: left center;
+}
+
+/* Button — golden ratio proportions */
+.phi-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s-sm) var(--s-lg);
+  border-radius: var(--r-md);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all var(--t-fast);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--fg-soft);
+}
+.phi-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-soft);
+}
+.phi-btn--primary {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+  color: var(--gold);
+}
+.phi-btn--primary:hover {
+  background: rgba(212, 168, 75, 0.2);
+}

@@ -27,8 +27,8 @@
         if (el) el.remove();
         el = document.createElement('div');
         el.id = 'image-fact-overlay';
-        el.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;animation:fadeIn 0.2s ease;';
-        el.innerHTML = '<div style="max-width:420px;background:#0c0f14;border:1px solid rgba(94,234,212,0.3);border-radius:12px;padding:1.5rem;color:#f0f4f8;font-size:0.95rem;line-height:1.6;position:relative;">' +
+        el.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;animation:fadeIn 0.2s ease;';
+        el.innerHTML = '<div style="max-width:420px;background:#0f130e;border:1px solid rgba(212,168,75,0.35);border-left:4px solid #d4a84b;border-radius:12px;padding:1.5rem;color:#f2efe6;font-size:0.95rem;line-height:1.6;position:relative;">' +
           '<button onclick="this.closest(\'#image-fact-overlay\').remove()" style="position:absolute;top:8px;right:8px;background:none;border:none;color:#94a3b8;cursor:pointer;font-size:1.2rem;">×</button>' +
           '<p style="margin:0;color:#5eead4;font-weight:600;margin-bottom:0.5rem;">✨</p><p style="margin:0;">' + fact.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</p></div>';
         el.addEventListener('click', function(ev) { if (ev.target === el) el.remove(); });
