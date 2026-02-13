@@ -750,6 +750,11 @@
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     
+    .at-work-grid img {
+      width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-lg);
+      border: 1px solid var(--line-soft); transition: transform 0.3s ease;
+    }
+    .at-work-grid div:hover img { transform: scale(1.02); }
     /* Focus visible for a11y */
     a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     
@@ -810,7 +815,7 @@
 </header>
 
 <div style="text-align:center;padding:10px 20px;background:linear-gradient(90deg,rgba(52,211,153,0.12),rgba(94,234,212,0.12));border-bottom:1px solid rgba(94,234,212,0.25);font-weight:600;font-size:0.9rem;color:var(--accent);">
-  🚀 <a href="mastermind.html" style="color:inherit;text-decoration:underline;">MASTERMIND modules</a> launching in &lt; 24 hours · Free core live now
+  🚀 <a href="mastermind.html" style="color:inherit;text-decoration:underline;">MASTERMIND</a> · Free core live · Premium modules coming soon
 </div>
 
 <div class="hero-banner">
@@ -924,13 +929,13 @@
   <section id="david-at-work" class="section fade-in">
     <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:var(--space-md);">At work</h2>
     <p style="color:var(--muted);font-size:0.9rem;margin-bottom:var(--space-lg);">Founder, builder, systems thinker — David at the intersection of nature-inspired tech and coordination.</p>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-lg);">
-      <div><img src="assets/david/david-desk-mastermind-hero.png" alt="David with MASTERMIND coordination system" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
-      <div><img src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
-      <div><img src="assets/david/david-coding-hands-on-keyboard.png" alt="David building" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
-      <div><img src="assets/david/david-explaining-whiteboard.png" alt="David explaining concepts" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
-      <div><img src="assets/david/david-nature-tech-outdoor.png" alt="David — nature and technology" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
-      <div><img src="assets/david/david-celebrating-success.png" alt="David celebrating" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line-soft);transition:transform 0.3s" onerror="this.style.display='none'" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"></div>
+    <div class="grid at-work-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-lg);">
+      <div><img src="assets/david/david-desk-mastermind-hero.png" alt="David with MASTERMIND coordination system" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img src="assets/david/david-phyllux-presenting.png" alt="David presenting Phyllux" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img src="assets/david/david-coding-hands-on-keyboard.png" alt="David building" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img src="assets/david/david-explaining-whiteboard.png" alt="David explaining concepts" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img src="assets/david/david-nature-tech-outdoor.png" alt="David — nature and technology" loading="lazy" onerror="this.style.display='none'"></div>
+      <div><img src="assets/david/david-celebrating-success.png" alt="David celebrating" loading="lazy" onerror="this.style.display='none'"></div>
     </div>
   </section>
 
@@ -1016,7 +1021,7 @@
       <a href="about.html" class="seq-dot" title="About">89</a>
       <a href="ecosystem.html" class="seq-dot" title="Ecosystem">144</a>
     </div>
-    <p class="small" style="margin-top: var(--space-sm); opacity: 0.7;">Fibonacci positions · traverse the spiral</p>
+    <p class="small" style="margin-top: var(--space-sm); opacity: 0.7;">Fibonacci sequence 0,1,1,2,3,5… · traverse the spiral</p>
   </section>
 </main>
 
@@ -1047,7 +1052,7 @@
       Golden Angle: 137.508° | φ = 1.618033988749895 | Patent Deadline: January 7, 2027
     </p>
     <p class="small" style="margin-top: var(--space-xs); opacity: 0.5; font-size: 11px;">
-      Optimized by ENGENICA Gen 5 • φ Convergence: 0.03% • Ethical Alignment: 1.0
+      Phyllux Technologies • Mutual flourishing
     </p>
   </div>
 </footer>
