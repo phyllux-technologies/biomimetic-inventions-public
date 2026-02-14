@@ -97,6 +97,14 @@ foreach ($fb in $fallbacks) {
     }
 }
 
+# MASTERMIND Results So Far (PDF) — copy from ROOT to website assets
+$resultsPdf = Join-Path $rootBase "MASTERMIND_RESULTS_SO_FAR.pdf"
+if (Test-Path $resultsPdf) {
+    Copy-Item $resultsPdf (Join-Path $websiteAssets "MASTERMIND_RESULTS_SO_FAR.pdf") -Force
+    Write-Host "  ROOT: MASTERMIND_RESULTS_SO_FAR.pdf"
+    $count++
+}
+
 # Mastermind
 if (Test-Path $mastermindAssets) {
     $modDest = Join-Path $websiteAssets "modules"
