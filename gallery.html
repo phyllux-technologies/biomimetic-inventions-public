@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery â€” David at Phyllux</title>
   <link rel="icon" href="assets/favicon.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="assets/phyllux.css">
+  <link rel="stylesheet" href="assets/nav.css">
   <style>
     :root { --bg:#050508; --fg:#f0f4f8; --muted:#94a3b8; --line:rgba(30,41,59,0.6); --radius:8px; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: Inter, sans-serif; background: var(--bg); color: var(--fg); padding: 1rem; }
+    main { max-width: 900px; margin: 0 auto; }
     h1 { margin-bottom: 1rem; font-size: 1.5rem; }
     h2 { margin: 2rem 0 1rem; font-size: 1.1rem; color: var(--muted); }
     .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
@@ -16,12 +19,41 @@
     .gallery figcaption { font-size: 0.7rem; color: var(--muted); margin-top: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .section { margin-bottom: 2rem; }
     .count { font-size: 0.8rem; color: var(--muted); margin-left: 0.5rem; }
-    nav { margin-bottom: 1rem; }
-    nav a { color: #5eead4; }
+    .back-link { display: inline-block; margin-bottom: 1rem; font-size: 0.875rem; color: var(--muted); }
+    .back-link:hover { color: #5eead4; }
+    header { position: sticky; top: 0; background: rgba(5, 5, 8, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); z-index: 100; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1.5rem; max-width: 1200px; margin: 0 auto; }
   </style>
 </head>
 <body>
-<nav><a href="index.html">â† Hub</a></nav>
+<header>
+  <nav>
+    <a href="index.html" class="brand">🌻 PHYLLUX</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-btn" aria-label="Open menu" aria-expanded="false">Menu ▾</button>
+      <div class="nav-dropdown-panel">
+        <a href="index.html">Hub</a>
+        <a href="mastermind.html">MASTERMIND</a>
+        <a href="products.html">Products</a>
+        <a href="vision.html">Vision</a>
+        <a href="path.html">Path</a>
+        <a href="technology.html">Technology</a>
+        <a href="engenica.html">ENGENICA</a>
+        <a href="proof.html">Proof</a>
+        <a href="partners.html">Partners</a>
+        <a href="ip.html">IP</a>
+        <a href="ethics.html">Ethics</a>
+        <a href="docs.html">Docs</a>
+        <a href="about.html">About</a>
+        <a href="ecosystem.html">Ecosystem</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="vault.html">Vault</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+<p><a href="index.html" class="back-link">← Hub</a></p>
 <h1>Gallery</h1>
 <p style="color:var(--muted);margin-bottom:1.5rem;">David at Phyllux â€” founder, builder, systems thinker. All photos showing me.</p>
 <section class="section"><h2>David<span class="count">(19)</span></h2>
@@ -47,4 +79,6 @@
   <figure><img src="assets/david/david-workspace-behind-scenes.jpg" alt="david workspace behind scenes" loading="lazy" onerror="this.style.display='none'" /><figcaption>David workspace behind scenes</figcaption></figure>
 </div></section>
 <p style='margin-top:2rem;color:var(--muted);'>Total: 19 images</p>
+</main>
+<script src="assets/nav.js"></script>
 </body></html>
